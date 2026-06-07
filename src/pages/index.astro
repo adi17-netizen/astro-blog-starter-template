@@ -1,50 +1,177 @@
----
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
----
-
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nevarro Technologies</title>
+  <meta name="description" content="Nevarro Technologies — building software for the 22nd century." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#08080d; --bg2:#0e0e17;
+      --ink:#f4f1e8; --muted:#7f8aa3;
+      --lava:#ff7a2f; --lava-hot:#ffd27a; --lava-deep:#e8431a;
+      --ash:#cabfa8; --ash-d:#9f9683; --rock:#0e0f15;
+      --line:#1c1c2a;
+    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      background:radial-gradient(1000px 640px at 50% 28%, #181018 0%, var(--bg2) 46%, var(--bg) 82%);
+      color:var(--ink);
+      font-family:"VT323", monospace;
+      min-height:100svh; display:grid; place-items:center;
+      overflow:hidden; position:relative; image-rendering:pixelated;
+    }
+
+    .grid{
+      position:absolute; inset:0; z-index:0; pointer-events:none;
+      background-image:
+        linear-gradient(var(--line) 2px, transparent 2px),
+        linear-gradient(90deg, var(--line) 2px, transparent 2px);
+      background-size:48px 48px;
+      mask-image:linear-gradient(to bottom, transparent 40%, #000 100%);
+      -webkit-mask-image:linear-gradient(to bottom, transparent 40%, #000 100%);
+      opacity:.22;
+    }
+
+    .star{ position:absolute; width:4px; height:4px; background:#fff; z-index:1; }
+    .star.s{ width:3px; height:3px; opacity:.6; }
+    .star.lava{ background:var(--lava); }
+    .star.tw{ animation:tw 1.6s steps(2) infinite; }
+    @keyframes tw{ 0%,100%{opacity:.2;} 50%{opacity:1;} }
+
+    .stage{ position:relative; z-index:3; display:flex; flex-direction:column; align-items:center; text-align:center; padding:5vh 20px; }
+
+    .art-wrap{ width:min(56vw, 300px); margin-bottom:clamp(24px,4.5vh,42px); opacity:0; animation:pop .5s steps(4) .1s forwards; }
+    .art-wrap svg{ width:100%; height:auto; display:block; image-rendering:pixelated; }
+
+    .glow-flicker{ animation:gflick 1.4s steps(2) infinite; }
+    @keyframes gflick{ 0%,100%{opacity:.9;} 50%{opacity:.5;} }
+    .lava-flicker{ animation:flick 1.1s steps(2) infinite; }
+    @keyframes flick{ 0%,100%{opacity:1;} 50%{opacity:.6;} }
+    .bomb{ transform-box:fill-box; }
+    .bomb.b1{ animation:eUp 2s steps(7) infinite; }
+    .bomb.b2{ animation:eL 2.4s steps(7) infinite .6s; }
+    @keyframes eUp{ 0%{transform:translate(0,0);opacity:0;} 12%{opacity:1;} 45%{transform:translate(0,-46px);} 100%{transform:translate(0,6px);opacity:0;} }
+    @keyframes eL { 0%{transform:translate(0,0);opacity:0;} 12%{opacity:1;} 45%{transform:translate(-16px,-36px);} 100%{transform:translate(-22px,8px);opacity:0;} }
+
+    .wordmark{
+      font-family:"Press Start 2P", monospace;
+      font-size:clamp(26px,7vw,58px); line-height:1; letter-spacing:.04em;
+      color:var(--ink); text-shadow:5px 5px 0 #000;
+      opacity:0; animation:pop .4s steps(3) .45s forwards;
+    }
+    .wordmark .accent{ color:var(--lava-hot); }
+
+    .sub{
+      margin-top:18px; font-family:"Press Start 2P", monospace;
+      font-size:clamp(8px,1.5vw,11px); letter-spacing:.42em; text-indent:.42em;
+      color:var(--lava); text-transform:uppercase; text-shadow:3px 3px 0 #000;
+      opacity:0; animation:pop .4s steps(3) .62s forwards;
+    }
+
+    .tagline{
+      margin-top:clamp(26px,5vh,40px); font-size:clamp(20px,3.4vw,28px);
+      letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+      line-height:1.2; max-width:22ch; opacity:0; animation:pop .4s steps(3) .8s forwards;
+    }
+    .tagline b{ color:var(--ink); font-weight:400; }
+    .tagline .num{ color:var(--lava-hot); }
+
+    .badge{
+      margin-top:clamp(30px,6vh,50px); display:inline-flex; align-items:center; gap:12px;
+      padding:10px 16px; font-size:18px; letter-spacing:.22em; text-transform:uppercase;
+      color:var(--ink); background:#101019; border:3px solid #000;
+      box-shadow:5px 5px 0 #000, inset 0 0 0 2px var(--line);
+      opacity:0; animation:pop .4s steps(3) 1s forwards;
+    }
+    .cube-dot{ width:12px; height:12px; background:var(--lava); box-shadow:0 0 0 2px #000; animation:blink 1.4s steps(1) infinite; }
+    @keyframes blink{ 0%,100%{opacity:1;} 50%{opacity:.15;} }
+
+    @keyframes pop{ from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+
+    @media (prefers-reduced-motion: reduce){ *{ animation:none !important; opacity:1 !important; transform:none !important; } }
+  </style>
+</head>
+<body>
+  <div class="grid" aria-hidden="true"></div>
+
+  <span class="star tw" style="top:14%;left:18%"></span>
+  <span class="star s tw" style="top:22%;left:76%;animation-delay:.4s"></span>
+  <span class="star lava tw" style="top:60%;left:14%;animation-delay:.8s"></span>
+  <span class="star s tw" style="top:10%;left:54%;animation-delay:.6s"></span>
+  <span class="star s" style="top:78%;left:42%"></span>
+  <span class="star s tw" style="top:30%;left:88%;animation-delay:1s"></span>
+  <span class="star s" style="top:44%;left:8%"></span>
+
+  <main class="stage">
+    <div class="art-wrap" aria-hidden="true">
+      <svg viewBox="0 0 300 270" role="img" aria-label="Voxel volcano with lava">
+        <defs>
+          <radialGradient id="ember" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,120,50,.6)"/>
+            <stop offset="55%" stop-color="rgba(255,110,40,.16)"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+        </defs>
+
+        <!-- ember bloom -->
+        <ellipse class="glow-flicker" cx="150" cy="120" rx="92" ry="120" fill="url(#ember)"/>
+
+        <!-- jagged dark volcano -->
+        <polygon fill="var(--rock)"
+          points="60,232 78,152 92,152 108,92 120,92 132,56 150,32 168,60 182,42 196,82 210,72 224,152 238,152 246,232"/>
+        <!-- subtle lit facet -->
+        <polygon fill="#1a2030" opacity=".7" points="150,32 168,60 182,42 196,82 178,70 150,32"/>
+
+        <!-- lit ash lower slopes -->
+        <polygon fill="var(--ash)"
+          points="70,232 86,182 110,182 110,166 140,166 140,186 166,186 166,170 196,170 196,190 222,190 236,232"/>
+        <polygon fill="var(--ash-d)" opacity=".65"
+          points="70,232 90,204 150,204 150,216 210,216 222,204 236,232"/>
+
+        <!-- ember bloom under lava -->
+        <ellipse class="glow-flicker" cx="151" cy="160" rx="40" ry="100" fill="url(#ember)"/>
+        <ellipse class="glow-flicker" cx="150" cy="236" rx="62" ry="26" fill="url(#ember)"/>
+
+        <!-- lava river -->
+        <g class="lava-flicker">
+          <polygon fill="var(--lava)"
+            points="146,52 154,52 150,130 158,130 164,232 136,232 142,130 150,130 146,52"/>
+          <polygon fill="var(--lava-hot)"
+            points="148,66 152,66 150,130 154,130 158,224 142,224 146,130 150,130 148,66"/>
+          <rect x="147" y="92"  width="6" height="6" fill="#fff3d6"/>
+          <rect x="147" y="150" width="6" height="6" fill="#fff3d6"/>
+          <rect x="147" y="198" width="6" height="6" fill="#fff3d6"/>
+        </g>
+
+        <!-- crater vent + jet -->
+        <g class="lava-flicker">
+          <rect x="144" y="44" width="12" height="10" fill="var(--lava-hot)"/>
+          <rect x="146" y="34" width="8"  height="10" fill="var(--lava)"/>
+        </g>
+
+        <!-- lava pool -->
+        <g class="lava-flicker">
+          <polygon fill="var(--lava)" points="118,232 150,224 182,232 176,248 124,248"/>
+          <polygon fill="var(--lava-hot)" points="132,232 150,228 168,232 162,242 138,242"/>
+        </g>
+
+        <!-- erupting lava bombs -->
+        <rect class="bomb b1" x="146" y="38" width="8" height="8" fill="var(--lava-hot)"/>
+        <rect class="bomb b2" x="142" y="42" width="6" height="6" fill="var(--lava)"/>
+      </svg>
+    </div>
+
+    <h1 class="wordmark">NEVA<span class="accent">RR</span>O</h1>
+    <div class="sub">Technologies</div>
+
+    <p class="tagline">Building <b>software</b> for the <span class="num">22nd</span> century</p>
+
+    <div class="badge"><span class="cube-dot"></span> Systems coming online</div>
+  </main>
+</body>
 </html>
