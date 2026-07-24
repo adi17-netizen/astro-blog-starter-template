@@ -5,43 +5,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nevarro Technologies</title>
-<meta name="description" content="Nevarro Technologies — a boutique software consulting and micro-SaaS studio. Building software for the 22nd century.">
+<title>Nevarro Technologies — Boutique AI Software & Research Products</title>
+<meta name="description" content="Nevarro Technologies builds boutique AI software for niche industries, and publishes digital research products — reports, audits, and ebooks — for consumers.">
 <style>
   :root{
     --bg:#fbfbfd; --text:#1d1d1f; --muted:#6e6e73; --faint:#a1a1a6;
-    --hairline:#e8e8ed; --accent-a:#5e8bff; --accent-b:#b06bff; --coral:#ff6f61;
+    --hairline:#e8e8ed; --accent-a:#5e8bff; --accent-b:#b06bff;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html,body{height:100%}
+  html{scroll-behavior:smooth}
   body{
     background:var(--bg); color:var(--text);
     font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Inter,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-    display:flex;flex-direction:column;min-height:100vh;overflow-x:hidden;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden;
   }
-  @media (min-height:640px){ body{height:100vh;overflow:hidden} }
-
-  nav{display:flex;align-items:center;justify-content:space-between;padding:1.4rem clamp(1.5rem,5vw,4rem);flex:none}
+  nav{position:sticky;top:0;background:rgba(251,251,253,.85);backdrop-filter:blur(12px);z-index:10;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:1.2rem clamp(1.5rem,5vw,4rem)}
   .wordmark{font-size:.95rem;font-weight:600;letter-spacing:.14em}
+  nav .links{display:flex;gap:1.6rem}
   nav a{font-size:.85rem;color:var(--muted);text-decoration:none;transition:color .25s ease}
   nav a:hover{color:var(--text)}
 
-  main{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 1.5rem;gap:.5rem}
+  .hero{min-height:calc(100svh - 62px);display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:2rem 1.5rem 3rem}
   h1{font-size:clamp(2.4rem,7vw,5rem);font-weight:700;letter-spacing:-.025em;line-height:1.05;max-width:16ch}
   h1 .grad{background:linear-gradient(92deg,var(--accent-a),var(--accent-b));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .sub{margin-top:1.2rem;font-size:clamp(1.02rem,2.2vw,1.28rem);font-weight:400;color:var(--muted);letter-spacing:-.01em;max-width:60ch;line-height:1.6}
-  .support{margin-top:.9rem;font-size:clamp(.95rem,2vw,1.05rem);color:var(--muted)}
-  .support a{color:var(--accent-a);text-decoration:none;font-weight:500;transition:opacity .25s ease}
-  .support a:hover{opacity:.7}
+  .sub{margin-top:1.2rem;font-size:clamp(1.02rem,2.2vw,1.28rem);color:var(--muted);letter-spacing:-.01em;max-width:60ch;line-height:1.6}
+  .supportline{margin-top:.9rem;font-size:clamp(.95rem,2vw,1.05rem);color:var(--muted)}
+  .supportline a{color:var(--accent-a);text-decoration:none;font-weight:500}
+  .supportline a:hover{opacity:.7}
 
-  /* character group */
-  .troupe{margin-top:clamp(1rem,3vh,2.5rem);display:flex;align-items:flex-end;justify-content:center;gap:clamp(.5rem,3vw,2.5rem);max-height:38vh}
-  .troupe svg{height:100%;width:auto;max-height:38vh;overflow:visible}
-  .nev-wrap{height:min(230px,34vh)}
-  .buddy{height:min(96px,15vh)}
-  .buddy.left{align-self:flex-end;margin-bottom:.5rem}
-  .buddy.right{align-self:flex-end;margin-bottom:1.2rem}
+  .troupe{margin-top:clamp(1.5rem,4vh,3rem);display:flex;align-items:flex-end;justify-content:center;gap:clamp(.5rem,3vw,2.5rem)}
+  .troupe svg{height:100%;width:auto;overflow:visible}
+  .nev-wrap{height:min(220px,30vh)}
+  .buddy{height:min(90px,13vh)}
+  .buddy.left{margin-bottom:.5rem}
+  .buddy.right{margin-bottom:1.2rem}
 
   .bot{animation:bob 4.5s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
@@ -53,7 +53,6 @@
   @keyframes wave{0%,78%,100%{transform:rotate(0)}84%{transform:rotate(-42deg)}90%{transform:rotate(-14deg)}95%{transform:rotate(-38deg)}}
   .ant-light{animation:antpulse 3s ease-in-out infinite}
   @keyframes antpulse{0%,100%{opacity:1}50%{opacity:.4}}
-
   .hop-a{animation:hop 3.2s ease-in-out infinite}
   .hop-b{animation:hop 3.8s ease-in-out infinite;animation-delay:.5s}
   @keyframes hop{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
@@ -63,164 +62,233 @@
   .blink-a{transform-origin:center;animation:blink 4.4s ease-in-out infinite}
   .blink-b{transform-origin:center;animation:blink 5.6s ease-in-out infinite;animation-delay:1s}
 
-  footer{
-    flex:none;
-    border-top:1px solid var(--hairline);
-    display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
-    font-size:.78rem;color:var(--faint);padding:1.1rem clamp(1.5rem,5vw,4rem);
-  }
+  section{max-width:1000px;margin:0 auto;padding:4.5rem 1.5rem}
+  .sec-kicker{font-size:.78rem;font-weight:600;letter-spacing:.2em;color:var(--accent-a);text-transform:uppercase;text-align:center}
+  h2{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:700;letter-spacing:-.02em;text-align:center;margin-top:.6rem}
+  .sec-sub{color:var(--muted);text-align:center;max-width:56ch;margin:1rem auto 0;line-height:1.6}
+
+  .offer{background:#fff;border:1px solid var(--hairline);border-radius:24px;padding:clamp(1.8rem,4vw,2.8rem);
+    margin-top:2.4rem;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .offer .tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent-a);background:#eef3ff;border-radius:999px;padding:.35rem .85rem}
+  .offer.consumer .tag{color:var(--accent-b);background:#f5eeff}
+  .offer h3{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:700;letter-spacing:-.015em;margin-top:1rem}
+  .offer p{color:var(--muted);line-height:1.7;margin-top:.8rem;max-width:64ch}
+  .offer ul{list-style:none;color:var(--muted);line-height:2;margin-top:.8rem;font-size:.95rem}
+  .offer ul li::before{content:"—";color:var(--accent-a);margin-right:.6rem}
+  .offer.consumer ul li::before{color:var(--accent-b)}
+  .pricenote{margin-top:1.2rem;padding:1rem 1.2rem;background:var(--bg);border:1px solid var(--hairline);border-radius:14px;
+    color:var(--text);font-size:.95rem;line-height:1.6}
+  .pricenote span{color:var(--muted)}
+  .offer .cta{margin-top:1.4rem}
+  .offer .cta a{font-weight:500;color:var(--accent-a);text-decoration:none}
+  .offer.consumer .cta a{color:var(--accent-b)}
+  .offer .cta a:hover{opacity:.7}
+
+  .contactband{text-align:center;border-top:1px solid var(--hairline)}
+  .contactband p{color:var(--muted);line-height:1.7;max-width:52ch;margin:1rem auto 0}
+  .contactband a{color:var(--accent-a);text-decoration:none;font-weight:500}
+
+  footer{border-top:1px solid var(--hairline);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+    font-size:.78rem;color:var(--faint);padding:1.2rem clamp(1.5rem,5vw,4rem)}
+  footer .pol{display:flex;gap:1.2rem;flex-wrap:wrap}
   footer a{color:var(--muted);text-decoration:none;transition:color .25s}
   footer a:hover{color:var(--text)}
   .made{color:var(--muted)}
-
-  @media (max-width:600px){footer{justify-content:center;text-align:center}}
+  @media (max-width:700px){footer{justify-content:center;text-align:center}}
   @media (prefers-reduced-motion: reduce){
     .bot,.shadow,.eyes,.arm-r,.ant-light,.hop-a,.hop-b,.bshadow-a,.bshadow-b,.blink-a,.blink-b{animation:none}
+    html{scroll-behavior:auto}
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <span class="wordmark">NEVARRO TECHNOLOGIES</span>
-  <a href="mailto:support@nevarrotech.com">Support</a>
+  <span class="wordmark">NEVARRO</span>
+  <span class="links">
+    <a href="#work">What we do</a>
+    <a href="/support">Support</a>
+  </span>
 </nav>
 
 <main>
-  <h1>Building software for the <span class="grad">22nd&nbsp;century</span>.</h1>
+  <div class="hero">
+    <h1>Building software for the <span class="grad">22nd&nbsp;century</span>.</h1>
+    <p class="sub">Nevarro is a boutique studio with two arms: custom AI software for niche industries, and a research team publishing digital products for consumers.</p>
+    <p class="supportline">For any queries, contact <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a></p>
 
-  <p class="sub">Nevarro is a boutique software consulting and digital products studio. We build and operate thoughtfully designed software, including focused vertical AI products shaped by taste, judgement, and a deep understanding of the problem.</p>
-
-  <p class="support">For any queries, contact <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a></p>
-
-  <!-- character troupe -->
-  <div class="troupe" aria-hidden="true">
-
-    <!-- BUDDY LEFT (blue) -->
-    <div class="buddy left">
-      <svg viewBox="0 0 100 120">
-        <defs>
-          <radialGradient id="bluebody" cx="38%" cy="30%" r="85%">
-            <stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#eaf0fb"/><stop offset="1" stop-color="#cdd9f0"/>
-          </radialGradient>
-          <radialGradient id="blueeye" cx="38%" cy="32%" r="80%">
-            <stop offset="0" stop-color="#bfe0ff"/><stop offset="1" stop-color="#5e8bff"/>
-          </radialGradient>
-        </defs>
-        <ellipse class="bshadow-a" cx="50" cy="112" rx="26" ry="5" fill="#1d1d1f"/>
-        <g class="hop-a">
-          <line x1="50" y1="26" x2="50" y2="16" stroke="#c9c2b6" stroke-width="3" stroke-linecap="round"/>
-          <circle class="ant-light" cx="50" cy="13" r="4.5" fill="#5e8bff"/>
-          <ellipse cx="30" cy="66" rx="16" ry="18" fill="url(#bluebody)"/>
-          <ellipse cx="70" cy="66" rx="16" ry="18" fill="url(#bluebody)"/>
-          <rect x="26" y="30" width="48" height="60" rx="24" fill="url(#bluebody)"/>
-          <ellipse cx="40" cy="44" rx="9" ry="5" fill="#fff" opacity=".7" transform="rotate(-20 40 44)"/>
-          <rect x="34" y="46" width="32" height="26" rx="13" fill="#2b3242"/>
-          <g class="blink-a">
-            <ellipse cx="44" cy="59" rx="4" ry="5" fill="url(#blueeye)"/>
-            <ellipse cx="56" cy="59" rx="4" ry="5" fill="url(#blueeye)"/>
-            <circle cx="42.6" cy="57" r="1.2" fill="#fff"/><circle cx="54.6" cy="57" r="1.2" fill="#fff"/>
+    <div class="troupe" aria-hidden="true">
+      <div class="buddy left">
+        <svg viewBox="0 0 100 120">
+          <defs>
+            <radialGradient id="bluebody" cx="38%" cy="30%" r="85%">
+              <stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#eaf0fb"/><stop offset="1" stop-color="#cdd9f0"/>
+            </radialGradient>
+            <radialGradient id="blueeye" cx="38%" cy="32%" r="80%">
+              <stop offset="0" stop-color="#bfe0ff"/><stop offset="1" stop-color="#5e8bff"/>
+            </radialGradient>
+          </defs>
+          <ellipse class="bshadow-a" cx="50" cy="112" rx="26" ry="5" fill="#1d1d1f"/>
+          <g class="hop-a">
+            <line x1="50" y1="26" x2="50" y2="16" stroke="#c9c2b6" stroke-width="3" stroke-linecap="round"/>
+            <circle class="ant-light" cx="50" cy="13" r="4.5" fill="#5e8bff"/>
+            <ellipse cx="30" cy="66" rx="16" ry="18" fill="url(#bluebody)"/>
+            <ellipse cx="70" cy="66" rx="16" ry="18" fill="url(#bluebody)"/>
+            <rect x="26" y="30" width="48" height="60" rx="24" fill="url(#bluebody)"/>
+            <ellipse cx="40" cy="44" rx="9" ry="5" fill="#fff" opacity=".7" transform="rotate(-20 40 44)"/>
+            <rect x="34" y="46" width="32" height="26" rx="13" fill="#2b3242"/>
+            <g class="blink-a">
+              <ellipse cx="44" cy="59" rx="4" ry="5" fill="url(#blueeye)"/>
+              <ellipse cx="56" cy="59" rx="4" ry="5" fill="url(#blueeye)"/>
+              <circle cx="42.6" cy="57" r="1.2" fill="#fff"/><circle cx="54.6" cy="57" r="1.2" fill="#fff"/>
+            </g>
+            <ellipse cx="38" cy="98" rx="7" ry="4" fill="#cdd9f0"/>
+            <ellipse cx="62" cy="98" rx="7" ry="4" fill="#cdd9f0"/>
           </g>
-          <ellipse cx="38" cy="98" rx="7" ry="4" fill="#cdd9f0"/>
-          <ellipse cx="62" cy="98" rx="7" ry="4" fill="#cdd9f0"/>
-        </g>
-      </svg>
+        </svg>
+      </div>
+
+      <div class="nev-wrap">
+        <svg viewBox="0 0 300 290">
+          <defs>
+            <radialGradient id="nevbody" cx="38%" cy="30%" r="85%">
+              <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#f4f1ec"/><stop offset="1" stop-color="#ddd6cc"/>
+            </radialGradient>
+            <radialGradient id="nevbelly" cx="40%" cy="35%" r="80%">
+              <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ece7df"/>
+            </radialGradient>
+            <radialGradient id="nevscreen" cx="42%" cy="32%" r="90%">
+              <stop offset="0" stop-color="#3a4254"/><stop offset="1" stop-color="#20242f"/>
+            </radialGradient>
+            <radialGradient id="neveye" cx="38%" cy="32%" r="80%">
+              <stop offset="0" stop-color="#9ff2ff"/><stop offset=".6" stop-color="#4cd7f0"/><stop offset="1" stop-color="#2ab5d6"/>
+            </radialGradient>
+            <radialGradient id="nevcoral" cx="38%" cy="30%" r="85%">
+              <stop offset="0" stop-color="#ff9c92"/><stop offset="1" stop-color="#f05a4d"/>
+            </radialGradient>
+            <linearGradient id="nevsheen" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffffff" stop-opacity=".85"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <ellipse class="shadow" cx="150" cy="262" rx="74" ry="12" fill="#1d1d1f"/>
+          <g class="bot">
+            <line x1="150" y1="52" x2="150" y2="30" stroke="#c9c2b6" stroke-width="5" stroke-linecap="round"/>
+            <circle class="ant-light" cx="150" cy="24" r="9" fill="url(#nevcoral)"/>
+            <ellipse cx="146.5" cy="20.5" rx="3.2" ry="2.4" fill="#ffffff" opacity=".85"/>
+            <g>
+              <path d="M96 168 Q76 178 72 196" stroke="#ddd6cc" stroke-width="16" stroke-linecap="round" fill="none"/>
+              <circle cx="71" cy="198" r="11" fill="url(#nevbody)"/>
+            </g>
+            <g class="arm-r">
+              <path d="M204 168 Q224 178 228 196" stroke="#ddd6cc" stroke-width="16" stroke-linecap="round" fill="none"/>
+              <circle cx="229" cy="198" r="11" fill="url(#nevbody)"/>
+            </g>
+            <rect x="88" y="52" width="124" height="164" rx="58" fill="url(#nevbody)"/>
+            <ellipse cx="122" cy="84" rx="26" ry="14" fill="url(#nevsheen)" transform="rotate(-24 122 84)"/>
+            <rect x="104" y="86" width="92" height="76" rx="34" fill="url(#nevscreen)"/>
+            <path d="M112 104 Q150 84 188 104 L188 96 Q150 78 112 96 Z" fill="#ffffff" opacity=".10"/>
+            <g class="eyes">
+              <ellipse cx="132" cy="126" rx="12" ry="15" fill="url(#neveye)"/>
+              <ellipse cx="168" cy="126" rx="12" ry="15" fill="url(#neveye)"/>
+              <circle cx="128" cy="120" r="3.6" fill="#ffffff" opacity=".95"/>
+              <circle cx="164" cy="120" r="3.6" fill="#ffffff" opacity=".95"/>
+            </g>
+            <ellipse cx="116" cy="148" rx="6" ry="3.6" fill="#ff8a80" opacity=".35"/>
+            <ellipse cx="184" cy="148" rx="6" ry="3.6" fill="#ff8a80" opacity=".35"/>
+            <circle cx="150" cy="190" r="15" fill="url(#nevbelly)" stroke="#e2dbd0" stroke-width="1.5"/>
+            <path d="M143 197 L143 183 L150 191 L157 183 L157 197" stroke="#f05a4d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <ellipse cx="126" cy="220" rx="15" ry="9" fill="#ddd6cc"/>
+            <ellipse cx="174" cy="220" rx="15" ry="9" fill="#ddd6cc"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="buddy right">
+        <svg viewBox="0 0 100 120">
+          <defs>
+            <radialGradient id="vbody" cx="38%" cy="30%" r="85%">
+              <stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#f1eafb"/><stop offset="1" stop-color="#ddccf0"/>
+            </radialGradient>
+            <radialGradient id="veye" cx="38%" cy="32%" r="80%">
+              <stop offset="0" stop-color="#e6ccff"/><stop offset="1" stop-color="#b06bff"/>
+            </radialGradient>
+          </defs>
+          <ellipse class="bshadow-b" cx="50" cy="112" rx="24" ry="5" fill="#1d1d1f"/>
+          <g class="hop-b">
+            <line x1="50" y1="28" x2="54" y2="18" stroke="#c9c2b6" stroke-width="3" stroke-linecap="round"/>
+            <circle class="ant-light" cx="55" cy="15" r="4.5" fill="#b06bff"/>
+            <ellipse cx="32" cy="70" rx="15" ry="16" fill="url(#vbody)"/>
+            <ellipse cx="68" cy="70" rx="15" ry="16" fill="url(#vbody)"/>
+            <circle cx="50" cy="60" r="30" fill="url(#vbody)"/>
+            <ellipse cx="40" cy="46" rx="8" ry="5" fill="#fff" opacity=".7" transform="rotate(-20 40 46)"/>
+            <rect x="34" y="50" width="32" height="24" rx="12" fill="#2b3242"/>
+            <g class="blink-b">
+              <ellipse cx="44" cy="62" rx="4" ry="5" fill="url(#veye)"/>
+              <ellipse cx="56" cy="62" rx="4" ry="5" fill="url(#veye)"/>
+              <circle cx="42.6" cy="60" r="1.2" fill="#fff"/><circle cx="54.6" cy="60" r="1.2" fill="#fff"/>
+            </g>
+            <ellipse cx="40" cy="96" rx="7" ry="4" fill="#ddccf0"/>
+            <ellipse cx="60" cy="96" rx="7" ry="4" fill="#ddccf0"/>
+          </g>
+        </svg>
+      </div>
     </div>
-
-    <!-- NEV (center) -->
-    <div class="nev-wrap">
-      <svg viewBox="0 0 300 290">
-        <defs>
-          <radialGradient id="nevbody" cx="38%" cy="30%" r="85%">
-            <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#f4f1ec"/><stop offset="1" stop-color="#ddd6cc"/>
-          </radialGradient>
-          <radialGradient id="nevbelly" cx="40%" cy="35%" r="80%">
-            <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ece7df"/>
-          </radialGradient>
-          <radialGradient id="nevscreen" cx="42%" cy="32%" r="90%">
-            <stop offset="0" stop-color="#3a4254"/><stop offset="1" stop-color="#20242f"/>
-          </radialGradient>
-          <radialGradient id="neveye" cx="38%" cy="32%" r="80%">
-            <stop offset="0" stop-color="#9ff2ff"/><stop offset=".6" stop-color="#4cd7f0"/><stop offset="1" stop-color="#2ab5d6"/>
-          </radialGradient>
-          <radialGradient id="nevcoral" cx="38%" cy="30%" r="85%">
-            <stop offset="0" stop-color="#ff9c92"/><stop offset="1" stop-color="#f05a4d"/>
-          </radialGradient>
-          <linearGradient id="nevsheen" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#ffffff" stop-opacity=".85"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-        <ellipse class="shadow" cx="150" cy="262" rx="74" ry="12" fill="#1d1d1f"/>
-        <g class="bot">
-          <line x1="150" y1="52" x2="150" y2="30" stroke="#c9c2b6" stroke-width="5" stroke-linecap="round"/>
-          <circle class="ant-light" cx="150" cy="24" r="9" fill="url(#nevcoral)"/>
-          <ellipse cx="146.5" cy="20.5" rx="3.2" ry="2.4" fill="#ffffff" opacity=".85"/>
-          <g>
-            <path d="M96 168 Q76 178 72 196" stroke="#ddd6cc" stroke-width="16" stroke-linecap="round" fill="none"/>
-            <circle cx="71" cy="198" r="11" fill="url(#nevbody)"/>
-          </g>
-          <g class="arm-r">
-            <path d="M204 168 Q224 178 228 196" stroke="#ddd6cc" stroke-width="16" stroke-linecap="round" fill="none"/>
-            <circle cx="229" cy="198" r="11" fill="url(#nevbody)"/>
-          </g>
-          <rect x="88" y="52" width="124" height="164" rx="58" fill="url(#nevbody)"/>
-          <ellipse cx="122" cy="84" rx="26" ry="14" fill="url(#nevsheen)" transform="rotate(-24 122 84)"/>
-          <rect x="104" y="86" width="92" height="76" rx="34" fill="url(#nevscreen)"/>
-          <path d="M112 104 Q150 84 188 104 L188 96 Q150 78 112 96 Z" fill="#ffffff" opacity=".10"/>
-          <g class="eyes">
-            <ellipse cx="132" cy="126" rx="12" ry="15" fill="url(#neveye)"/>
-            <ellipse cx="168" cy="126" rx="12" ry="15" fill="url(#neveye)"/>
-            <circle cx="128" cy="120" r="3.6" fill="#ffffff" opacity=".95"/>
-            <circle cx="164" cy="120" r="3.6" fill="#ffffff" opacity=".95"/>
-          </g>
-          <ellipse cx="116" cy="148" rx="6" ry="3.6" fill="#ff8a80" opacity=".35"/>
-          <ellipse cx="184" cy="148" rx="6" ry="3.6" fill="#ff8a80" opacity=".35"/>
-          <circle cx="150" cy="190" r="15" fill="url(#nevbelly)" stroke="#e2dbd0" stroke-width="1.5"/>
-          <path d="M143 197 L143 183 L150 191 L157 183 L157 197" stroke="#f05a4d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <ellipse cx="126" cy="220" rx="15" ry="9" fill="#ddd6cc"/>
-          <ellipse cx="174" cy="220" rx="15" ry="9" fill="#ddd6cc"/>
-        </g>
-      </svg>
-    </div>
-
-    <!-- BUDDY RIGHT (violet) -->
-    <div class="buddy right">
-      <svg viewBox="0 0 100 120">
-        <defs>
-          <radialGradient id="vbody" cx="38%" cy="30%" r="85%">
-            <stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#f1eafb"/><stop offset="1" stop-color="#ddccf0"/>
-          </radialGradient>
-          <radialGradient id="veye" cx="38%" cy="32%" r="80%">
-            <stop offset="0" stop-color="#e6ccff"/><stop offset="1" stop-color="#b06bff"/>
-          </radialGradient>
-        </defs>
-        <ellipse class="bshadow-b" cx="50" cy="112" rx="24" ry="5" fill="#1d1d1f"/>
-        <g class="hop-b">
-          <line x1="50" y1="28" x2="54" y2="18" stroke="#c9c2b6" stroke-width="3" stroke-linecap="round"/>
-          <circle class="ant-light" cx="55" cy="15" r="4.5" fill="#b06bff"/>
-          <ellipse cx="32" cy="70" rx="15" ry="16" fill="url(#vbody)"/>
-          <ellipse cx="68" cy="70" rx="15" ry="16" fill="url(#vbody)"/>
-          <circle cx="50" cy="60" r="30" fill="url(#vbody)"/>
-          <ellipse cx="40" cy="46" rx="8" ry="5" fill="#fff" opacity=".7" transform="rotate(-20 40 46)"/>
-          <rect x="34" y="50" width="32" height="24" rx="12" fill="#2b3242"/>
-          <g class="blink-b">
-            <ellipse cx="44" cy="62" rx="4" ry="5" fill="url(#veye)"/>
-            <ellipse cx="56" cy="62" rx="4" ry="5" fill="url(#veye)"/>
-            <circle cx="42.6" cy="60" r="1.2" fill="#fff"/><circle cx="54.6" cy="60" r="1.2" fill="#fff"/>
-          </g>
-          <ellipse cx="40" cy="96" rx="7" ry="4" fill="#ddccf0"/>
-          <ellipse cx="60" cy="96" rx="7" ry="4" fill="#ddccf0"/>
-        </g>
-      </svg>
-    </div>
-
   </div>
+
+  <!-- WHAT WE DO -->
+  <section id="work">
+    <div class="sec-kicker">What we do</div>
+    <h2>Two arms, one studio.</h2>
+    <p class="sec-sub">An enterprise practice that builds custom AI software, and a research team that publishes digital products.</p>
+
+    <!-- ENTERPRISE -->
+    <div class="offer" id="enterprise">
+      <span class="tag">Enterprise · Consulting</span>
+      <h3>Boutique AI software for niche industries</h3>
+      <p>We partner with smaller-scale enterprises in niche industries to design and build custom AI-enabled software — working iteratively on defined artifacts (workflows, tools, integrations, and internal products) on a pay-as-you-go basis. Engagements are intentionally small and focused: one team, one problem, working software every month.</p>
+      <ul>
+        <li>Custom AI tools and internal products, built to your workflow</li>
+        <li>Iterative monthly delivery against agreed artifacts</li>
+        <li>Deployment, handover, and ongoing improvement</li>
+      </ul>
+      <div class="pricenote">Typical engagements run <strong>$500–$1,500 per month</strong> depending on the range of services. <span>Final pricing and configuration are agreed in writing before any billing begins.</span></div>
+      <div class="cta"><a href="mailto:adithya@gmail.com?subject=Enterprise%20engagement%20enquiry">Enquire about an engagement →</a></div>
+    </div>
+
+    <!-- CONSUMER / RESEARCH -->
+    <div class="offer consumer" id="research">
+      <span class="tag">Consumer · Research Products</span>
+      <h3>Digital products from our research team</h3>
+      <p>Our research arm produces digital products sold directly to consumers — ebooks, research reports, digital audits, and custom-made reports for specific industries. Each product is delivered as a digital download.</p>
+      <ul>
+        <li>Ebooks and industry research reports</li>
+        <li>Digital audits and benchmark reports</li>
+        <li>Custom-made reports built to order</li>
+      </ul>
+      <div class="pricenote">Products are priced <strong>₹500–₹5,000 per digital download</strong>. <span>Custom reports are quoted individually based on scope and configuration.</span></div>
+      <div class="cta"><a href="mailto:support@nevarrotech.com?subject=Research%20product%20enquiry">Ask about our products →</a></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contactband">
+    <div class="sec-kicker">Contact</div>
+    <h2>Talk to us.</h2>
+    <p>General queries and product support: <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a><br>
+    Enterprise engagements: <a href="mailto:adithya@gmail.com">adithya@gmail.com</a></p>
+  </section>
 </main>
 
 <footer>
   <span>© 2026 Nevarro Technologies</span>
   <span class="made">Made in 🇮🇳 with 💙 for the 🌍</span>
-  <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a>
+  <span class="pol">
+    <a href="/terms">Terms</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/refunds">Refunds</a>
+    <a href="/support">Support</a>
+  </span>
 </footer>
 
 </body>
