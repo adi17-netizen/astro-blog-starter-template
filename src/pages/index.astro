@@ -5,12 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nevarro Technologies — Boutique AI Software & Research Products</title>
-<meta name="description" content="Nevarro Technologies builds boutique AI software for niche industries, and publishes digital research products — reports, audits, and ebooks — for consumers.">
+<title>Nevarro Technologies — Boutique AI Software & Digital Products</title>
+<meta name="description" content="Nevarro Technologies builds boutique AI software for niche industries, and publishes digital products — tools, reports, and audits.">
 <style>
   :root{
-    --bg:#fbfbfd; --text:#1d1d1f; --muted:#6e6e73; --faint:#a1a1a6;
+    --bg:#fbfbfd; --card:#ffffff; --text:#1d1d1f; --muted:#6e6e73; --faint:#a1a1a6;
     --hairline:#e8e8ed; --accent-a:#5e8bff; --accent-b:#b06bff;
+    --tagblue-bg:#eef3ff; --tagviolet-bg:#f5eeff; --shadowc:#1d1d1f;
+    --navbg:rgba(251,251,253,.85);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0d0d10; --card:#1a1a1e; --text:#f5f5f7; --muted:#a1a1a6; --faint:#6e6e73;
+      --hairline:#2a2a30; --accent-a:#7da2ff; --accent-b:#c08cff;
+      --tagblue-bg:#1c2540; --tagviolet-bg:#2a1f40; --shadowc:#000000;
+      --navbg:rgba(13,13,16,.8);
+    }
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -19,7 +29,7 @@
     font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Inter,Arial,sans-serif;
     -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden;
   }
-  nav{position:sticky;top:0;background:rgba(251,251,253,.85);backdrop-filter:blur(12px);z-index:10;
+  nav{position:sticky;top:0;background:var(--navbg);backdrop-filter:blur(12px);z-index:10;
     display:flex;align-items:center;justify-content:space-between;
     padding:1.2rem clamp(1.5rem,5vw,4rem)}
   .wordmark{font-size:.95rem;font-weight:600;letter-spacing:.14em}
@@ -42,6 +52,7 @@
   .buddy{height:min(90px,13vh)}
   .buddy.left{margin-bottom:.5rem}
   .buddy.right{margin-bottom:1.2rem}
+  .shadow,.bshadow-a,.bshadow-b{fill:var(--shadowc)}
 
   .bot{animation:bob 4.5s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
@@ -67,11 +78,11 @@
   h2{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:700;letter-spacing:-.02em;text-align:center;margin-top:.6rem}
   .sec-sub{color:var(--muted);text-align:center;max-width:56ch;margin:1rem auto 0;line-height:1.6}
 
-  .offer{background:#fff;border:1px solid var(--hairline);border-radius:24px;padding:clamp(1.8rem,4vw,2.8rem);
+  .offer{background:var(--card);border:1px solid var(--hairline);border-radius:24px;padding:clamp(1.8rem,4vw,2.8rem);
     margin-top:2.4rem;box-shadow:0 1px 2px rgba(0,0,0,.03)}
   .offer .tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--accent-a);background:#eef3ff;border-radius:999px;padding:.35rem .85rem}
-  .offer.consumer .tag{color:var(--accent-b);background:#f5eeff}
+    color:var(--accent-a);background:var(--tagblue-bg);border-radius:999px;padding:.35rem .85rem}
+  .offer.consumer .tag{color:var(--accent-b);background:var(--tagviolet-bg)}
   .offer h3{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:700;letter-spacing:-.015em;margin-top:1rem}
   .offer p{color:var(--muted);line-height:1.7;margin-top:.8rem;max-width:64ch}
   .offer ul{list-style:none;color:var(--muted);line-height:2;margin-top:.8rem;font-size:.95rem}
@@ -84,6 +95,21 @@
   .offer .cta a{font-weight:500;color:var(--accent-a);text-decoration:none}
   .offer.consumer .cta a{color:var(--accent-b)}
   .offer .cta a:hover{opacity:.7}
+
+  .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1.6rem}
+  .pcard{background:var(--bg);border:1px solid var(--hairline);border-radius:16px;padding:1.3rem 1.3rem;
+    display:flex;flex-direction:column;gap:.55rem;transition:transform .25s ease}
+  .pcard:hover{transform:translateY(-2px)}
+  .pcard .pbadge{align-self:flex-start;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    border-radius:999px;padding:.28rem .7rem}
+  .pcard .free{color:#2f9e63;background:rgba(52,199,89,.12)}
+  .pcard .new{color:var(--accent-b);background:var(--tagviolet-bg)}
+  .pcard h4{font-size:1.02rem;font-weight:600}
+  .pcard p{color:var(--muted);font-size:.88rem;line-height:1.6;margin:0}
+  .pcard .pprice{font-weight:600;font-size:.92rem}
+  .pcard .plink{margin-top:auto;padding-top:.4rem}
+  .pcard .plink a{font-size:.88rem;font-weight:500;color:var(--accent-b);text-decoration:none}
+  .pcard .plink a:hover{opacity:.7}
 
   .contactband{text-align:center;border-top:1px solid var(--hairline)}
   .contactband p{color:var(--muted);line-height:1.7;max-width:52ch;margin:1rem auto 0}
@@ -108,6 +134,7 @@
   <span class="wordmark">NEVARRO</span>
   <span class="links">
     <a href="#work">What we do</a>
+    <a href="#products">Products</a>
     <a href="/support">Support</a>
   </span>
 </nav>
@@ -115,7 +142,7 @@
 <main>
   <div class="hero">
     <h1>Building software for the <span class="grad">22nd&nbsp;century</span>.</h1>
-    <p class="sub">Nevarro is a boutique studio with two arms: custom AI software for niche industries, and a research team publishing digital products for consumers.</p>
+    <p class="sub">Nevarro is a boutique studio with two arms: custom AI software for niche industries, and digital products people can use today.</p>
     <p class="supportline">For any queries, contact <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a></p>
 
     <div class="troupe" aria-hidden="true">
@@ -129,7 +156,7 @@
               <stop offset="0" stop-color="#bfe0ff"/><stop offset="1" stop-color="#5e8bff"/>
             </radialGradient>
           </defs>
-          <ellipse class="bshadow-a" cx="50" cy="112" rx="26" ry="5" fill="#1d1d1f"/>
+          <ellipse class="bshadow-a" cx="50" cy="112" rx="26" ry="5"/>
           <g class="hop-a">
             <line x1="50" y1="26" x2="50" y2="16" stroke="#c9c2b6" stroke-width="3" stroke-linecap="round"/>
             <circle class="ant-light" cx="50" cy="13" r="4.5" fill="#5e8bff"/>
@@ -171,7 +198,7 @@
               <stop offset="0" stop-color="#ffffff" stop-opacity=".85"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
             </linearGradient>
           </defs>
-          <ellipse class="shadow" cx="150" cy="262" rx="74" ry="12" fill="#1d1d1f"/>
+          <ellipse class="shadow" cx="150" cy="262" rx="74" ry="12"/>
           <g class="bot">
             <line x1="150" y1="52" x2="150" y2="30" stroke="#c9c2b6" stroke-width="5" stroke-linecap="round"/>
             <circle class="ant-light" cx="150" cy="24" r="9" fill="url(#nevcoral)"/>
@@ -214,7 +241,7 @@
               <stop offset="0" stop-color="#e6ccff"/><stop offset="1" stop-color="#b06bff"/>
             </radialGradient>
           </defs>
-          <ellipse class="bshadow-b" cx="50" cy="112" rx="24" ry="5" fill="#1d1d1f"/>
+          <ellipse class="bshadow-b" cx="50" cy="112" rx="24" ry="5"/>
           <g class="hop-b">
             <line x1="50" y1="28" x2="54" y2="18" stroke="#c9c2b6" stroke-width="3" stroke-linecap="round"/>
             <circle class="ant-light" cx="55" cy="15" r="4.5" fill="#b06bff"/>
@@ -240,34 +267,51 @@
   <section id="work">
     <div class="sec-kicker">What we do</div>
     <h2>Two arms, one studio.</h2>
-    <p class="sec-sub">An enterprise practice that builds custom AI software, and a research team that publishes digital products.</p>
+    <p class="sec-sub">Custom AI software built for your industry, and ready-to-use digital products.</p>
 
     <!-- ENTERPRISE -->
     <div class="offer" id="enterprise">
-      <span class="tag">Enterprise · Consulting</span>
+      <span class="tag">Studio · Consulting</span>
       <h3>Boutique AI software for niche industries</h3>
-      <p>We partner with smaller-scale enterprises in niche industries to design and build custom AI-enabled software — working iteratively on defined artifacts (workflows, tools, integrations, and internal products) on a pay-as-you-go basis. Engagements are intentionally small and focused: one team, one problem, working software every month.</p>
+      <p>We build the software your industry actually needs — not off-the-shelf tools bent out of shape. Working directly with founders and operators in niche industries, we design and ship custom AI-enabled products: workflow tools, internal platforms, integrations, and automations that fit the way your business runs. Small team, senior attention, working software fast.</p>
       <ul>
-        <li>Custom AI tools and internal products, built to your workflow</li>
-        <li>Iterative monthly delivery against agreed artifacts</li>
-        <li>Deployment, handover, and ongoing improvement</li>
+        <li>Custom AI tools and internal products, built around your workflow</li>
+        <li>Iterative delivery — see progress every week, not every quarter</li>
+        <li>Deployment, handover, and ongoing improvement included</li>
       </ul>
-      <div class="pricenote">Typical engagements run <strong>$500–$1,500 per month</strong> depending on the range of services. <span>Final pricing and configuration are agreed in writing before any billing begins.</span></div>
-      <div class="cta"><a href="mailto:adithya@gmail.com?subject=Enterprise%20engagement%20enquiry">Enquire about an engagement →</a></div>
+      <div class="pricenote">Custom pricing, based on your requirements and range of services. <span>Every engagement is scoped and agreed in writing before billing begins.</span></div>
+      <div class="cta"><a href="mailto:support@nevarrotech.com?subject=Enterprise%20engagement%20enquiry">Tell us what you're building →</a></div>
     </div>
 
-    <!-- CONSUMER / RESEARCH -->
-    <div class="offer consumer" id="research">
-      <span class="tag">Consumer · Research Products</span>
-      <h3>Digital products from our research team</h3>
-      <p>Our research arm produces digital products sold directly to consumers — ebooks, research reports, digital audits, and custom-made reports for specific industries. Each product is delivered as a digital download.</p>
-      <ul>
-        <li>Ebooks and industry research reports</li>
-        <li>Digital audits and benchmark reports</li>
-        <li>Custom-made reports built to order</li>
-      </ul>
-      <div class="pricenote">Products are priced <strong>₹500–₹5,000 per digital download</strong>. <span>Custom reports are quoted individually based on scope and configuration.</span></div>
-      <div class="cta"><a href="mailto:support@nevarrotech.com?subject=Research%20product%20enquiry">Ask about our products →</a></div>
+    <!-- DIGITAL PRODUCTS -->
+    <div class="offer consumer" id="products">
+      <span class="tag">Digital Products</span>
+      <h3>Tools and reports you can use today</h3>
+      <p>We publish digital products — practical tools, research reports, and custom-made audits — priced between ₹500 and ₹5,000 per download, with custom pricing and configurations for made-to-order work. Some of our tools are free to use, right now.</p>
+
+      <div class="products">
+        <div class="pcard">
+          <span class="pbadge free">Free</span>
+          <h4>Dr. Mumbaikar</h4>
+          <p>Your friendly web companion for getting around Mumbai — local guidance in a simple, fast tool.</p>
+          <div class="plink"><a href="https://dr-mumbaikar.vercel.app/" target="_blank" rel="noopener">Try it →</a></div>
+        </div>
+
+        <div class="pcard">
+          <span class="pbadge free">Free</span>
+          <h4>Personal OS</h4>
+          <p>A Chrome extension that turns your browser into a personal operating system — your day, organised in one place.</p>
+          <div class="plink"><a href="https://chromewebstore.google.com/detail/hbalkgkjjceffaekpmkpdbkkeggjfamo" target="_blank" rel="noopener">Add to Chrome →</a></div>
+        </div>
+
+        <div class="pcard">
+          <span class="pbadge new">New · Launching</span>
+          <h4>The Clinic Audit Review</h4>
+          <p>A custom digital audit of your clinic — how you show up online and on social media, what patients see, and exactly what to improve.</p>
+          <div class="pprice">₹1,999 <span style="font-weight:400;color:var(--muted)">promotional pricing</span></div>
+          <div class="plink"><a href="mailto:support@nevarrotech.com?subject=Clinic%20Audit%20Review">Get your audit →</a></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -275,8 +319,7 @@
   <section class="contactband">
     <div class="sec-kicker">Contact</div>
     <h2>Talk to us.</h2>
-    <p>General queries and product support: <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a><br>
-    Enterprise engagements: <a href="mailto:adithya@gmail.com">adithya@gmail.com</a></p>
+    <p>All queries, engagements, and product support: <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a></p>
   </section>
 </main>
 
@@ -286,7 +329,6 @@
   <span class="pol">
     <a href="/terms">Terms</a>
     <a href="/privacy">Privacy</a>
-    <a href="/refunds">Refunds</a>
     <a href="/support">Support</a>
   </span>
 </footer>
