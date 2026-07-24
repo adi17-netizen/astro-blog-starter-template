@@ -7,6 +7,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nevarro Technologies — Boutique AI Software & Digital Products</title>
 <meta name="description" content="Nevarro Technologies builds boutique AI software for niche industries, and publishes digital products — tools, reports, and audits.">
+<script>
+  // Apply saved theme before first paint to avoid flash
+  (function(){
+    var t = localStorage.getItem('nev-theme');
+    if(t){ document.documentElement.setAttribute('data-theme', t); }
+  })();
+</script>
 <style>
   :root{
     --bg:#fbfbfd; --card:#ffffff; --text:#1d1d1f; --muted:#6e6e73; --faint:#a1a1a6;
@@ -14,8 +21,14 @@
     --tagblue-bg:#eef3ff; --tagviolet-bg:#f5eeff; --shadowc:#1d1d1f;
     --navbg:rgba(251,251,253,.85);
   }
+  :root[data-theme="dark"]{
+    --bg:#0d0d10; --card:#1a1a1e; --text:#f5f5f7; --muted:#a1a1a6; --faint:#6e6e73;
+    --hairline:#2a2a30; --accent-a:#7da2ff; --accent-b:#c08cff;
+    --tagblue-bg:#1c2540; --tagviolet-bg:#2a1f40; --shadowc:#000000;
+    --navbg:rgba(13,13,16,.8);
+  }
   @media (prefers-color-scheme: dark){
-    :root{
+    :root:not([data-theme="light"]){
       --bg:#0d0d10; --card:#1a1a1e; --text:#f5f5f7; --muted:#a1a1a6; --faint:#6e6e73;
       --hairline:#2a2a30; --accent-a:#7da2ff; --accent-b:#c08cff;
       --tagblue-bg:#1c2540; --tagviolet-bg:#2a1f40; --shadowc:#000000;
@@ -28,14 +41,27 @@
     background:var(--bg); color:var(--text);
     font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Inter,Arial,sans-serif;
     -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden;
+    transition:background .3s ease, color .3s ease;
   }
   nav{position:sticky;top:0;background:var(--navbg);backdrop-filter:blur(12px);z-index:10;
     display:flex;align-items:center;justify-content:space-between;
     padding:1.2rem clamp(1.5rem,5vw,4rem)}
   .wordmark{font-size:.95rem;font-weight:600;letter-spacing:.14em}
-  nav .links{display:flex;gap:1.6rem}
+  nav .links{display:flex;gap:1.4rem;align-items:center}
   nav a{font-size:.85rem;color:var(--muted);text-decoration:none;transition:color .25s ease}
   nav a:hover{color:var(--text)}
+  #themeToggle{background:none;border:1px solid var(--hairline);border-radius:999px;
+    width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;
+    cursor:pointer;color:var(--muted);transition:color .25s ease, border-color .25s ease}
+  #themeToggle:hover{color:var(--text);border-color:var(--muted)}
+  #themeToggle svg{width:16px;height:16px}
+  .icon-sun{display:none}
+  :root[data-theme="dark"] .icon-sun{display:block}
+  :root[data-theme="dark"] .icon-moon{display:none}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .icon-sun{display:block}
+    :root:not([data-theme="light"]) .icon-moon{display:none}
+  }
 
   .hero{min-height:calc(100svh - 62px);display:flex;flex-direction:column;align-items:center;justify-content:center;
     text-align:center;padding:2rem 1.5rem 3rem}
@@ -73,7 +99,7 @@
   .blink-a{transform-origin:center;animation:blink 4.4s ease-in-out infinite}
   .blink-b{transform-origin:center;animation:blink 5.6s ease-in-out infinite;animation-delay:1s}
 
-  section{max-width:1000px;margin:0 auto;padding:4.5rem 1.5rem}
+  section{max-width:1060px;margin:0 auto;padding:4.5rem 1.5rem}
   .sec-kicker{font-size:.78rem;font-weight:600;letter-spacing:.2em;color:var(--accent-a);text-transform:uppercase;text-align:center}
   h2{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:700;letter-spacing:-.02em;text-align:center;margin-top:.6rem}
   .sec-sub{color:var(--muted);text-align:center;max-width:56ch;margin:1rem auto 0;line-height:1.6}
@@ -96,19 +122,22 @@
   .offer.consumer .cta a{color:var(--accent-b)}
   .offer .cta a:hover{opacity:.7}
 
-  .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1.6rem}
-  .pcard{background:var(--bg);border:1px solid var(--hairline);border-radius:16px;padding:1.3rem 1.3rem;
+  .products{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.6rem}
+  @media (max-width:900px){.products{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.products{grid-template-columns:1fr}}
+  .pcard{background:var(--bg);border:1px solid var(--hairline);border-radius:16px;padding:1.3rem 1.2rem;
     display:flex;flex-direction:column;gap:.55rem;transition:transform .25s ease}
   .pcard:hover{transform:translateY(-2px)}
-  .pcard .pbadge{align-self:flex-start;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  .pcard .pbadge{align-self:flex-start;font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
     border-radius:999px;padding:.28rem .7rem}
   .pcard .free{color:#2f9e63;background:rgba(52,199,89,.12)}
   .pcard .new{color:var(--accent-b);background:var(--tagviolet-bg)}
-  .pcard h4{font-size:1.02rem;font-weight:600}
-  .pcard p{color:var(--muted);font-size:.88rem;line-height:1.6;margin:0}
-  .pcard .pprice{font-weight:600;font-size:.92rem}
+  .pcard h4{font-size:1rem;font-weight:600}
+  .pcard p{color:var(--muted);font-size:.86rem;line-height:1.6;margin:0}
+  .pcard .pprice{font-weight:600;font-size:.9rem}
+  .pcard .pprice span{font-weight:400;color:var(--muted)}
   .pcard .plink{margin-top:auto;padding-top:.4rem}
-  .pcard .plink a{font-size:.88rem;font-weight:500;color:var(--accent-b);text-decoration:none}
+  .pcard .plink a{font-size:.86rem;font-weight:500;color:var(--accent-b);text-decoration:none}
   .pcard .plink a:hover{opacity:.7}
 
   .contactband{text-align:center;border-top:1px solid var(--hairline)}
@@ -136,6 +165,10 @@
     <a href="#work">What we do</a>
     <a href="#products">Products</a>
     <a href="/support">Support</a>
+    <button id="themeToggle" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
   </span>
 </nav>
 
@@ -287,7 +320,7 @@
     <div class="offer consumer" id="products">
       <span class="tag">Digital Products</span>
       <h3>Tools and reports you can use today</h3>
-      <p>We publish digital products — practical tools, research reports, and custom-made audits — priced between ₹500 and ₹5,000 per download, with custom pricing and configurations for made-to-order work. Some of our tools are free to use, right now.</p>
+      <p>We publish digital products — practical tools, research reports, and custom-made audits — priced between ₹500 and ₹5,000 per download, with subscriptions and custom configurations for made-to-order work. Some of our tools are free to use, right now.</p>
 
       <div class="products">
         <div class="pcard">
@@ -308,8 +341,16 @@
           <span class="pbadge new">New · Launching</span>
           <h4>The Clinic Audit Review</h4>
           <p>A custom digital audit of your clinic — how you show up online and on social media, what patients see, and exactly what to improve.</p>
-          <div class="pprice">₹1,999 <span style="font-weight:400;color:var(--muted)">promotional pricing</span></div>
+          <div class="pprice">₹1,999 <span>promotional pricing</span></div>
           <div class="plink"><a href="mailto:support@nevarrotech.com?subject=Clinic%20Audit%20Review">Get your audit →</a></div>
+        </div>
+
+        <div class="pcard">
+          <span class="pbadge new">In development</span>
+          <h4>GIFT Radar</h4>
+          <p>The pulse of GIFT City, in your inbox. Every new regulation, circular, and report from IFSCA — decoded, with a clear read on what it means for your business line.</p>
+          <div class="pprice">₹499<span>/month · introductory pricing</span></div>
+          <div class="plink"><a href="mailto:support@nevarrotech.com?subject=GIFT%20Radar%20early%20access">Get early access →</a></div>
         </div>
       </div>
     </div>
@@ -332,6 +373,19 @@
     <a href="/support">Support</a>
   </span>
 </footer>
+
+<script>
+  document.getElementById('themeToggle').addEventListener('click', function(){
+    var root = document.documentElement;
+    var current = root.getAttribute('data-theme');
+    if(!current){
+      current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    var next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('nev-theme', next);
+  });
+</script>
 
 </body>
 </html>
