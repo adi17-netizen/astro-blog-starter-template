@@ -6,39 +6,62 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Support — Nevarro Technologies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#fbfbfd;--text:#1d1d1f;--muted:#6e6e73;--faint:#a1a1a6;--hairline:#e8e8ed;--accent:#5e8bff;--card:#fff}
-  @media (prefers-color-scheme: dark){
-    :root{--bg:#0d0d10;--text:#f5f5f7;--muted:#a1a1a6;--faint:#6e6e73;--hairline:#2a2a30;--accent:#7da2ff;--card:#1a1a1e}
+  :root{--canvas:#f7f7f4;--surface:#f2f1ed;--border:#dedcd6;--text:#26251e;--muted:#7a7974;--faint:#a1a19f;--ember:#f54e00;
+    --sans:'Inter',ui-sans-serif,system-ui,-apple-system,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,monospace}
+  @media (prefers-color-scheme:dark){
+    :root{--canvas:#1a1915;--surface:#21201a;--border:#38372f;--text:#f2f1ed;--muted:#a1a19f;--faint:#84847e;--ember:#ff6a24}
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-  nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem clamp(1.5rem,5vw,4rem)}
-  .wordmark{font-size:.95rem;font-weight:600;letter-spacing:.14em;color:var(--text);text-decoration:none}
-  nav a{font-size:.85rem;color:var(--muted);text-decoration:none}
-  main{max-width:720px;margin:0 auto;padding:3rem 1.5rem 5rem}
-  h1{font-size:clamp(1.9rem,5vw,2.6rem);font-weight:700;letter-spacing:-.02em}
-  h2{font-size:1.15rem;font-weight:600;margin:2.2rem 0 .6rem}
-  p,li{color:var(--muted);line-height:1.75;font-size:.96rem}
-  ul,ol{padding-left:1.2rem;margin:.4rem 0}
-  a{color:var(--accent);text-decoration:none}
-  .box{background:var(--card);border:1px solid var(--hairline);border-radius:16px;padding:1.4rem 1.5rem;margin-top:1.5rem}
-  footer{border-top:1px solid var(--hairline);text-align:center;font-size:.78rem;color:var(--faint);padding:1.2rem}
+  body{background:var(--canvas);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  nav{border-bottom:1px solid var(--border)}
+  .navin{max-width:760px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+  .brand svg{width:22px;height:22px}
+  .brand span{font-size:14px;font-weight:500;letter-spacing:.1em}
+  nav a.back{font-size:14px;color:var(--muted);text-decoration:none}
+  nav a.back:hover{color:var(--text)}
+  main{max-width:760px;margin:0 auto;padding:56px 24px 80px}
+  h1{font-size:clamp(30px,5vw,40px);font-weight:400;letter-spacing:-.025em;line-height:1.15}
+  h2{font-size:19px;font-weight:500;margin:38px 0 10px;letter-spacing:-.005em}
+  p,li{color:var(--muted);line-height:1.75;font-size:15px}
+  ul,ol{padding-left:20px;margin:8px 0}
+  a{color:var(--ember);text-decoration:none}
+  a:hover{text-decoration:underline;text-underline-offset:3px}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:20px 22px;margin-top:24px}
+  .box p{color:var(--text)}
+  footer{border-top:1px solid var(--border);text-align:center;font-family:var(--mono);font-size:12px;
+    color:var(--faint);padding:22px 24px}
+  footer a{color:var(--muted)}
 </style>
 </head>
 <body>
-<nav><a class="wordmark" href="/">NEVARRO</a><a href="/">← Home</a></nav>
+<nav><div class="navin">
+  <a class="brand" href="/">
+    <svg viewBox="0 0 40 40" aria-hidden="true">
+      <rect x="5" y="8" width="30" height="27" rx="11" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <circle cx="15" cy="21" r="3" fill="currentColor"/><circle cx="25" cy="21" r="3" fill="currentColor"/>
+      <line x1="20" y1="8" x2="20" y2="4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="20" cy="3.5" r="2" fill="currentColor"/>
+    </svg><span>NEVARRO</span>
+  </a>
+  <a class="back" href="/">← Home</a>
+</div></nav>
+
 <main>
-  <h1>Support & Escalation</h1>
+  <h1>Support &amp; Escalation</h1>
 
   <div class="box">
     <p><strong>Primary support channel:</strong> <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a><br>
-    First response within <strong>1 business day</strong> (Mon–Fri, IST). Active engagement clients also receive a direct line at kickoff.</p>
+    First response within <strong>1 business day</strong> (Mon–Fri, IST). Engagement clients also receive a direct line at kickoff.</p>
   </div>
 
   <h2>What support covers</h2>
   <ul>
-    <li>Questions about our consulting services and proposals</li>
+    <li>Questions about our services, engagements, and proposals</li>
     <li>Digital product purchases, downloads, and delivery issues</li>
     <li>Billing, invoices, receipts, and refund requests</li>
     <li>Bug reports for our tools (critical issues addressed within 2 business days)</li>
@@ -54,6 +77,7 @@
   <h2>Billing disputes</h2>
   <p>Before raising a chargeback with your bank or payment provider, please contact us — genuine billing errors are refunded promptly, and direct resolution is always faster.</p>
 </main>
+
 <footer>© 2026 Nevarro Technologies · <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a></footer>
 </body>
 </html>
