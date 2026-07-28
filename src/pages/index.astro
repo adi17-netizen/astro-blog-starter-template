@@ -5,386 +5,509 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nevarro Technologies — Boutique AI Software & Digital Products</title>
-<meta name="description" content="Nevarro Technologies builds boutique AI software for niche industries, and publishes digital products — tools, reports, and audits.">
+<title>Nevarro Technologies — AI Software & Services for Essential Industries</title>
+<meta name="description" content="Nevarro builds AI software and services for essential and MSME industries, replacing parts of your workflow with technology. Plus digital products from our research arm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <script>
-  // Apply saved theme before first paint to avoid flash
-  (function(){
-    var t = localStorage.getItem('nev-theme');
-    if(t){ document.documentElement.setAttribute('data-theme', t); }
-  })();
+  (function(){var t=localStorage.getItem('nev-theme');if(t){document.documentElement.setAttribute('data-theme',t);}})();
 </script>
 <style>
   :root{
-    --bg:#fbfbfd; --card:#ffffff; --text:#1d1d1f; --muted:#6e6e73; --faint:#a1a1a6;
-    --hairline:#e8e8ed; --accent-a:#5e8bff; --accent-b:#b06bff;
-    --tagblue-bg:#eef3ff; --tagviolet-bg:#f5eeff; --shadowc:#1d1d1f;
-    --navbg:rgba(251,251,253,.85);
+    --parchment:#f7f7f4; --bone:#f2f1ed; --linen:#e6e5e0; --stone:#cdcdc9;
+    --mist:#a1a19f; --driftwood:#84847e; --ash:#7a7974; --ink:#26251e;
+    --ember:#f54e00; --amber:#c08532;
+    --canvas:var(--parchment); --surface:var(--bone); --raised:var(--linen);
+    --border:#dedcd6; --text:var(--ink); --muted:var(--ash); --faint:var(--mist);
+    --btn-fill:var(--ink); --btn-fill-text:var(--parchment);
+    --shadow-card:rgba(0,0,0,.10) 0 24px 60px, rgba(0,0,0,.06) 0 10px 24px;
+    --g-sea-hi:#e8e6dd; --g-sea:#c9c7bd; --g-sea-lo:#a3a197;
+    --g-land-hi:#57564c; --g-land:#3a3931; --g-land-lo:#22211b;
+    --g-ring:#9b9a92; --g-ring-d:#c5c4bd;
+    --sans:'Inter',ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    --serif:'EB Garamond','Iowan Old Style',Palatino,ui-serif,Georgia,serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
   }
   :root[data-theme="dark"]{
-    --bg:#0d0d10; --card:#1a1a1e; --text:#f5f5f7; --muted:#a1a1a6; --faint:#6e6e73;
-    --hairline:#2a2a30; --accent-a:#7da2ff; --accent-b:#c08cff;
-    --tagblue-bg:#1c2540; --tagviolet-bg:#2a1f40; --shadowc:#000000;
-    --navbg:rgba(13,13,16,.8);
+    --canvas:#1a1915; --surface:#21201a; --raised:#2a2922; --border:#38372f;
+    --text:#f2f1ed; --muted:#a1a19f; --faint:#84847e; --stone:#38372f;
+    --ember:#ff6a24; --amber:#d0973f;
+    --btn-fill:var(--linen); --btn-fill-text:#26251e;
+    --shadow-card:rgba(0,0,0,.4) 0 24px 60px, rgba(0,0,0,.25) 0 10px 24px;
+    --g-sea-hi:#555348; --g-sea:#413f37; --g-sea-lo:#31302a;
+    --g-land-hi:#f4f1e8; --g-land:#d2cfc3; --g-land-lo:#9d9b90;
+    --g-ring:#74736b; --g-ring-d:#4c4b43;
   }
-  @media (prefers-color-scheme: dark){
+  @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --bg:#0d0d10; --card:#1a1a1e; --text:#f5f5f7; --muted:#a1a1a6; --faint:#6e6e73;
-      --hairline:#2a2a30; --accent-a:#7da2ff; --accent-b:#c08cff;
-      --tagblue-bg:#1c2540; --tagviolet-bg:#2a1f40; --shadowc:#000000;
-      --navbg:rgba(13,13,16,.8);
+      --canvas:#1a1915; --surface:#21201a; --raised:#2a2922; --border:#38372f;
+      --text:#f2f1ed; --muted:#a1a19f; --faint:#84847e; --stone:#38372f;
+      --ember:#ff6a24; --amber:#d0973f;
+      --btn-fill:var(--linen); --btn-fill-text:#26251e;
+      --shadow-card:rgba(0,0,0,.4) 0 24px 60px, rgba(0,0,0,.25) 0 10px 24px;
+      --g-sea-hi:#555348; --g-sea:#413f37; --g-sea-lo:#31302a;
+      --g-land-hi:#f4f1e8; --g-land:#d2cfc3; --g-land-lo:#9d9b90;
+      --g-ring:#74736b; --g-ring-d:#4c4b43;
     }
   }
+
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    background:var(--bg); color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Inter,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden;
-    transition:background .3s ease, color .3s ease;
+    background:var(--canvas); color:var(--text); font-family:var(--sans);
+    font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased;
+    transition:background .35s ease,color .35s ease;
   }
-  nav{position:sticky;top:0;background:var(--navbg);backdrop-filter:blur(12px);z-index:10;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:1.2rem clamp(1.5rem,5vw,4rem)}
-  .wordmark{font-size:.95rem;font-weight:600;letter-spacing:.14em}
-  nav .links{display:flex;gap:1.4rem;align-items:center}
-  nav a{font-size:.85rem;color:var(--muted);text-decoration:none;transition:color .25s ease}
-  nav a:hover{color:var(--text)}
-  #themeToggle{background:none;border:1px solid var(--hairline);border-radius:999px;
-    width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;
-    cursor:pointer;color:var(--muted);transition:color .25s ease, border-color .25s ease}
-  #themeToggle:hover{color:var(--text);border-color:var(--muted)}
-  #themeToggle svg{width:16px;height:16px}
+  ::selection{background:#8bc4f8;color:#26251e}
+  .wrap{max-width:1080px;margin:0 auto;padding-left:24px;padding-right:24px}
+
+  nav{position:sticky;top:0;z-index:30;background:color-mix(in oklab,var(--canvas) 88%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+  nav.stuck{border-color:var(--border)}
+  .navin{max-width:1080px;margin:0 auto;padding:0 24px;height:60px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+  .brand svg{width:22px;height:22px;flex:none}
+  .brand span{font-size:14px;font-weight:500;letter-spacing:.1em}
+  .navmid{display:flex;align-items:center;gap:28px}
+  .navmid a{font-size:14px;color:var(--muted);text-decoration:none;transition:color .15s}
+  .navmid a:hover{color:var(--text)}
+  .navend{display:flex;align-items:center;gap:10px}
+  @media (max-width:880px){.navmid{display:none}}
+
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:400;
+    text-decoration:none;padding:.7em 1.3em;border-radius:4px;
+    transition:background .15s cubic-bezier(.4,0,.2,1),color .15s,border-color .15s}
+  .btn.primary{background:var(--btn-fill);color:var(--btn-fill-text)}
+  .btn.primary:hover{opacity:.86}
+  .btn.secondary{background:var(--raised);color:var(--text)}
+  .btn.secondary:hover{background:var(--stone)}
+
+  #themeToggle{background:none;border:1px solid var(--border);border-radius:4px;
+    width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;
+    cursor:pointer;color:var(--muted);transition:color .15s,border-color .15s}
+  #themeToggle:hover{color:var(--text);border-color:var(--stone)}
+  #themeToggle svg{width:15px;height:15px}
   .icon-sun{display:none}
   :root[data-theme="dark"] .icon-sun{display:block}
   :root[data-theme="dark"] .icon-moon{display:none}
-  @media (prefers-color-scheme: dark){
+  @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]) .icon-sun{display:block}
     :root:not([data-theme="light"]) .icon-moon{display:none}
   }
 
-  .hero{min-height:calc(100svh - 62px);display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:2rem 1.5rem 3rem}
-  h1{font-size:clamp(2.4rem,7vw,5rem);font-weight:700;letter-spacing:-.025em;line-height:1.05;max-width:16ch}
-  h1 .grad{background:linear-gradient(92deg,var(--accent-a),var(--accent-b));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .sub{margin-top:1.2rem;font-size:clamp(1.02rem,2.2vw,1.28rem);color:var(--muted);letter-spacing:-.01em;max-width:60ch;line-height:1.6}
-  .supportline{margin-top:.9rem;font-size:clamp(.95rem,2vw,1.05rem);color:var(--muted)}
-  .supportline a{color:var(--accent-a);text-decoration:none;font-weight:500}
-  .supportline a:hover{opacity:.7}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash)}
+  h1{font-size:clamp(36px,5.6vw,60px);font-weight:400;line-height:1.08;letter-spacing:-.03em;max-width:18ch}
+  h1 em{font-style:normal;color:var(--ember)}
+  h2{font-size:clamp(26px,3.6vw,34px);font-weight:400;line-height:1.2;letter-spacing:-.02em;max-width:24ch}
+  h3{font-size:20px;font-weight:400;line-height:1.3;letter-spacing:-.005em}
+  h4{font-size:17px;font-weight:500;line-height:1.35}
+  .prose{font-family:var(--serif);font-size:19px;line-height:1.55;color:var(--driftwood);max-width:58ch}
+  :root[data-theme="dark"] .prose{color:var(--mist)}
+  p.body{font-size:15px;line-height:1.6;color:var(--muted)}
 
-  .troupe{margin-top:clamp(1.5rem,4vh,3rem);display:flex;align-items:flex-end;justify-content:center;gap:clamp(.5rem,3vw,2.5rem)}
-  .troupe svg{height:100%;width:auto;overflow:visible}
-  .nev-wrap{height:min(220px,30vh)}
-  .buddy{height:min(90px,13vh)}
-  .buddy.left{margin-bottom:.5rem}
-  .buddy.right{margin-bottom:1.2rem}
-  .shadow,.bshadow-a,.bshadow-b{fill:var(--shadowc)}
+  .hero{padding:clamp(56px,10vh,100px) 0 0}
+  .hero .eyebrow{margin-bottom:22px}
+  .hero .prose{margin-top:24px}
+  .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
 
-  .bot{animation:bob 4.5s ease-in-out infinite}
-  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-  .shadow{transform-origin:150px 262px;animation:shadowbob 4.5s ease-in-out infinite}
-  @keyframes shadowbob{0%,100%{transform:scaleX(1);opacity:.16}50%{transform:scaleX(.82);opacity:.09}}
-  .eyes{transform-origin:150px 128px;animation:blink 5.2s ease-in-out infinite}
-  @keyframes blink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.06)}}
-  .arm-r{transform-origin:206px 168px;animation:wave 7s ease-in-out infinite}
-  @keyframes wave{0%,78%,100%{transform:rotate(0)}84%{transform:rotate(-42deg)}90%{transform:rotate(-14deg)}95%{transform:rotate(-38deg)}}
-  .ant-light{animation:antpulse 3s ease-in-out infinite}
-  @keyframes antpulse{0%,100%{opacity:1}50%{opacity:.4}}
-  .hop-a{animation:hop 3.2s ease-in-out infinite}
-  .hop-b{animation:hop 3.8s ease-in-out infinite;animation-delay:.5s}
-  @keyframes hop{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-  .bshadow-a{transform-origin:center;animation:bshadow 3.2s ease-in-out infinite}
-  .bshadow-b{transform-origin:center;animation:bshadow 3.8s ease-in-out infinite;animation-delay:.5s}
-  @keyframes bshadow{0%,100%{opacity:.14;transform:scaleX(1)}50%{opacity:.08;transform:scaleX(.82)}}
-  .blink-a{transform-origin:center;animation:blink 4.4s ease-in-out infinite}
-  .blink-b{transform-origin:center;animation:blink 5.6s ease-in-out infinite;animation-delay:1s}
+  .panel{margin-top:clamp(44px,7vh,72px);background:var(--surface);border:1px solid var(--border);
+    border-radius:4px;box-shadow:var(--shadow-card);overflow:hidden}
+  .panel .bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--border)}
+  .panel .bar i{width:9px;height:9px;border-radius:50%;background:var(--stone);display:block}
+  .panel .bar em{font-family:var(--mono);font-size:12px;color:var(--faint);font-style:normal;margin-left:8px}
+  .panel .stage{display:flex;align-items:center;justify-content:center;padding:clamp(30px,5vw,52px) 24px}
+  .globe-wrap{width:clamp(160px,26vw,240px)}
+  .globe-wrap svg{width:100%;height:auto;display:block;shape-rendering:crispEdges}
+  .panel .caption{border-top:1px solid var(--border);padding:14px 20px;font-family:var(--mono);
+    font-size:12px;color:var(--faint);text-align:center}
 
-  section{max-width:1060px;margin:0 auto;padding:4.5rem 1.5rem}
-  .sec-kicker{font-size:.78rem;font-weight:600;letter-spacing:.2em;color:var(--accent-a);text-transform:uppercase;text-align:center}
-  h2{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:700;letter-spacing:-.02em;text-align:center;margin-top:.6rem}
-  .sec-sub{color:var(--muted);text-align:center;max-width:56ch;margin:1rem auto 0;line-height:1.6}
+  .c-sea-hi{fill:var(--g-sea-hi)} .c-sea{fill:var(--g-sea)} .c-sea-lo{fill:var(--g-sea-lo)}
+  .c-land-hi{fill:var(--g-land-hi)} .c-land{fill:var(--g-land)} .c-land-lo{fill:var(--g-land-lo)}
+  .c-ring{fill:var(--g-ring)} .c-ring-d{fill:var(--g-ring-d)}
 
-  .offer{background:var(--card);border:1px solid var(--hairline);border-radius:24px;padding:clamp(1.8rem,4vw,2.8rem);
-    margin-top:2.4rem;box-shadow:0 1px 2px rgba(0,0,0,.03)}
-  .offer .tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--accent-a);background:var(--tagblue-bg);border-radius:999px;padding:.35rem .85rem}
-  .offer.consumer .tag{color:var(--accent-b);background:var(--tagviolet-bg)}
-  .offer h3{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:700;letter-spacing:-.015em;margin-top:1rem}
-  .offer p{color:var(--muted);line-height:1.7;margin-top:.8rem;max-width:64ch}
-  .offer ul{list-style:none;color:var(--muted);line-height:2;margin-top:.8rem;font-size:.95rem}
-  .offer ul li::before{content:"—";color:var(--accent-a);margin-right:.6rem}
-  .offer.consumer ul li::before{color:var(--accent-b)}
-  .pricenote{margin-top:1.2rem;padding:1rem 1.2rem;background:var(--bg);border:1px solid var(--hairline);border-radius:14px;
-    color:var(--text);font-size:.95rem;line-height:1.6}
-  .pricenote span{color:var(--muted)}
-  .offer .cta{margin-top:1.4rem}
-  .offer .cta a{font-weight:500;color:var(--accent-a);text-decoration:none}
-  .offer.consumer .cta a{color:var(--accent-b)}
-  .offer .cta a:hover{opacity:.7}
+  .strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:clamp(52px,8vh,80px)}
+  .strip .inner{max-width:1080px;margin:0 auto;padding:18px 24px;display:flex;gap:28px;flex-wrap:wrap;
+    justify-content:center;font-family:var(--mono);font-size:12px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--faint)}
 
-  .products{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.6rem}
-  @media (max-width:900px){.products{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:520px){.products{grid-template-columns:1fr}}
-  .pcard{background:var(--bg);border:1px solid var(--hairline);border-radius:16px;padding:1.3rem 1.2rem;
-    display:flex;flex-direction:column;gap:.55rem;transition:transform .25s ease}
-  .pcard:hover{transform:translateY(-2px)}
-  .pcard .pbadge{align-self:flex-start;font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-    border-radius:999px;padding:.28rem .7rem}
-  .pcard .free{color:#2f9e63;background:rgba(52,199,89,.12)}
-  .pcard .new{color:var(--accent-b);background:var(--tagviolet-bg)}
-  .pcard h4{font-size:1rem;font-weight:600}
-  .pcard p{color:var(--muted);font-size:.86rem;line-height:1.6;margin:0}
-  .pcard .pprice{font-weight:600;font-size:.9rem}
-  .pcard .pprice span{font-weight:400;color:var(--muted)}
-  .pcard .plink{margin-top:auto;padding-top:.4rem}
-  .pcard .plink a{font-size:.86rem;font-weight:500;color:var(--accent-b);text-decoration:none}
-  .pcard .plink a:hover{opacity:.7}
+  section{padding:clamp(60px,10vh,88px) 0}
+  section .eyebrow{margin-bottom:16px}
+  section h2+.prose,section h2+p.body{margin-top:18px}
 
-  .contactband{text-align:center;border-top:1px solid var(--hairline)}
-  .contactband p{color:var(--muted);line-height:1.7;max-width:52ch;margin:1rem auto 0}
-  .contactband a{color:var(--accent-a);text-decoration:none;font-weight:500}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:36px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:24px;
+    transition:border-color .2s}
+  .card:hover{border-color:var(--stone)}
+  .card h3{margin-bottom:10px}
 
-  footer{border-top:1px solid var(--hairline);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
-    font-size:.78rem;color:var(--faint);padding:1.2rem clamp(1.5rem,5vw,4rem)}
-  footer .pol{display:flex;gap:1.2rem;flex-wrap:wrap}
-  footer a{color:var(--muted);text-decoration:none;transition:color .25s}
-  footer a:hover{color:var(--text)}
-  .made{color:var(--muted)}
-  @media (max-width:700px){footer{justify-content:center;text-align:center}}
-  @media (prefers-reduced-motion: reduce){
-    .bot,.shadow,.eyes,.arm-r,.ant-light,.hop-a,.hop-b,.bshadow-a,.bshadow-b,.blink-a,.blink-b{animation:none}
+  .steps{margin-top:40px;border-top:1px solid var(--border)}
+  .step{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--border);
+    align-items:start}
+  .step .num{font-family:var(--mono);font-size:12px;color:var(--ash);padding-top:4px}
+  .step h3{margin-bottom:9px}
+  @media (max-width:600px){.step{grid-template-columns:1fr;gap:10px}}
+
+  .note{margin-top:28px;padding:20px 22px;background:var(--surface);border:1px solid var(--border);
+    border-radius:4px;font-size:15px;line-height:1.6}
+  .note b{font-weight:500}
+  .note span{color:var(--muted)}
+
+  .products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+  @media (max-width:940px){.products{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:540px){.products{grid-template-columns:1fr}}
+  .pcard{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:22px 20px;
+    display:flex;flex-direction:column;gap:12px;transition:border-color .2s}
+  .pcard:hover{border-color:var(--stone)}
+  .ptag{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ash)}
+  .ptag.dev{color:var(--amber)}
+  .pcard p{font-size:14px;line-height:1.55;color:var(--muted);flex:1}
+  .pprice{font-family:var(--mono);font-size:13px;color:var(--text)}
+  .pprice span{color:var(--muted)}
+  .pcard a.plink{font-size:14px;color:var(--ember);text-decoration:none}
+  .pcard a.plink:hover{text-decoration:underline;text-underline-offset:3px}
+
+  .closing{border-top:1px solid var(--border);text-align:center}
+  .closing h2,.closing .prose{margin-inline:auto}
+  .closing .cta-row{justify-content:center}
+
+  footer{border-top:1px solid var(--border);padding:44px 0 32px}
+  .footgrid{display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap}
+  .footcol{display:flex;flex-direction:column;gap:9px}
+  .footcol .h{font-size:14px;font-weight:500;color:var(--text);margin-bottom:2px}
+  .footcol a{font-size:13px;color:var(--ash);text-decoration:none}
+  .footcol a:hover{color:var(--text)}
+  .footbase{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:12px;color:var(--faint)}
+  @media (max-width:700px){.footgrid,.footbase{justify-content:center;text-align:center}
+    .footcol{align-items:center}}
+
+  .rev{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+  .rev.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .rev{opacity:1;transform:none;transition:none}
     html{scroll-behavior:auto}
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <span class="wordmark">NEVARRO</span>
-  <span class="links">
-    <a href="#work">What we do</a>
-    <a href="#products">Products</a>
-    <a href="/support">Support</a>
-    <button id="themeToggle" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-    </button>
-  </span>
+<nav id="nav">
+  <div class="navin">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="5" y="8" width="30" height="27" rx="11" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <circle cx="15" cy="21" r="3" fill="currentColor"/>
+        <circle cx="25" cy="21" r="3" fill="currentColor"/>
+        <line x1="20" y1="8" x2="20" y2="4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="20" cy="3.5" r="2" fill="currentColor"/>
+      </svg>
+      <span>NEVARRO</span>
+    </a>
+    <div class="navmid">
+      <a href="#work">What we do</a>
+      <a href="#approach">How we work</a>
+      <a href="#products">Products</a>
+      <a href="/support">Support</a>
+    </div>
+    <div class="navend">
+      <button id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="1.5" x2="12" y2="3.5"/><line x1="12" y1="20.5" x2="12" y2="22.5"/><line x1="4.5" y1="4.5" x2="5.9" y2="5.9"/><line x1="18.1" y1="18.1" x2="19.5" y2="19.5"/><line x1="1.5" y1="12" x2="3.5" y2="12"/><line x1="20.5" y1="12" x2="22.5" y2="12"/><line x1="4.5" y1="19.5" x2="5.9" y2="18.1"/><line x1="18.1" y1="5.9" x2="19.5" y2="4.5"/></svg>
+      </button>
+      <a class="btn primary" href="mailto:support@nevarrotech.com?subject=Enquiry">Get in touch</a>
+    </div>
+  </div>
 </nav>
 
-<main>
-  <div class="hero">
-    <h1>Building software for the <span class="grad">22nd&nbsp;century</span>.</h1>
-    <p class="sub">Nevarro is a boutique studio with two arms: custom AI software for niche industries, and digital products people can use today.</p>
-    <p class="supportline">For any queries, contact <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a></p>
+<main id="top">
 
-    <div class="troupe" aria-hidden="true">
-      <div class="buddy left">
-        <svg viewBox="0 0 100 120">
-          <defs>
-            <radialGradient id="bluebody" cx="38%" cy="30%" r="85%">
-              <stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#eaf0fb"/><stop offset="1" stop-color="#cdd9f0"/>
-            </radialGradient>
-            <radialGradient id="blueeye" cx="38%" cy="32%" r="80%">
-              <stop offset="0" stop-color="#bfe0ff"/><stop offset="1" stop-color="#5e8bff"/>
-            </radialGradient>
-          </defs>
-          <ellipse class="bshadow-a" cx="50" cy="112" rx="26" ry="5"/>
-          <g class="hop-a">
-            <line x1="50" y1="26" x2="50" y2="16" stroke="#c9c2b6" stroke-width="3" stroke-linecap="round"/>
-            <circle class="ant-light" cx="50" cy="13" r="4.5" fill="#5e8bff"/>
-            <ellipse cx="30" cy="66" rx="16" ry="18" fill="url(#bluebody)"/>
-            <ellipse cx="70" cy="66" rx="16" ry="18" fill="url(#bluebody)"/>
-            <rect x="26" y="30" width="48" height="60" rx="24" fill="url(#bluebody)"/>
-            <ellipse cx="40" cy="44" rx="9" ry="5" fill="#fff" opacity=".7" transform="rotate(-20 40 44)"/>
-            <rect x="34" y="46" width="32" height="26" rx="13" fill="#2b3242"/>
-            <g class="blink-a">
-              <ellipse cx="44" cy="59" rx="4" ry="5" fill="url(#blueeye)"/>
-              <ellipse cx="56" cy="59" rx="4" ry="5" fill="url(#blueeye)"/>
-              <circle cx="42.6" cy="57" r="1.2" fill="#fff"/><circle cx="54.6" cy="57" r="1.2" fill="#fff"/>
-            </g>
-            <ellipse cx="38" cy="98" rx="7" ry="4" fill="#cdd9f0"/>
-            <ellipse cx="62" cy="98" rx="7" ry="4" fill="#cdd9f0"/>
-          </g>
-        </svg>
-      </div>
+  <div class="wrap hero">
+    <div class="eyebrow">Nevarro Technologies · Bengaluru, India</div>
+    <h1>AI software and services for <em>essential industries</em>.</h1>
+    <p class="prose">We work with MSMEs and mid-sized businesses to replace parts of their workflow with technology. Alongside it, a small research arm publishes digital products.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="mailto:support@nevarrotech.com?subject=Enquiry">Talk to us</a>
+      <a class="btn secondary" href="#products">See our products →</a>
+    </div>
 
-      <div class="nev-wrap">
-        <svg viewBox="0 0 300 290">
-          <defs>
-            <radialGradient id="nevbody" cx="38%" cy="30%" r="85%">
-              <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#f4f1ec"/><stop offset="1" stop-color="#ddd6cc"/>
-            </radialGradient>
-            <radialGradient id="nevbelly" cx="40%" cy="35%" r="80%">
-              <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ece7df"/>
-            </radialGradient>
-            <radialGradient id="nevscreen" cx="42%" cy="32%" r="90%">
-              <stop offset="0" stop-color="#3a4254"/><stop offset="1" stop-color="#20242f"/>
-            </radialGradient>
-            <radialGradient id="neveye" cx="38%" cy="32%" r="80%">
-              <stop offset="0" stop-color="#9ff2ff"/><stop offset=".6" stop-color="#4cd7f0"/><stop offset="1" stop-color="#2ab5d6"/>
-            </radialGradient>
-            <radialGradient id="nevcoral" cx="38%" cy="30%" r="85%">
-              <stop offset="0" stop-color="#ff9c92"/><stop offset="1" stop-color="#f05a4d"/>
-            </radialGradient>
-            <linearGradient id="nevsheen" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#ffffff" stop-opacity=".85"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <ellipse class="shadow" cx="150" cy="262" rx="74" ry="12"/>
-          <g class="bot">
-            <line x1="150" y1="52" x2="150" y2="30" stroke="#c9c2b6" stroke-width="5" stroke-linecap="round"/>
-            <circle class="ant-light" cx="150" cy="24" r="9" fill="url(#nevcoral)"/>
-            <ellipse cx="146.5" cy="20.5" rx="3.2" ry="2.4" fill="#ffffff" opacity=".85"/>
-            <g>
-              <path d="M96 168 Q76 178 72 196" stroke="#ddd6cc" stroke-width="16" stroke-linecap="round" fill="none"/>
-              <circle cx="71" cy="198" r="11" fill="url(#nevbody)"/>
-            </g>
-            <g class="arm-r">
-              <path d="M204 168 Q224 178 228 196" stroke="#ddd6cc" stroke-width="16" stroke-linecap="round" fill="none"/>
-              <circle cx="229" cy="198" r="11" fill="url(#nevbody)"/>
-            </g>
-            <rect x="88" y="52" width="124" height="164" rx="58" fill="url(#nevbody)"/>
-            <ellipse cx="122" cy="84" rx="26" ry="14" fill="url(#nevsheen)" transform="rotate(-24 122 84)"/>
-            <rect x="104" y="86" width="92" height="76" rx="34" fill="url(#nevscreen)"/>
-            <path d="M112 104 Q150 84 188 104 L188 96 Q150 78 112 96 Z" fill="#ffffff" opacity=".10"/>
-            <g class="eyes">
-              <ellipse cx="132" cy="126" rx="12" ry="15" fill="url(#neveye)"/>
-              <ellipse cx="168" cy="126" rx="12" ry="15" fill="url(#neveye)"/>
-              <circle cx="128" cy="120" r="3.6" fill="#ffffff" opacity=".95"/>
-              <circle cx="164" cy="120" r="3.6" fill="#ffffff" opacity=".95"/>
-            </g>
-            <ellipse cx="116" cy="148" rx="6" ry="3.6" fill="#ff8a80" opacity=".35"/>
-            <ellipse cx="184" cy="148" rx="6" ry="3.6" fill="#ff8a80" opacity=".35"/>
-            <circle cx="150" cy="190" r="15" fill="url(#nevbelly)" stroke="#e2dbd0" stroke-width="1.5"/>
-            <path d="M143 197 L143 183 L150 191 L157 183 L157 197" stroke="#f05a4d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <ellipse cx="126" cy="220" rx="15" ry="9" fill="#ddd6cc"/>
-            <ellipse cx="174" cy="220" rx="15" ry="9" fill="#ddd6cc"/>
-          </g>
-        </svg>
+    <div class="panel">
+      <div class="bar"><i></i><i></i><i></i><em>nevarro — studio</em></div>
+      <div class="stage">
+        <div class="globe-wrap" aria-hidden="true">
+          <svg id="globeSvg" viewBox="0 0 600 400">
+            <g id="gRingBack" transform="rotate(-16 300 200)"></g>
+            <g id="gGlobe"></g>
+            <g id="gRingFront" transform="rotate(-16 300 200)"></g>
+          </svg>
+        </div>
       </div>
+      <div class="caption">Two verticals: software we co-build with you, and products we publish.</div>
+    </div>
+  </div>
 
-      <div class="buddy right">
-        <svg viewBox="0 0 100 120">
-          <defs>
-            <radialGradient id="vbody" cx="38%" cy="30%" r="85%">
-              <stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#f1eafb"/><stop offset="1" stop-color="#ddccf0"/>
-            </radialGradient>
-            <radialGradient id="veye" cx="38%" cy="32%" r="80%">
-              <stop offset="0" stop-color="#e6ccff"/><stop offset="1" stop-color="#b06bff"/>
-            </radialGradient>
-          </defs>
-          <ellipse class="bshadow-b" cx="50" cy="112" rx="24" ry="5"/>
-          <g class="hop-b">
-            <line x1="50" y1="28" x2="54" y2="18" stroke="#c9c2b6" stroke-width="3" stroke-linecap="round"/>
-            <circle class="ant-light" cx="55" cy="15" r="4.5" fill="#b06bff"/>
-            <ellipse cx="32" cy="70" rx="15" ry="16" fill="url(#vbody)"/>
-            <ellipse cx="68" cy="70" rx="15" ry="16" fill="url(#vbody)"/>
-            <circle cx="50" cy="60" r="30" fill="url(#vbody)"/>
-            <ellipse cx="40" cy="46" rx="8" ry="5" fill="#fff" opacity=".7" transform="rotate(-20 40 46)"/>
-            <rect x="34" y="50" width="32" height="24" rx="12" fill="#2b3242"/>
-            <g class="blink-b">
-              <ellipse cx="44" cy="62" rx="4" ry="5" fill="url(#veye)"/>
-              <ellipse cx="56" cy="62" rx="4" ry="5" fill="url(#veye)"/>
-              <circle cx="42.6" cy="60" r="1.2" fill="#fff"/><circle cx="54.6" cy="60" r="1.2" fill="#fff"/>
-            </g>
-            <ellipse cx="40" cy="96" rx="7" ry="4" fill="#ddccf0"/>
-            <ellipse cx="60" cy="96" rx="7" ry="4" fill="#ddccf0"/>
-          </g>
-        </svg>
-      </div>
+  <div class="strip">
+    <div class="inner">
+      <span>AI software</span>
+      <span>Managed operations</span>
+      <span>Digital products</span>
+      <span>Bengaluru, India</span>
     </div>
   </div>
 
   <!-- WHAT WE DO -->
-  <section id="work">
-    <div class="sec-kicker">What we do</div>
-    <h2>Two arms, one studio.</h2>
-    <p class="sec-sub">Custom AI software built for your industry, and ready-to-use digital products.</p>
-
-    <!-- ENTERPRISE -->
-    <div class="offer" id="enterprise">
-      <span class="tag">Studio · Consulting</span>
-      <h3>Boutique AI software for niche industries</h3>
-      <p>We build the software your industry actually needs — not off-the-shelf tools bent out of shape. Working directly with founders and operators in niche industries, we design and ship custom AI-enabled products: workflow tools, internal platforms, integrations, and automations that fit the way your business runs. Small team, senior attention, working software fast.</p>
-      <ul>
-        <li>Custom AI tools and internal products, built around your workflow</li>
-        <li>Iterative delivery — see progress every week, not every quarter</li>
-        <li>Deployment, handover, and ongoing improvement included</li>
-      </ul>
-      <div class="pricenote">Custom pricing, based on your requirements and range of services. <span>Every engagement is scoped and agreed in writing before billing begins.</span></div>
-      <div class="cta"><a href="mailto:support@nevarrotech.com?subject=Enterprise%20engagement%20enquiry">Tell us what you're building →</a></div>
+  <section id="work"><div class="wrap">
+    <div class="eyebrow rev">What we do</div>
+    <h2 class="rev">Two verticals.</h2>
+    <div class="grid2">
+      <div class="card rev">
+        <h3>AI software and services</h3>
+        <p class="body">We take one part of how your business runs and rebuild it with technology — co-built with your team, running on our stack. What we learn in your workflow shapes what we build next.</p>
+      </div>
+      <div class="card rev">
+        <h3>Research arm</h3>
+        <p class="body">A small vertical that publishes digital products: practical tools, research reports, and custom audits, available to anyone.</p>
+      </div>
     </div>
+  </div></section>
 
-    <!-- DIGITAL PRODUCTS -->
-    <div class="offer consumer" id="products">
-      <span class="tag">Digital Products</span>
-      <h3>Tools and reports you can use today</h3>
-      <p>We publish digital products — practical tools, research reports, and custom-made audits — priced between ₹500 and ₹5,000 per download, with subscriptions and custom configurations for made-to-order work. Some of our tools are free to use, right now.</p>
-
-      <div class="products">
-        <div class="pcard">
-          <span class="pbadge free">Free</span>
-          <h4>Dr. Mumbaikar</h4>
-          <p>Your friendly web companion for getting around Mumbai — local guidance in a simple, fast tool.</p>
-          <div class="plink"><a href="https://dr-mumbaikar.vercel.app/" target="_blank" rel="noopener">Try it →</a></div>
+  <!-- HOW WE WORK -->
+  <section id="approach"><div class="wrap">
+    <div class="eyebrow rev">How we work</div>
+    <h2 class="rev">From workflow to software.</h2>
+    <div class="steps">
+      <div class="step rev">
+        <div class="num">01</div>
+        <div>
+          <h3>We check the fit</h3>
+          <p class="body">We start with your size and scale. If there is enough volume moving through a workflow, replacing it with software pays for itself — and we will tell you plainly if it doesn't.</p>
         </div>
-
-        <div class="pcard">
-          <span class="pbadge free">Free</span>
-          <h4>Personal OS</h4>
-          <p>A Chrome extension that turns your browser into a personal operating system — your day, organised in one place.</p>
-          <div class="plink"><a href="https://chromewebstore.google.com/detail/hbalkgkjjceffaekpmkpdbkkeggjfamo" target="_blank" rel="noopener">Add to Chrome →</a></div>
+      </div>
+      <div class="step rev">
+        <div class="num">02</div>
+        <div>
+          <h3>We replace a vertical</h3>
+          <p class="body">We pick one operation and rebuild it with AI, co-built with your team. Deployment, documentation, and handover are part of the work.</p>
         </div>
-
-        <div class="pcard">
-          <span class="pbadge new">New · Launching</span>
-          <h4>The Clinic Audit Review</h4>
-          <p>A custom digital audit of your clinic — how you show up online and on social media, what patients see, and exactly what to improve.</p>
-          <div class="pprice">₹1,999 <span>promotional pricing</span></div>
-          <div class="plink"><a href="mailto:support@nevarrotech.com?subject=Clinic%20Audit%20Review">Get your audit →</a></div>
-        </div>
-
-        <div class="pcard">
-          <span class="pbadge new">In development</span>
-          <h4>GIFT Radar</h4>
-          <p>The pulse of GIFT City, in your inbox. Every new regulation, circular, and report from IFSCA — decoded, with a clear read on what it means for your business line.</p>
-          <div class="pprice">₹499<span>/month · introductory pricing</span></div>
-          <div class="plink"><a href="mailto:support@nevarrotech.com?subject=GIFT%20Radar%20early%20access">Get early access →</a></div>
+      </div>
+      <div class="step rev">
+        <div class="num">03</div>
+        <div>
+          <h3>We build the operations centre</h3>
+          <p class="body">Beyond the first build: data and research that help you think ahead, and a managed operations centre we run in partnership with you.</p>
         </div>
       </div>
     </div>
-  </section>
+    <div class="note rev"><b>Custom pricing</b>, based on your requirements and range of services. <span>Every engagement is scoped and agreed in writing before billing begins.</span></div>
+    <div class="cta-row rev">
+      <a class="btn primary" href="mailto:support@nevarrotech.com?subject=Engagement%20enquiry">Start a conversation</a>
+    </div>
+  </div></section>
 
-  <!-- CONTACT -->
-  <section class="contactband">
-    <div class="sec-kicker">Contact</div>
-    <h2>Talk to us.</h2>
-    <p>All queries, engagements, and product support: <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a></p>
-  </section>
+  <!-- PRODUCTS -->
+  <section id="products"><div class="wrap">
+    <div class="eyebrow rev">Digital products</div>
+    <h2 class="rev">Tools and reports you can use today.</h2>
+    <p class="prose rev">Published by our research arm, priced from ₹500 to ₹5,000. Two are free right now.</p>
+    <div class="products">
+      <div class="pcard rev">
+        <div class="ptag">Free</div>
+        <h4>Dr. Mumbaikar</h4>
+        <p>A web companion for getting around Mumbai — local guidance in a simple, fast tool.</p>
+        <a class="plink" href="https://dr-mumbaikar.vercel.app/" target="_blank" rel="noopener">Try it →</a>
+      </div>
+      <div class="pcard rev">
+        <div class="ptag">Free</div>
+        <h4>Personal OS</h4>
+        <p>A Chrome extension that turns the browser into a personal operating system — your day in one place.</p>
+        <a class="plink" href="https://chromewebstore.google.com/detail/hbalkgkjjceffaekpmkpdbkkeggjfamo" target="_blank" rel="noopener">Add to Chrome →</a>
+      </div>
+      <div class="pcard rev">
+        <div class="ptag dev">Launching</div>
+        <h4>The Clinic Audit Review</h4>
+        <p>A custom digital audit of your clinic — how you appear online, what patients see, and what to improve.</p>
+        <div class="pprice">₹1,999 <span>promotional</span></div>
+        <a class="plink" href="mailto:support@nevarrotech.com?subject=Clinic%20Audit%20Review">Get your audit →</a>
+      </div>
+      <div class="pcard rev">
+        <div class="ptag dev">In development</div>
+        <h4>GIFT Radar</h4>
+        <p>Every new IFSCA regulation and circular from GIFT City, decoded — and what it means for your business line.</p>
+        <div class="pprice">₹499<span>/month · introductory</span></div>
+        <a class="plink" href="mailto:support@nevarrotech.com?subject=GIFT%20Radar%20early%20access">Get early access →</a>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="closing"><div class="wrap">
+    <div class="eyebrow rev">Ready when you are</div>
+    <h2 class="rev">Tell us what you're trying to fix.</h2>
+    <p class="prose rev">A short email is enough to start. We'll tell you honestly whether we're the right fit.</p>
+    <div class="cta-row rev">
+      <a class="btn primary" href="mailto:support@nevarrotech.com?subject=Enquiry">Email us</a>
+      <a class="btn secondary" href="/support">Visit support</a>
+    </div>
+  </div></section>
+
 </main>
 
-<footer>
-  <span>© 2026 Nevarro Technologies</span>
-  <span class="made">Made in 🇮🇳 with 💙 for the 🌍</span>
-  <span class="pol">
-    <a href="/terms">Terms</a>
-    <a href="/privacy">Privacy</a>
-    <a href="/support">Support</a>
-  </span>
-</footer>
+<footer><div class="wrap">
+  <div class="footgrid">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="5" y="8" width="30" height="27" rx="11" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <circle cx="15" cy="21" r="3" fill="currentColor"/>
+        <circle cx="25" cy="21" r="3" fill="currentColor"/>
+        <line x1="20" y1="8" x2="20" y2="4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="20" cy="3.5" r="2" fill="currentColor"/>
+      </svg>
+      <span>NEVARRO</span>
+    </a>
+    <div class="footcol">
+      <span class="h">Studio</span>
+      <a href="#work">What we do</a>
+      <a href="#approach">How we work</a>
+      <a href="#products">Products</a>
+    </div>
+    <div class="footcol">
+      <span class="h">Company</span>
+      <a href="/support">Support</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <div class="footcol">
+      <span class="h">Contact</span>
+      <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a>
+    </div>
+  </div>
+  <div class="footbase">
+    <span>© 2026 Nevarro Technologies</span>
+    <span>Made in 🇮🇳 with 💙 for the 🌍</span>
+  </div>
+</div></footer>
 
 <script>
-  document.getElementById('themeToggle').addEventListener('click', function(){
-    var root = document.documentElement;
-    var current = root.getAttribute('data-theme');
-    if(!current){
-      current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    var next = current === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    localStorage.setItem('nev-theme', next);
+  window.addEventListener('scroll',function(){
+    document.getElementById('nav').classList.toggle('stuck',window.scrollY>8);
   });
+  (function(){
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  })();
+  document.getElementById('themeToggle').addEventListener('click',function(){
+    var r=document.documentElement,c=r.getAttribute('data-theme');
+    if(!c){c=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+    var n=c==='dark'?'light':'dark';
+    r.setAttribute('data-theme',n);localStorage.setItem('nev-theme',n);
+  });
+
+  /* ---------- voxel globe + ring ---------- */
+  (function(){
+    var NS='http://www.w3.org/2000/svg';
+    var gG=document.getElementById('gGlobe'),
+        gB=document.getElementById('gRingBack'),
+        gF=document.getElementById('gRingFront');
+    if(!gG) return;
+
+    var cx=300, cy=200, c=9, HALF=20, R=HALF*c;
+    var x0=cx-HALF*c, y0=cy-HALF*c;
+    var D=Math.PI/180, TILT=20*D, sT=Math.sin(TILT), cT=Math.cos(TILT);
+
+    function ell(la,lo,a0,o0,ar,orr){
+      var d=((lo-o0+540)%360)-180, u=(la-a0)/ar, v=d/orr;
+      return u*u+v*v<=1;
+    }
+    function land(la,lo){
+      if(la<-64) return true;
+      if(ell(la,lo,73,-42,10,17)) return true;
+      if(ell(la,lo,58,-102,13,42)) return true;
+      if(ell(la,lo,40,-99,12,26)) return true;
+      if(ell(la,lo,64,-152,7,17)) return true;
+      if(ell(la,lo,21,-101,8,12)) return true;
+      if(ell(la,lo,13,-86,5,10)) return true;
+      if(ell(la,lo,-4,-62,14,13)) return true;
+      if(ell(la,lo,-30,-63,16,8)) return true;
+      if(ell(la,lo,20,8,15,22)) return true;
+      if(ell(la,lo,-8,20,20,14)) return true;
+      if(ell(la,lo,8,42,7,7)) return true;
+      if(ell(la,lo,-20,46,6,3)) return true;
+      if(ell(la,lo,49,14,11,22)) return true;
+      if(ell(la,lo,63,17,7,13)) return true;
+      if(ell(la,lo,27,45,12,14)) return true;
+      if(ell(la,lo,53,90,20,52)) return true;
+      if(ell(la,lo,64,130,10,50)) return true;
+      if(ell(la,lo,21,79,12,10)) return true;
+      if(ell(la,lo,8,107,13,13)) return true;
+      if(ell(la,lo,37,138,7,4)) return true;
+      if(ell(la,lo,-25,134,11,18)) return true;
+      if(ell(la,lo,-41,173,6,4)) return true;
+      return false;
+    }
+
+    var Lx=-0.44,Ly=0.36,Lz=0.82;
+    var Ln=Math.sqrt(Lx*Lx+Ly*Ly+Lz*Lz); Lx/=Ln; Ly/=Ln; Lz/=Ln;
+
+    var cells=[];
+    for(var j=0;j<HALF*2;j++){
+      for(var i=0;i<HALF*2;i++){
+        var px=x0+i*c, py=y0+j*c;
+        var nx=(px+c/2-cx)/R, ny=-(py+c/2-cy)/R;
+        var rho2=nx*nx+ny*ny;
+        if(rho2>0.99) continue;
+        var nz=Math.sqrt(1-rho2);
+        var r=document.createElementNS(NS,'rect');
+        r.setAttribute('x',px); r.setAttribute('y',py);
+        r.setAttribute('width',c); r.setAttribute('height',c);
+        gG.appendChild(r);
+        cells.push({el:r,nx:nx,ny:ny,nz:nz,d:nx*Lx+ny*Ly+nz*Lz,cls:''});
+      }
+    }
+
+    function paint(lon0){
+      for(var k=0;k<cells.length;k++){
+        var q=cells[k];
+        var yw=q.ny*cT + q.nz*sT;
+        var zw=-q.ny*sT + q.nz*cT;
+        var la=Math.asin(Math.max(-1,Math.min(1,yw)))/D;
+        var lo=((lon0 + Math.atan2(q.nx,zw)/D + 540)%360)-180;
+        var isL=land(la,lo);
+        var t=q.d>0.62?0:(q.d>0.18?1:2);
+        var cls=isL?(t===0?'c-land-hi':t===1?'c-land':'c-land-lo')
+                   :(t===0?'c-sea-hi':t===1?'c-sea':'c-sea-lo');
+        if(cls!==q.cls){q.cls=cls; q.el.setAttribute('class',cls);}
+      }
+    }
+    paint(0);
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var lon=0;
+      setInterval(function(){ lon=(lon+4)%360; paint(lon); },200);
+    }
+
+    var seen={};
+    var bands=[{fr:1.40,fy:0.350,cls:'c-ring-d'},
+               {fr:1.53,fy:0.383,cls:'c-ring'},
+               {fr:1.66,fy:0.415,cls:'c-ring-d'}];
+    bands.forEach(function(b){
+      for(var a=0;a<Math.PI*2;a+=0.010){
+        var px=cx+R*b.fr*Math.cos(a), py=cy+R*b.fy*Math.sin(a);
+        var gx=x0+Math.round((px-x0-c/2)/c)*c;
+        var gy=y0+Math.round((py-y0-c/2)/c)*c;
+        var back=Math.sin(a)<0;
+        var key=gx+'_'+gy+'_'+(back?'b':'f');
+        if(seen[key]) continue;
+        seen[key]=1;
+        var rr=document.createElementNS(NS,'rect');
+        rr.setAttribute('x',gx); rr.setAttribute('y',gy);
+        rr.setAttribute('width',c); rr.setAttribute('height',c);
+        rr.setAttribute('class',b.cls);
+        (back?gB:gF).appendChild(rr);
+      }
+    });
+  })();
 </script>
 
 </body>
