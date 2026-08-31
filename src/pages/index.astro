@@ -5,68 +5,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nevarro Technologies — Growth Partners &amp; Applied AI Research</title>
-<meta name="description" content="Nevarro partners with companies to transform and scale them toward a strategic outcome, and builds custom AI products for niche industries.">
+<title>Nevarro Technologies</title>
+<meta name="description" content="Nevarro modernizes businesses in deep verticals, and builds the AI-native software that gets them there.">
+<meta property="og:title" content="Nevarro Technologies">
+<meta property="og:description" content="We modernize businesses in deep verticals — and build the software that gets them there.">
+<meta property="og:image" content="https://nevarrotech.com/og.png">
+<meta property="og:url" content="https://nevarrotech.com/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=EB+Garamond:wght@400&display=swap" rel="stylesheet">
 <script is:inline>
   (function(){var t=localStorage.getItem('nev-theme');if(t){document.documentElement.setAttribute('data-theme',t);}})();
 </script>
 <style is:global>
   :root{
-    --parchment:#f7f7f4; --bone:#f2f1ed; --linen:#e6e5e0; --stone:#cdcdc9;
-    --mist:#a1a19f; --driftwood:#84847e; --ash:#7a7974; --ink:#26251e;
-    --ember:#f54e00; --amber:#c08532;
-    --canvas:var(--parchment); --surface:var(--bone); --raised:var(--linen);
-    --border:#dedcd6; --text:var(--ink); --muted:var(--ash); --faint:var(--mist);
-    --btn-fill:var(--ink); --btn-fill-text:var(--parchment);
-    --shadow-card:rgba(0,0,0,.10) 0 24px 60px, rgba(0,0,0,.06) 0 10px 24px;
-    --g-sea-hi:#e8e6dd; --g-sea:#c9c7bd; --g-sea-lo:#a3a197;
-    --g-land-hi:#57564c; --g-land:#3a3931; --g-land-lo:#22211b;
-    --g-ring:#9b9a92; --g-ring-d:#c5c4bd;
+    --canvas:#f7f7f4; --surface:#f2f1ed; --raised:#e6e5e0; --border:#dedcd6;
+    --text:#26251e; --muted:#7a7974; --faint:#a1a19f; --stone:#cdcdc9; --driftwood:#84847e;
+    --ember:#f54e00;
+    --btn-fill:#26251e; --btn-fill-text:#f7f7f4;
+    --s1:#ecebe4; --s2:#d9d7cd; --s3:#c3c1b6; --s4:#aaa89d; --s5:#918f85;
+    --l1:#6b6a5f; --l2:#52514a; --l3:#3d3c35; --l4:#2c2b25; --l5:#1e1d18;
+    --ring:#a5a49c; --ring-d:#c9c8c1;
     --sans:'Inter',ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
     --serif:'EB Garamond','Iowan Old Style',Palatino,ui-serif,Georgia,serif;
     --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
   }
   :root[data-theme="dark"]{
     --canvas:#1a1915; --surface:#21201a; --raised:#2a2922; --border:#38372f;
-    --text:#f2f1ed; --muted:#a1a19f; --faint:#84847e; --stone:#38372f;
-    --ember:#ff6a24; --amber:#d0973f;
-    --btn-fill:var(--linen); --btn-fill-text:#26251e;
-    --shadow-card:rgba(0,0,0,.4) 0 24px 60px, rgba(0,0,0,.25) 0 10px 24px;
-    --g-sea-hi:#555348; --g-sea:#413f37; --g-sea-lo:#31302a;
-    --g-land-hi:#f4f1e8; --g-land:#d2cfc3; --g-land-lo:#9d9b90;
-    --g-ring:#74736b; --g-ring-d:#4c4b43;
+    --text:#f2f1ed; --muted:#a1a19f; --faint:#84847e; --stone:#38372f; --driftwood:#a1a19f;
+    --ember:#ff6a24; --btn-fill:#e6e5e0; --btn-fill-text:#26251e;
+    --s1:#5a584d; --s2:#4b4941; --s3:#3e3d36; --s4:#33322c; --s5:#2a2924;
+    --l1:#f6f3ea; --l2:#e0ddd2; --l3:#c6c3b8; --l4:#a9a79c; --l5:#8d8b81;
+    --ring:#77766e; --ring-d:#4f4e46;
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
       --canvas:#1a1915; --surface:#21201a; --raised:#2a2922; --border:#38372f;
-      --text:#f2f1ed; --muted:#a1a19f; --faint:#84847e; --stone:#38372f;
-      --ember:#ff6a24; --amber:#d0973f;
-      --btn-fill:var(--linen); --btn-fill-text:#26251e;
-      --shadow-card:rgba(0,0,0,.4) 0 24px 60px, rgba(0,0,0,.25) 0 10px 24px;
-      --g-sea-hi:#555348; --g-sea:#413f37; --g-sea-lo:#31302a;
-      --g-land-hi:#f4f1e8; --g-land:#d2cfc3; --g-land-lo:#9d9b90;
-      --g-ring:#74736b; --g-ring-d:#4c4b43;
+      --text:#f2f1ed; --muted:#a1a19f; --faint:#84847e; --stone:#38372f; --driftwood:#a1a19f;
+      --ember:#ff6a24; --btn-fill:#e6e5e0; --btn-fill-text:#26251e;
+      --s1:#5a584d; --s2:#4b4941; --s3:#3e3d36; --s4:#33322c; --s5:#2a2924;
+      --l1:#f6f3ea; --l2:#e0ddd2; --l3:#c6c3b8; --l4:#a9a79c; --l5:#8d8b81;
+      --ring:#77766e; --ring-d:#4f4e46;
     }
   }
 
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--canvas); color:var(--text); font-family:var(--sans);
-    font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased;
-    transition:background .35s ease,color .35s ease;
-  }
+  body{background:var(--canvas);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.5;
+    -webkit-font-smoothing:antialiased;transition:background .35s ease,color .35s ease}
   ::selection{background:#8bc4f8;color:#26251e}
   .wrap{max-width:1080px;margin:0 auto;padding-left:24px;padding-right:24px}
 
   nav{position:sticky;top:0;z-index:30;background:color-mix(in oklab,var(--canvas) 88%,transparent);
     backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
   nav.stuck{border-color:var(--border)}
-  .navin{max-width:1080px;margin:0 auto;padding:0 24px;height:60px;
-    display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .navin{max-width:1080px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;
+    justify-content:space-between;gap:16px}
   .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
   .brand svg{width:22px;height:22px;flex:none}
   .brand span{font-size:14px;font-weight:500;letter-spacing:.1em}
@@ -76,17 +71,16 @@
   .navend{display:flex;align-items:center;gap:10px}
   @media (max-width:880px){.navmid{display:none}}
 
-  .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:400;
-    text-decoration:none;padding:.7em 1.3em;border-radius:4px;
-    transition:background .15s cubic-bezier(.4,0,.2,1),color .15s,border-color .15s}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;text-decoration:none;
+    padding:.7em 1.3em;border-radius:4px;transition:background .15s,opacity .15s}
   .btn.primary{background:var(--btn-fill);color:var(--btn-fill-text)}
   .btn.primary:hover{opacity:.86}
   .btn.secondary{background:var(--raised);color:var(--text)}
   .btn.secondary:hover{background:var(--stone)}
 
-  #themeToggle{background:none;border:1px solid var(--border);border-radius:4px;
-    width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;
-    cursor:pointer;color:var(--muted);transition:color .15s,border-color .15s}
+  #themeToggle{background:none;border:1px solid var(--border);border-radius:4px;width:32px;height:32px;
+    display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:var(--muted);
+    transition:color .15s,border-color .15s}
   #themeToggle:hover{color:var(--text);border-color:var(--stone)}
   #themeToggle svg{width:15px;height:15px}
   .icon-sun{display:none}
@@ -97,64 +91,53 @@
     :root:not([data-theme="light"]) .icon-moon{display:none}
   }
 
-  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   h1{font-size:clamp(36px,5.6vw,60px);font-weight:400;line-height:1.08;letter-spacing:-.03em;max-width:19ch}
   h1 em{font-style:normal;color:var(--ember)}
   h2{font-size:clamp(26px,3.6vw,34px);font-weight:400;line-height:1.2;letter-spacing:-.02em;max-width:24ch}
-  h3{font-size:21px;font-weight:400;line-height:1.3;letter-spacing:-.005em}
-  .prose{font-family:var(--serif);font-size:19px;line-height:1.6;color:var(--driftwood);max-width:60ch}
-  :root[data-theme="dark"] .prose{color:var(--mist)}
-  p.body{font-size:15px;line-height:1.7;color:var(--muted)}
+  h3{font-size:22px;font-weight:400;line-height:1.3;letter-spacing:-.008em}
+  .prose{font-family:var(--serif);font-size:19px;line-height:1.62;color:var(--driftwood);max-width:60ch}
+  p.body{font-size:15px;line-height:1.75;color:var(--muted)}
 
   .hero{padding:clamp(56px,10vh,100px) 0 0}
   .hero .eyebrow{margin-bottom:22px}
   .hero .prose{margin-top:24px}
   .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
 
-  .panel{margin-top:clamp(44px,7vh,72px);background:var(--surface);border:1px solid var(--border);
-    border-radius:4px;box-shadow:var(--shadow-card);overflow:hidden}
-  .panel .bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--border)}
-  .panel .bar i{width:9px;height:9px;border-radius:50%;background:var(--stone);display:block}
-  .panel .bar em{font-family:var(--mono);font-size:12px;color:var(--faint);font-style:normal;margin-left:8px}
-  .panel .stage{display:flex;align-items:center;justify-content:center;padding:clamp(26px,4vw,44px) 24px}
-  .globe-wrap{width:clamp(240px,40vw,360px)}
+  /* globe — no frame, sits on the canvas */
+  .stage{margin-top:clamp(52px,9vh,88px);display:flex;justify-content:center;padding:8px 0 28px}
+  .globe-wrap{width:clamp(280px,46vw,420px);cursor:crosshair}
   .globe-wrap svg{width:100%;height:auto;display:block;shape-rendering:crispEdges}
-  .panel .caption{border-top:1px solid var(--border);padding:14px 20px;font-family:var(--mono);
-    font-size:12px;color:var(--faint);text-align:center}
+  .stageline{border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    padding:14px 0;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--faint)}
+  .stageline b{font-weight:400;color:var(--muted)}
+  @media (max-width:600px){.stageline{justify-content:center;text-align:center}}
 
-  .c-sea-hi{fill:var(--g-sea-hi)}
-  .c-sea{fill:var(--g-sea)}
-  .c-sea-lo{fill:var(--g-sea-lo)}
-  .c-land-hi{fill:var(--g-land-hi)}
-  .c-land{fill:var(--g-land)}
-  .c-land-lo{fill:var(--g-land-lo)}
-  .c-ring{fill:var(--g-ring)}
-  .c-ring-d{fill:var(--g-ring-d)}
-
-  .strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:clamp(52px,8vh,80px)}
-  .strip .inner{max-width:1080px;margin:0 auto;padding:18px 24px;display:flex;gap:28px;flex-wrap:wrap;
-    justify-content:center;font-family:var(--mono);font-size:12px;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--faint)}
+  .c-s1{fill:var(--s1)} .c-s2{fill:var(--s2)} .c-s3{fill:var(--s3)} .c-s4{fill:var(--s4)} .c-s5{fill:var(--s5)}
+  .c-l1{fill:var(--l1)} .c-l2{fill:var(--l2)} .c-l3{fill:var(--l3)} .c-l4{fill:var(--l4)} .c-l5{fill:var(--l5)}
+  .c-ring{fill:var(--ring)} .c-ring-d{fill:var(--ring-d)}
 
   section{padding:clamp(60px,10vh,92px) 0}
   section .eyebrow{margin-bottom:16px}
   section h2+.prose{margin-top:18px}
 
-  .tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:40px}
-  .track{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:28px 26px;
-    transition:border-color .2s}
-  .track:hover{border-color:var(--stone)}
+  .tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:16px;margin-top:40px}
+  .track{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:30px 28px;
+    display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+  .track:hover{border-color:var(--stone);transform:translateY(-3px)}
   .track .tnum{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
     color:var(--faint);margin-bottom:14px}
   .track h3{margin-bottom:12px}
-  .track p{font-size:15px;line-height:1.75;color:var(--muted)}
-  .track .tlist{margin-top:18px;padding-top:16px;border-top:1px solid var(--border);
-    font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint);line-height:2}
+  .track p{font-size:15px;line-height:1.75;color:var(--muted);flex:1}
+  .track .tfoot{margin-top:22px;padding-top:16px;border-top:1px solid var(--border);
+    display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .track .tmeta{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+  .track .tgo{font-size:14px;color:var(--ember)}
 
   .lines{margin-top:40px;border-top:1px solid var(--border)}
-  .line{display:grid;grid-template-columns:180px 1fr;gap:28px;padding:24px 0;
-    border-bottom:1px solid var(--border);align-items:baseline}
-  .line .k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ash)}
+  .line{display:grid;grid-template-columns:200px 1fr;gap:28px;padding:22px 0;border-bottom:1px solid var(--border);align-items:baseline}
+  .line .k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
   .line p{font-size:15px;line-height:1.75;color:var(--muted)}
   @media (max-width:640px){.line{grid-template-columns:1fr;gap:8px}}
 
@@ -166,40 +149,35 @@
   .footgrid{display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap}
   .footcol{display:flex;flex-direction:column;gap:9px}
   .footcol .h{font-size:14px;font-weight:500;color:var(--text);margin-bottom:2px}
-  .footcol a{font-size:13px;color:var(--ash);text-decoration:none}
+  .footcol a{font-size:13px;color:var(--muted);text-decoration:none}
   .footcol a:hover{color:var(--text)}
   .footbase{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);
     display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
     font-family:var(--mono);font-size:12px;color:var(--faint)}
-  @media (max-width:700px){.footgrid,.footbase{justify-content:center;text-align:center}
-    .footcol{align-items:center}}
+  @media (max-width:700px){.footgrid,.footbase{justify-content:center;text-align:center}.footcol{align-items:center}}
 
   .rev{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
   .rev.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){
-    .rev{opacity:1;transform:none;transition:none}
-    html{scroll-behavior:auto}
-  }
+  @media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
 <nav id="nav">
   <div class="navin">
-    <a class="brand" href="#top">
+    <a class="brand" href="/">
       <svg viewBox="0 0 40 40" aria-hidden="true">
         <rect x="5" y="8" width="30" height="27" rx="11" fill="none" stroke="currentColor" stroke-width="2.4"/>
-        <circle cx="15" cy="21" r="3" fill="currentColor"/>
-        <circle cx="25" cy="21" r="3" fill="currentColor"/>
+        <circle cx="15" cy="21" r="3" fill="currentColor"/><circle cx="25" cy="21" r="3" fill="currentColor"/>
         <line x1="20" y1="8" x2="20" y2="4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
         <circle cx="20" cy="3.5" r="2" fill="currentColor"/>
       </svg>
       <span>NEVARRO</span>
     </a>
     <div class="navmid">
-      <a href="#tracks">Two tracks</a>
-      <a href="#approach">How we partner</a>
-      <a href="#focus">Focus</a>
+      <a href="/modernization">Modernization</a>
+      <a href="/labs">Labs</a>
+      <a href="/pricing">Pricing</a>
       <a href="/support">Support</a>
     </div>
     <div class="navend">
@@ -216,120 +194,65 @@
 
   <div class="wrap hero">
     <div class="eyebrow">Nevarro Technologies · Bengaluru, India</div>
-    <h1>We build businesses toward <em>an outcome</em>.</h1>
-    <p class="prose">Nevarro is a growth partner. We work inside companies to transform how they operate and scale them toward a strategic outcome — an acquisition, a listing, a next chapter. And we build the AI that makes it possible, through our own research and development.</p>
+    <h1>We modernize businesses in <em>deep verticals</em>.</h1>
+    <p class="prose">Nevarro is a small group with two arms. One works inside established businesses — as a partner or as an owner — to modernize how they operate and expand what they earn. The other is a specialist product team building AI-native software for verticals the large platforms have never bothered with.</p>
     <div class="cta-row">
       <a class="btn primary" href="mailto:adi@nevarrotech.com?subject=Enquiry">Talk to us</a>
-      <a class="btn secondary" href="#tracks">Our two tracks →</a>
+      <a class="btn secondary" href="#tracks">What we do →</a>
     </div>
 
-    <div class="panel">
-      <div class="bar"><i></i><i></i><i></i><em>nevarro — studio</em></div>
-      <div class="stage">
-        <div class="globe-wrap" aria-hidden="true">
-          <svg id="globeSvg" viewBox="0 0 600 400">
-            <g id="gRingBack" transform="rotate(-16 300 200)"></g>
-            <g id="gGlobe"></g>
-            <g id="gRingFront" transform="rotate(-16 300 200)"></g>
-          </svg>
-        </div>
+    <div class="stage">
+      <div class="globe-wrap" id="globeWrap" aria-hidden="true">
+        <svg id="globeSvg" viewBox="0 0 660 440">
+          <g id="gRingBack" transform="rotate(-16 330 220)"></g>
+          <g id="gGlobe"></g>
+          <g id="gRingFront" transform="rotate(-16 330 220)"></g>
+        </svg>
       </div>
-      <div class="caption">Partners in the business. Builders of the technology.</div>
+    </div>
+    <div class="stageline">
+      <span>Two arms · <b>one operating philosophy</b></span>
+      <span id="clock">Bengaluru · <b>--:--:--</b> IST</span>
     </div>
   </div>
 
-  <div class="strip">
-    <div class="inner">
-      <span>Growth partnership</span>
-      <span>Applied AI research</span>
-      <span>Strategic outcomes</span>
-      <span>Bengaluru, India</span>
-    </div>
-  </div>
-
-  <!-- TWO TRACKS -->
   <section id="tracks"><div class="wrap">
-    <div class="eyebrow rev">The thesis</div>
-    <h2 class="rev">Two tracks.</h2>
-    <p class="prose rev">Advisors hand over a deck and leave. Vendors ship a product and invoice. We do neither — we take a position in the outcome, and we build what the business needs to get there.</p>
+    <div class="eyebrow rev">The group</div>
+    <h2 class="rev">Two arms.</h2>
+    <p class="prose rev">They share a stack, a set of operating principles, and a bias toward industries that everyone else finds boring. Beyond that, they are run as separate businesses with separate clients.</p>
     <div class="tracks">
-      <div class="track rev">
-        <div class="tnum">Track one</div>
-        <h3>Growth partnership</h3>
-        <p>We work with a small number of companies at a time, inside the business rather than beside it. We rebuild how the operation runs, put technology where the manual work is, and grow toward a defined target. The engagement is written around that target — and the destination is a strategic outcome: an acquisition, a listing, or a transition into whatever comes next.</p>
-        <div class="tlist">Transformation · Scale · Strategic exit</div>
-      </div>
-      <div class="track rev">
-        <div class="tnum">Track two</div>
-        <h3>Applied AI research</h3>
-        <p>Our internal research and development team builds custom AI products and models for industries the large platforms overlook. Each one starts from a real operating problem, is trained on the language and constraints of that sector, and becomes part of the stack we bring into the next partnership.</p>
-        <div class="tlist">Research · Custom models · Industry products</div>
-      </div>
+      <a class="track rev" href="/modernization">
+        <div class="tnum">Arm one</div>
+        <h3>Vertical Modernization</h3>
+        <p>We work inside established businesses to modernize how they run — replacing manual operations with technology, expanding margins, and growing toward a defined outcome. We do this as a partner to the owner, or by acquiring the business ourselves.</p>
+        <div class="tfoot"><span class="tmeta">Owners · Operators · Promoters</span><span class="tgo">Read more →</span></div>
+      </a>
+      <a class="track rev" href="/labs">
+        <div class="tnum">Arm two</div>
+        <h3>Nevarro Labs</h3>
+        <p>A specialist product team building AI-native software stacks for deep verticals — industry bodies, regulated professions, and enterprises whose work is specific enough that generic software has never fit. Built to order, or built as a product.</p>
+        <div class="tfoot"><span class="tmeta">Enterprises · Bodies · Professions</span><span class="tgo">Read more →</span></div>
+      </a>
     </div>
   </div></section>
 
-  <!-- HOW WE PARTNER -->
-  <section id="approach"><div class="wrap">
-    <div class="eyebrow rev">How we partner</div>
-    <h2 class="rev">Aligned to the outcome, not the invoice.</h2>
-    <p class="prose rev">We take on few engagements because each one is deep. The shape is consistent even when the terms are not.</p>
-    <div class="lines">
-      <div class="line rev">
-        <div class="k">We go inside</div>
-        <p>We work within the operation, alongside the people who run it. Nothing useful gets built from the outside looking in.</p>
-      </div>
-      <div class="line rev">
-        <div class="k">We target growth</div>
-        <p>Every engagement is written around a defined target rather than a scope of hours. What we are aiming at is agreed at the start, in writing.</p>
-      </div>
-      <div class="line rev">
-        <div class="k">We build, not advise</div>
-        <p>Technology replaces the manual work rather than documenting it. What we build stays with the business.</p>
-      </div>
-      <div class="line rev">
-        <div class="k">We aim at an outcome</div>
-        <p>The destination is a strategic event — an acquisition, a listing, a transition — and the work is structured to arrive there.</p>
-      </div>
-      <div class="line rev">
-        <div class="k">Custom terms</div>
-        <p>Every partnership is structured to the situation and agreed in writing before it begins. There is no standard package, because there is no standard company.</p>
-      </div>
-    </div>
-  </div></section>
-
-  <!-- FOCUS -->
   <section id="focus"><div class="wrap">
     <div class="eyebrow rev">Where we focus</div>
-    <h2 class="rev">Niche industries, deep operations.</h2>
-    <p class="prose rev">We look for sectors with real operational depth, meaningful regulation, and software that has not kept pace — where a small team working closely with an operator can change the trajectory of the business.</p>
+    <h2 class="rev">Industries with depth and inertia.</h2>
+    <p class="prose rev">Sectors with real operational complexity, meaningful regulation, and software that has not kept pace — where a small team working closely with an operator can change the trajectory of the business.</p>
     <div class="lines">
-      <div class="line rev">
-        <div class="k">Healthcare</div>
-        <p>Providers and practices where operations, compliance, and patient-facing systems have grown faster than the tooling around them.</p>
-      </div>
-      <div class="line rev">
-        <div class="k">Financial services</div>
-        <p>Advisers, intermediaries, and regulated entities carrying heavy documentation and reporting obligations.</p>
-      </div>
-      <div class="line rev">
-        <div class="k">ITSM</div>
-        <p>Service management operations where volume is high, process is well defined, and the work remains stubbornly manual.</p>
-      </div>
-      <div class="line rev">
-        <div class="k">Information management</div>
-        <p>Businesses whose core asset is documents and records, and whose competitive edge is how quickly they can be found and used.</p>
-      </div>
-      <div class="line rev">
-        <div class="k">Outsourcing</div>
-        <p>Delivery organisations built on people, where AI shifts the economics of every process it touches.</p>
-      </div>
+      <div class="line rev"><div class="k">Healthcare</div><p>Providers and practices where operations and compliance have outgrown the systems around them.</p></div>
+      <div class="line rev"><div class="k">Financial services</div><p>Intermediaries and regulated entities carrying heavy documentation and reporting obligations.</p></div>
+      <div class="line rev"><div class="k">ITSM</div><p>Service management operations where volume is high, process is well defined, and the work stays manual.</p></div>
+      <div class="line rev"><div class="k">Information management</div><p>Businesses whose core asset is documents and records, and whose edge is how fast they can be found and used.</p></div>
+      <div class="line rev"><div class="k">Outsourcing</div><p>Delivery organisations built on people, where AI changes the economics of every process it touches.</p></div>
     </div>
   </div></section>
 
   <section class="closing"><div class="wrap">
     <div class="eyebrow rev">Ready when you are</div>
-    <h2 class="rev">If you're building toward something, let's talk.</h2>
-    <p class="prose rev">Whether you are scaling toward an exit or trying to work out what the next chapter looks like, a short email is enough to start.</p>
+    <h2 class="rev">Tell us what you're working on.</h2>
+    <p class="prose rev">Whether you run a business you want to modernize, or need software nobody has built yet, a short email is enough to start.</p>
     <div class="cta-row rev">
       <a class="btn primary" href="mailto:adi@nevarrotech.com?subject=Enquiry">Email us</a>
       <a class="btn secondary" href="/support">Visit support</a>
@@ -340,160 +263,139 @@
 
 <footer><div class="wrap">
   <div class="footgrid">
-    <a class="brand" href="#top">
+    <a class="brand" href="/">
       <svg viewBox="0 0 40 40" aria-hidden="true">
         <rect x="5" y="8" width="30" height="27" rx="11" fill="none" stroke="currentColor" stroke-width="2.4"/>
-        <circle cx="15" cy="21" r="3" fill="currentColor"/>
-        <circle cx="25" cy="21" r="3" fill="currentColor"/>
+        <circle cx="15" cy="21" r="3" fill="currentColor"/><circle cx="25" cy="21" r="3" fill="currentColor"/>
         <line x1="20" y1="8" x2="20" y2="4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
         <circle cx="20" cy="3.5" r="2" fill="currentColor"/>
       </svg>
       <span>NEVARRO</span>
     </a>
-    <div class="footcol">
-      <span class="h">Studio</span>
-      <a href="#tracks">Two tracks</a>
-      <a href="#approach">How we partner</a>
-      <a href="#focus">Focus</a>
-      <a href="/pricing">Pricing</a>
-    </div>
-    <div class="footcol">
-      <span class="h">Company</span>
-      <a href="/support">Support</a>
-      <a href="/terms">Terms</a>
-      <a href="/privacy">Privacy</a>
-    </div>
-    <div class="footcol">
-      <span class="h">Contact</span>
-      <a href="mailto:adi@nevarrotech.com">adi@nevarrotech.com</a>
-      <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a>
-    </div>
+    <div class="footcol"><span class="h">Group</span><a href="/modernization">Vertical Modernization</a><a href="/labs">Nevarro Labs</a><a href="/pricing">Pricing</a></div>
+    <div class="footcol"><span class="h">Company</span><a href="/support">Support</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a></div>
+    <div class="footcol"><span class="h">Contact</span><a href="mailto:adi@nevarrotech.com">adi@nevarrotech.com</a><a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a></div>
   </div>
-  <div class="footbase">
-    <span>© 2026 Nevarro Technologies</span>
-    <span>Made in 🇮🇳 with 💙 for the 🌍</span>
-  </div>
+  <div class="footbase"><span>© 2026 Nevarro Technologies</span><span>Made in 🇮🇳 with 💙 for the 🌍</span></div>
 </div></footer>
 
 <script is:inline>
-  window.addEventListener('scroll',function(){
-    document.getElementById('nav').classList.toggle('stuck',window.scrollY>8);
-  });
-
+  window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('stuck',window.scrollY>8);});
   (function(){
-    var io=new IntersectionObserver(function(en){
-      en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});
-    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
     document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
   })();
-
   document.getElementById('themeToggle').addEventListener('click',function(){
     var r=document.documentElement,c=r.getAttribute('data-theme');
     if(!c){c=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
-    var n=c==='dark'?'light':'dark';
-    r.setAttribute('data-theme',n);localStorage.setItem('nev-theme',n);
+    var n=c==='dark'?'light':'dark';r.setAttribute('data-theme',n);localStorage.setItem('nev-theme',n);
   });
 
-  /* ---------- voxel globe + ring ---------- */
+  /* clock — Bengaluru, IST */
   (function(){
+    var el=document.getElementById('clock');
+    var f=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+    function tick(){el.innerHTML='Bengaluru · <b>'+f.format(new Date())+'</b> IST';}
+    tick();setInterval(tick,1000);
+  })();
+
+  /* ---------- globe ---------- */
+  (function(){
+    /* Paste the hex string from mask.mjs between the quotes. Empty = ellipse fallback. */
+    var LAND_MASK='';
+    var MW=128,MH=64;
+
     var NS='http://www.w3.org/2000/svg';
-    var gG=document.getElementById('gGlobe'),
-        gB=document.getElementById('gRingBack'),
-        gF=document.getElementById('gRingFront');
+    var gG=document.getElementById('gGlobe'),gB=document.getElementById('gRingBack'),gF=document.getElementById('gRingFront'),wrap=document.getElementById('globeWrap');
     if(!gG) return;
 
-    var cx=300, cy=200, c=9, HALF=20, R=HALF*c;
-    var x0=cx-HALF*c, y0=cy-HALF*c;
-    var D=Math.PI/180, TILT=20*D, sT=Math.sin(TILT), cT=Math.cos(TILT);
+    var cx=330,cy=220,c=6,HALF=32,R=HALF*c;      /* 64 cells across */
+    var x0=cx-HALF*c,y0=cy-HALF*c;
+    var D=Math.PI/180,TILT=20*D,sT=Math.sin(TILT),cT=Math.cos(TILT);
 
-    function ell(la,lo,a0,o0,ar,orr){
-      var d=((lo-o0+540)%360)-180, u=(la-a0)/ar, v=d/orr;
-      return u*u+v*v<=1;
+    var bits=null;
+    if(LAND_MASK.length===MW*MH/4){
+      bits=new Uint8Array(MW*MH);
+      for(var i=0;i<LAND_MASK.length;i++){var v=parseInt(LAND_MASK[i],16);bits[i*4]=(v>>3)&1;bits[i*4+1]=(v>>2)&1;bits[i*4+2]=(v>>1)&1;bits[i*4+3]=v&1;}
+    }
+    function ell(la,lo,a0,o0,ar,orr){var d=((lo-o0+540)%360)-180,u=(la-a0)/ar,v=d/orr;return u*u+v*v<=1;}
+    function landEll(la,lo){
+      if(la<-64) return true;
+      return ell(la,lo,73,-42,10,17)||ell(la,lo,58,-102,13,42)||ell(la,lo,40,-99,12,26)||ell(la,lo,64,-152,7,17)||
+        ell(la,lo,21,-101,8,12)||ell(la,lo,13,-86,5,10)||ell(la,lo,-4,-62,14,13)||ell(la,lo,-30,-63,16,8)||
+        ell(la,lo,20,8,15,22)||ell(la,lo,-8,20,20,14)||ell(la,lo,8,42,7,7)||ell(la,lo,-20,46,6,3)||
+        ell(la,lo,49,14,11,22)||ell(la,lo,63,17,7,13)||ell(la,lo,27,45,12,14)||ell(la,lo,53,90,20,52)||
+        ell(la,lo,64,130,10,50)||ell(la,lo,21,79,12,10)||ell(la,lo,8,107,13,13)||ell(la,lo,37,138,7,4)||
+        ell(la,lo,-25,134,11,18)||ell(la,lo,-41,173,6,4);
     }
     function land(la,lo){
-      if(la<-64) return true;
-      if(ell(la,lo,73,-42,10,17)) return true;
-      if(ell(la,lo,58,-102,13,42)) return true;
-      if(ell(la,lo,40,-99,12,26)) return true;
-      if(ell(la,lo,64,-152,7,17)) return true;
-      if(ell(la,lo,21,-101,8,12)) return true;
-      if(ell(la,lo,13,-86,5,10)) return true;
-      if(ell(la,lo,-4,-62,14,13)) return true;
-      if(ell(la,lo,-30,-63,16,8)) return true;
-      if(ell(la,lo,20,8,15,22)) return true;
-      if(ell(la,lo,-8,20,20,14)) return true;
-      if(ell(la,lo,8,42,7,7)) return true;
-      if(ell(la,lo,-20,46,6,3)) return true;
-      if(ell(la,lo,49,14,11,22)) return true;
-      if(ell(la,lo,63,17,7,13)) return true;
-      if(ell(la,lo,27,45,12,14)) return true;
-      if(ell(la,lo,53,90,20,52)) return true;
-      if(ell(la,lo,64,130,10,50)) return true;
-      if(ell(la,lo,21,79,12,10)) return true;
-      if(ell(la,lo,8,107,13,13)) return true;
-      if(ell(la,lo,37,138,7,4)) return true;
-      if(ell(la,lo,-25,134,11,18)) return true;
-      if(ell(la,lo,-41,173,6,4)) return true;
-      return false;
+      if(!bits) return landEll(la,lo);
+      var col=Math.floor((lo+180)/360*MW),row=Math.floor((90-la)/180*MH);
+      if(col<0)col=0;if(col>=MW)col=MW-1;if(row<0)row=0;if(row>=MH)row=MH-1;
+      return bits[row*MW+col]===1;
     }
 
-    var Lx=-0.44,Ly=0.36,Lz=0.82;
-    var Ln=Math.sqrt(Lx*Lx+Ly*Ly+Lz*Lz); Lx/=Ln; Ly/=Ln; Lz/=Ln;
+    /* light: default upper-left, follows cursor over the globe */
+    var L={x:-0.44,y:0.36,z:0.82},T={x:-0.44,y:0.36,z:0.82};
+    function norm(v){var n=Math.sqrt(v.x*v.x+v.y*v.y+v.z*v.z);v.x/=n;v.y/=n;v.z/=n;return v;}
+    norm(L);norm(T);
 
     var cells=[];
-    for(var j=0;j<HALF*2;j++){
-      for(var i=0;i<HALF*2;i++){
-        var px=x0+i*c, py=y0+j*c;
-        var nx=(px+c/2-cx)/R, ny=-(py+c/2-cy)/R;
-        var rho2=nx*nx+ny*ny;
-        if(rho2>0.99) continue;
-        var nz=Math.sqrt(1-rho2);
-        var r=document.createElementNS(NS,'rect');
-        r.setAttribute('x',px); r.setAttribute('y',py);
-        r.setAttribute('width',c); r.setAttribute('height',c);
-        gG.appendChild(r);
-        cells.push({el:r,nx:nx,ny:ny,nz:nz,d:nx*Lx+ny*Ly+nz*Lz,cls:''});
-      }
-    }
+    for(var j=0;j<HALF*2;j++){for(var i=0;i<HALF*2;i++){
+      var px=x0+i*c,py=y0+j*c;
+      var nx=(px+c/2-cx)/R,ny=-(py+c/2-cy)/R,rho2=nx*nx+ny*ny;
+      if(rho2>0.995) continue;
+      var nz=Math.sqrt(1-rho2);
+      var r=document.createElementNS(NS,'rect');
+      r.setAttribute('x',px);r.setAttribute('y',py);r.setAttribute('width',c);r.setAttribute('height',c);
+      gG.appendChild(r);
+      cells.push({el:r,nx:nx,ny:ny,nz:nz,cls:''});
+    }}
 
+    function tone(d){return d>0.80?1:d>0.52?2:d>0.22?3:d>-0.04?4:5;}
     function paint(lon0){
       for(var k=0;k<cells.length;k++){
         var q=cells[k];
-        var yw=q.ny*cT + q.nz*sT;
-        var zw=-q.ny*sT + q.nz*cT;
+        var yw=q.ny*cT+q.nz*sT,zw=-q.ny*sT+q.nz*cT;
         var la=Math.asin(Math.max(-1,Math.min(1,yw)))/D;
-        var lo=((lon0 + Math.atan2(q.nx,zw)/D + 540)%360)-180;
-        var isL=land(la,lo);
-        var t=q.d>0.62?0:(q.d>0.18?1:2);
-        var cls=isL?(t===0?'c-land-hi':t===1?'c-land':'c-land-lo')
-                   :(t===0?'c-sea-hi':t===1?'c-sea':'c-sea-lo');
-        if(cls!==q.cls){q.cls=cls; q.el.setAttribute('class',cls);}
+        var lo=((lon0+Math.atan2(q.nx,zw)/D+540)%360)-180;
+        var d=q.nx*L.x+q.ny*L.y+q.nz*L.z;
+        var cls=(land(la,lo)?'c-l':'c-s')+tone(d);
+        if(cls!==q.cls){q.cls=cls;q.el.setAttribute('class',cls);}
       }
     }
+
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var lon=0;
     paint(0);
-    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      var lon=0;
-      setInterval(function(){ lon=(lon+4)%360; paint(lon); },200);
+    if(!reduce){
+      setInterval(function(){
+        lon=(lon+3)%360;
+        L.x+=(T.x-L.x)*.25;L.y+=(T.y-L.y)*.25;L.z+=(T.z-L.z)*.25;norm(L);
+        paint(lon);
+      },160);
+      wrap.addEventListener('mousemove',function(e){
+        var b=wrap.getBoundingClientRect();
+        var mx=((e.clientX-b.left)/b.width)*660,my=((e.clientY-b.top)/b.height)*440;
+        var x=(mx-cx)/R,y=-(my-cy)/R;
+        var m=Math.sqrt(x*x+y*y);if(m>1){x/=m;y/=m;m=1;}
+        T={x:x*.9,y:y*.9,z:Math.max(.35,Math.sqrt(1-m*m*.81))};norm(T);
+      });
+      wrap.addEventListener('mouseleave',function(){T={x:-0.44,y:0.36,z:0.82};norm(T);});
     }
 
+    /* ring — thinner, same grid */
     var seen={};
-    var bands=[{fr:1.40,fy:0.350,cls:'c-ring-d'},
-               {fr:1.53,fy:0.383,cls:'c-ring'},
-               {fr:1.66,fy:0.415,cls:'c-ring-d'}];
+    var bands=[{fr:1.46,fy:0.36,cls:'c-ring-d'},{fr:1.56,fy:0.385,cls:'c-ring'},{fr:1.62,fy:0.40,cls:'c-ring-d'}];
     bands.forEach(function(b){
-      for(var a=0;a<Math.PI*2;a+=0.010){
-        var px=cx+R*b.fr*Math.cos(a), py=cy+R*b.fy*Math.sin(a);
-        var gx=x0+Math.round((px-x0-c/2)/c)*c;
-        var gy=y0+Math.round((py-y0-c/2)/c)*c;
-        var back=Math.sin(a)<0;
-        var key=gx+'_'+gy+'_'+(back?'b':'f');
-        if(seen[key]) continue;
-        seen[key]=1;
+      for(var a=0;a<Math.PI*2;a+=0.008){
+        var px=cx+R*b.fr*Math.cos(a),py=cy+R*b.fy*Math.sin(a);
+        var gx=x0+Math.round((px-x0-c/2)/c)*c,gy=y0+Math.round((py-y0-c/2)/c)*c;
+        var back=Math.sin(a)<0,key=gx+'_'+gy+'_'+(back?'b':'f');
+        if(seen[key]) continue;seen[key]=1;
         var rr=document.createElementNS(NS,'rect');
-        rr.setAttribute('x',gx); rr.setAttribute('y',gy);
-        rr.setAttribute('width',c); rr.setAttribute('height',c);
-        rr.setAttribute('class',b.cls);
-        (back?gB:gF).appendChild(rr);
+        rr.setAttribute('x',gx);rr.setAttribute('y',gy);rr.setAttribute('width',c);rr.setAttribute('height',c);
+        rr.setAttribute('class',b.cls);(back?gB:gF).appendChild(rr);
       }
     });
   })();
@@ -501,4 +403,3 @@
 
 </body>
 </html>
-
