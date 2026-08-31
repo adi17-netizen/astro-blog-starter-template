@@ -1,0 +1,198 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nevarro Labs — AI-Native Software for Deep Verticals</title>
+<meta name="description" content="A specialist product team building AI-native software stacks for industry bodies, regulated professions, and enterprises in deep verticals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=EB+Garamond:wght@400&display=swap" rel="stylesheet">
+<script is:inline>
+  (function(){var t=localStorage.getItem('nev-theme');if(t){document.documentElement.setAttribute('data-theme',t);}})();
+</script>
+<style is:global>
+  :root{
+    --canvas:#f7f7f4; --surface:#f2f1ed; --raised:#e6e5e0; --border:#dedcd6;
+    --text:#26251e; --muted:#7a7974; --faint:#a1a19f; --stone:#cdcdc9; --driftwood:#84847e;
+    --ember:#f54e00; --amber:#c08532;
+    --btn-fill:#26251e; --btn-fill-text:#f7f7f4;
+    --sans:'Inter',ui-sans-serif,system-ui,-apple-system,sans-serif;
+    --serif:'EB Garamond',ui-serif,Georgia,serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  :root[data-theme="dark"]{
+    --canvas:#1a1915; --surface:#21201a; --raised:#2a2922; --border:#38372f;
+    --text:#f2f1ed; --muted:#a1a19f; --faint:#84847e; --stone:#38372f; --driftwood:#a1a19f;
+    --ember:#ff6a24; --amber:#d0973f; --btn-fill:#e6e5e0; --btn-fill-text:#26251e;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --canvas:#1a1915; --surface:#21201a; --raised:#2a2922; --border:#38372f;
+      --text:#f2f1ed; --muted:#a1a19f; --faint:#84847e; --stone:#38372f; --driftwood:#a1a19f;
+      --ember:#ff6a24; --amber:#d0973f; --btn-fill:#e6e5e0; --btn-fill-text:#26251e;
+    }
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--canvas);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.5;
+    -webkit-font-smoothing:antialiased;transition:background .35s ease,color .35s ease}
+  ::selection{background:#8bc4f8;color:#26251e}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+
+  nav{border-bottom:1px solid var(--border)}
+  .navin{max-width:900px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;
+    justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+  .brand svg{width:22px;height:22px;flex:none}
+  .brand span{font-size:14px;font-weight:500;letter-spacing:.1em}
+  .navend{display:flex;align-items:center;gap:12px}
+  .navend a.back{font-size:14px;color:var(--muted);text-decoration:none}
+  .navend a.back:hover{color:var(--text)}
+  #themeToggle{background:none;border:1px solid var(--border);border-radius:4px;width:32px;height:32px;
+    display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:var(--muted)}
+  #themeToggle:hover{color:var(--text);border-color:var(--stone)}
+  #themeToggle svg{width:15px;height:15px}
+  .icon-sun{display:none}
+  :root[data-theme="dark"] .icon-sun{display:block}
+  :root[data-theme="dark"] .icon-moon{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .icon-sun{display:block}
+    :root:not([data-theme="light"]) .icon-moon{display:none}
+  }
+
+  main{padding:60px 0 88px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  h1{font-size:clamp(34px,5.4vw,52px);font-weight:400;letter-spacing:-.03em;line-height:1.08;margin-top:14px;max-width:19ch}
+  h1 em{font-style:normal;color:var(--ember)}
+  .lead{font-family:var(--serif);font-size:20px;line-height:1.62;color:var(--driftwood);max-width:62ch;margin-top:22px}
+  h2{font-size:clamp(22px,3vw,27px);font-weight:400;letter-spacing:-.015em;margin-top:64px;max-width:26ch}
+  p{color:var(--muted);line-height:1.78;font-size:15px;margin-top:14px;max-width:64ch}
+
+  .work{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:28px 26px;margin-top:28px}
+  .work .status{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+  .work h3{font-size:21px;font-weight:400;margin-top:12px;letter-spacing:-.01em}
+  .work p{margin-top:12px}
+  .work .meta{margin-top:20px;padding-top:16px;border-top:1px solid var(--border);
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+
+  .lines{margin-top:26px;border-top:1px solid var(--border)}
+  .line{display:grid;grid-template-columns:200px 1fr;gap:26px;padding:20px 0;border-bottom:1px solid var(--border);align-items:baseline}
+  .line .k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .line p{margin-top:0;font-size:15px}
+  @media (max-width:640px){.line{grid-template-columns:1fr;gap:8px}}
+
+  .modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:28px}
+  .mode{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:24px}
+  .mode .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  .mode h3{font-size:19px;font-weight:400;margin-top:10px;letter-spacing:-.008em}
+  .mode p{font-size:14px;margin-top:10px}
+
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:24px 26px;margin-top:56px}
+  .box p{margin-top:0;font-size:15px}
+  .box p+p{margin-top:12px}
+  a.link{color:var(--ember);text-decoration:none}
+  a.link:hover{text-decoration:underline;text-underline-offset:3px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;text-decoration:none;padding:.7em 1.3em;
+    border-radius:4px;background:var(--btn-fill);color:var(--btn-fill-text);margin-top:24px;transition:opacity .15s}
+  .btn:hover{opacity:.86}
+
+  footer{border-top:1px solid var(--border);text-align:center;font-family:var(--mono);font-size:12px;
+    color:var(--faint);padding:24px}
+  footer a{color:var(--muted);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav><div class="navin">
+  <a class="brand" href="/">
+    <svg viewBox="0 0 40 40" aria-hidden="true">
+      <rect x="5" y="8" width="30" height="27" rx="11" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <circle cx="15" cy="21" r="3" fill="currentColor"/><circle cx="25" cy="21" r="3" fill="currentColor"/>
+      <line x1="20" y1="8" x2="20" y2="4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="20" cy="3.5" r="2" fill="currentColor"/>
+    </svg><span>NEVARRO</span>
+  </a>
+  <span class="navend">
+    <button id="themeToggle" aria-label="Toggle theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="1.5" x2="12" y2="3.5"/><line x1="12" y1="20.5" x2="12" y2="22.5"/><line x1="4.5" y1="4.5" x2="5.9" y2="5.9"/><line x1="18.1" y1="18.1" x2="19.5" y2="19.5"/><line x1="1.5" y1="12" x2="3.5" y2="12"/><line x1="20.5" y1="12" x2="22.5" y2="12"/><line x1="4.5" y1="19.5" x2="5.9" y2="18.1"/><line x1="18.1" y1="5.9" x2="19.5" y2="4.5"/></svg>
+    </button>
+    <a class="back" href="/">← Home</a>
+  </span>
+</div></nav>
+
+<main><div class="wrap">
+  <div class="eyebrow">Arm two</div>
+  <h1>Nevarro <em>Labs</em>.</h1>
+  <p class="lead">A specialist product team building AI-native software for verticals the large platforms have never bothered with. Not another horizontal tool bent to fit — software that starts from how a specific profession, body, or industry actually works.</p>
+
+  <h2>Current work</h2>
+  <div class="work">
+    <div class="status">In build</div>
+    <h3>Proprietary portal for an industry association</h3>
+    <p>A purpose-built portal for an industry body, replacing fragmented manual processes with a single system its members and secretariat can both work in. Designed around how the association actually operates rather than around a generic membership platform.</p>
+    <div class="meta">Industry body · Member operations · Custom build</div>
+  </div>
+
+  <h2>Who this is for</h2>
+  <p>Organisations whose work is specific enough that off-the-shelf software has never quite fit, and large enough that the manual workaround has become expensive.</p>
+  <div class="lines">
+    <div class="line"><div class="k">Industry bodies</div>
+      <p>Associations and councils running member operations, accreditation, and reporting on spreadsheets and email threads.</p></div>
+    <div class="line"><div class="k">Regulated professions</div>
+      <p>Practices where the process is defined by regulation, documentation is heavy, and a human must stay in the loop.</p></div>
+    <div class="line"><div class="k">Enterprises in deep niches</div>
+      <p>Businesses whose core operation is too specific for generic platforms and too small for the big vendors to build for.</p></div>
+    <div class="line"><div class="k">Data-heavy operations</div>
+      <p>Organisations whose principal asset is information, and whose edge is how quickly it can be found, cleaned, and used.</p></div>
+  </div>
+
+  <h2>How we build</h2>
+  <div class="modes">
+    <div class="mode">
+      <div class="k">Built to order</div>
+      <h3>Your system, your ownership</h3>
+      <p>A proprietary build for one organisation, designed around its process and handed over with documentation and source. This is most of what we do.</p>
+    </div>
+    <div class="mode">
+      <div class="k">Built as a product</div>
+      <h3>Co-built for a category</h3>
+      <p>Where a problem is shared across an entire vertical, we build it as a product — sometimes alone, sometimes alongside a partner who knows the industry from the inside.</p>
+    </div>
+  </div>
+
+  <h2>How we work</h2>
+  <div class="lines">
+    <div class="line"><div class="k">Domain first</div>
+      <p>We start by learning the process properly — the documented one and the one people actually follow. Software written without that is software that gets abandoned.</p></div>
+    <div class="line"><div class="k">AI where it earns its place</div>
+      <p>Used where it removes real work, not where it demos well. The rest is careful, ordinary engineering.</p></div>
+    <div class="line"><div class="k">Small and senior</div>
+      <p>A small team working directly with you. No account layer between the people specifying the work and the people building it.</p></div>
+    <div class="line"><div class="k">Yours at the end</div>
+      <p>Deployment, documentation, and handover are part of the build. What we make for you belongs to you.</p></div>
+  </div>
+
+  <div class="box">
+    <p><strong>Engagements and pricing.</strong> Custom builds are quoted against scope and depth; ownership and licensing are agreed in writing before anything is built. Indicative rates are on our <a class="link" href="/pricing">pricing page</a>.</p>
+    <p>If you have a process that no existing product fits, tell us about it — that is usually the most interesting kind of problem we see.</p>
+  </div>
+
+  <a class="btn" href="mailto:adi@nevarrotech.com?subject=Labs%20enquiry">Tell us what you need built</a>
+</div></main>
+
+<footer>© 2026 Nevarro Technologies · <a href="/modernization">Modernization</a> · <a href="/pricing">Pricing</a> · <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · <a href="/support">Support</a></footer>
+
+<script is:inline>
+  document.getElementById('themeToggle').addEventListener('click',function(){
+    var r=document.documentElement,c=r.getAttribute('data-theme');
+    if(!c){c=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+    var n=c==='dark'?'light':'dark';
+    r.setAttribute('data-theme',n);localStorage.setItem('nev-theme',n);
+  });
+</script>
+
+</body>
+</html>
