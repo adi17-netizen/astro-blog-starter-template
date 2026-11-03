@@ -151,15 +151,21 @@ p{margin:0 0 14px;text-wrap:pretty}
 
 /* footer */
 footer{border-top:1px solid var(--hairline);background:var(--surface)}
-.fgrid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:var(--gutter);padding:64px 0 48px;font-size:14px}
+.fgrid{display:grid;grid-template-columns:repeat(5,auto);justify-content:space-between;gap:36px 32px;padding:64px 0 48px;font-size:14px}
 .fgrid h4{margin:0 0 16px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--faint);font-weight:400;text-transform:uppercase}
 .fgrid a.brand{display:flex;padding:0;color:var(--text)}
 .fgrid a{display:block;color:var(--muted);padding:5px 0;transition:color .18s ease}
 .fgrid a:hover{color:var(--text)}
 .fgrid .about{color:var(--muted);max-width:32ch;margin-top:16px;line-height:1.6}
-.fgrid a.pledge-mini{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.pledge-mini img{width:40px;height:40px;border-radius:50%;box-shadow:0 0 0 1px var(--hairline);display:block}
-.fbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:1px solid var(--hairline);padding:20px 0;
+.fbar a.pledge-mini{display:inline-flex;align-items:center;gap:10px;color:var(--muted);transition:color .18s ease}
+.fbar a.pledge-mini:hover{color:var(--text)}
+.pledge-mini img{width:28px;height:28px;border-radius:50%;box-shadow:0 0 0 1px var(--hairline);display:block}
+.pres{display:flex;flex-direction:column;gap:12px}
+.pres div{display:flex;align-items:flex-start;gap:10px;color:var(--muted);line-height:1.45}
+.pres img{width:22px;height:16.5px;border-radius:2px;box-shadow:0 0 0 1px var(--hairline);margin-top:3px;flex:none;object-fit:cover}
+.pres b{display:block;font-weight:500;color:var(--text)}
+.pres span{white-space:nowrap}
+.fbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--hairline);padding:20px 0;
   font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.07em;text-transform:uppercase}
 
 /* secondary pages */
@@ -183,14 +189,13 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 .rev{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
 .rev.in{opacity:1;transform:none}
 
+@media (max-width:1100px){.fgrid{grid-template-columns:repeat(3,minmax(0,1fr));justify-content:stretch}.fgrid>div:first-child{grid-column:1/-1}}
 @media (max-width:920px){
   :root{--band:76px;--gutter:32px}
   .head{grid-template-columns:1fr;row-gap:16px}
   .head h2{padding-right:0}
   .head .lead{grid-column:1;padding-top:0}
   .two{grid-template-columns:1fr}
-  .fgrid{grid-template-columns:1fr 1fr;row-gap:36px}
-  .fgrid>div:first-child{grid-column:1/-1}
 }
 @media (max-width:680px){
   :root{--band:60px}
@@ -202,6 +207,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
   .line{grid-template-columns:1fr;row-gap:6px}
   .page-head{padding:56px 0 36px}
 }
+@media (max-width:680px){.fgrid{grid-template-columns:1fr 1fr}.pres span{white-space:normal}}
 @media (max-width:520px){.brand .wm i{display:none}}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -237,12 +243,21 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 .line-card:hover .go{border-color:var(--ember)}
 .line-card:hover .artbox{background:color-mix(in srgb,var(--surface) 70%,var(--raised))}
 
-/* pledge */
-.pledge{background:var(--surface)}
-.pledge-grid{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:40px;align-items:center}
-.pledge-grid img{width:132px;height:132px;border-radius:50%;box-shadow:0 0 0 1px var(--hairline);display:block}
-.pledge-grid h2{margin-bottom:12px}
-.pledge-grid p{margin:0;color:var(--muted);max-width:58ch}
+/* network */
+.netrow{display:flex;flex-wrap:wrap;gap:12px}
+.flagchip{display:inline-flex;align-items:center;gap:11px;padding:12px 20px 12px 14px;border:1px solid var(--border);border-radius:999px;background:var(--canvas);font-size:15.5px;white-space:nowrap;transition:border-color .18s ease,transform .18s ease}
+.flagchip:hover{border-color:var(--faint);transform:translateY(-2px)}
+.flagchip img{width:26px;height:19.5px;border-radius:3px;box-shadow:0 0 0 1px var(--hairline);display:block;object-fit:cover}
+.flagchip i{width:6px;height:6px;border-radius:50%;background:var(--ember);margin-left:2px;animation:pulse 2.4s ease-in-out infinite;box-shadow:0 0 0 3px var(--ember-soft)}
+.netnote{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-top:48px;padding-top:24px;border-top:1px solid var(--hairline);font-size:15px;color:var(--muted)}
+
+/* pledge — compact strip */
+.pledge{background:var(--surface);padding:44px 0}
+.pledge-grid{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:28px;align-items:center}
+.pledge-grid img{width:72px;height:72px;border-radius:50%;box-shadow:0 0 0 1px var(--hairline);display:block}
+.pledge-grid .eyebrow{margin-bottom:8px}
+.pledge-grid h3{font-size:1.25rem;letter-spacing:-.015em;margin-bottom:6px}
+.pledge-grid p{margin:0;color:var(--muted);font-size:14.5px;max-width:64ch}
 
 .closing{text-align:center}
 .closing h2{margin:0 auto 16px;max-width:24ch}
@@ -252,7 +267,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 @media (max-width:920px){
   .hero-grid{grid-template-columns:1fr;row-gap:40px}
   .globe-wrap{justify-self:center;max-width:420px}
-  .pledge-grid{grid-template-columns:auto 1fr;gap:28px}
+  .pledge-grid{grid-template-columns:auto 1fr;gap:22px}
   .pledge-grid .actions{grid-column:1/-1}
 }
 @media (max-width:680px){
@@ -260,8 +275,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
   .hero .lead{font-size:1.1875rem}
   .line-card .artbox{padding:22px 20px 16px}
   .line-card .body{padding:24px 22px 26px}
-  .pledge-grid{grid-template-columns:1fr}
-  .pledge-grid img{width:104px;height:104px}
+  .flagchip{font-size:14px;padding:9px 15px 9px 11px}
 }
 </style>
 </head>
@@ -411,15 +425,27 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
     </div>
   </section>
 
+  <section class="band" id="network">
+    <div class="wrap">
+      <div class="head rev">
+        <div class="eyebrow">Our network</div>
+        <h2>Working with partners across these regions.</h2>
+        <p class="lead">We are actively working with partners in each of these markets, on modernization engagements and through NEV Research Labs.</p>
+      </div>
+      <div class="netrow rev" role="list" aria-label="Regions where we work with partners"><span class="flagchip" role="listitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBpZD0iZmxhZy1pY29ucy1pbiIgdmlld0JveD0iMCAwIDY0MCA0ODAiPgogIDxwYXRoIGZpbGw9IiNmOTMiIGQ9Ik0wIDBoNjQwdjE2MEgweiIvPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0wIDE2MGg2NDB2MTYwSDB6Ii8+CiAgPHBhdGggZmlsbD0iIzEyODgwNyIgZD0iTTAgMzIwaDY0MHYxNjBIMHoiLz4KICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgzLjIgMCAwIDMuMiAzMjAgMjQwKSI+CiAgICA8Y2lyY2xlIHI9IjIwIiBmaWxsPSIjMDA4Ii8+CiAgICA8Y2lyY2xlIHI9IjE3LjUiIGZpbGw9IiNmZmYiLz4KICAgIDxjaXJjbGUgcj0iMy41IiBmaWxsPSIjMDA4Ii8+CiAgICA8ZyBpZD0iaW4tZCI+CiAgICAgIDxnIGlkPSJpbi1jIj4KICAgICAgICA8ZyBpZD0iaW4tYiI+CiAgICAgICAgICA8ZyBpZD0iaW4tYSIgZmlsbD0iIzAwOCI+CiAgICAgICAgICAgIDxjaXJjbGUgcj0iLjkiIHRyYW5zZm9ybT0icm90YXRlKDcuNSAtOC44IDEzMy41KSIvPgogICAgICAgICAgICA8cGF0aCBkPSJNMCAxNy41LjYgNyAwIDJsLS42IDV6Ii8+CiAgICAgICAgICA8L2c+CiAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNpbi1hIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB0cmFuc2Zvcm09InJvdGF0ZSgxNSkiLz4KICAgICAgICA8L2c+CiAgICAgICAgPHVzZSB4bGluazpocmVmPSIjaW4tYiIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdHJhbnNmb3JtPSJyb3RhdGUoMzApIi8+CiAgICAgIDwvZz4KICAgICAgPHVzZSB4bGluazpocmVmPSIjaW4tYyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdHJhbnNmb3JtPSJyb3RhdGUoNjApIi8+CiAgICA8L2c+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNpbi1kIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNpbi1kIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTIwKSIvPgogIDwvZz4KPC9zdmc+Cg==" alt="" width="26" height="20" loading="lazy">India</span><span class="flagchip" role="listitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJmbGFnLWljb25zLWJoIiB2aWV3Qm94PSIwIDAgNjQwIDQ4MCI+CiAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGg2NDB2NDgwSDAiLz4KICA8cGF0aCBmaWxsPSIjY2UxMTI2IiBkPSJNNjQwIDBIOTZsMTEwLjcgNDhMOTYgOTZsMTEwLjcgNDhMOTYgMTkybDExMC43IDQ4TDk2IDI4OGwxMTAuNyA0OEw5NiAzODRsMTEwLjcgNDhMOTYgNDgwaDU0NCIvPgo8L3N2Zz4K" alt="" width="26" height="20" loading="lazy">Bahrain</span><span class="flagchip" role="listitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJmbGFnLWljb25zLXNhIiB2aWV3Qm94PSIwIDAgNjQwIDQ4MCI+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9InNhLWEiPgogICAgICA8cGF0aCBmaWxsLW9wYWNpdHk9Ii43IiBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+CiAgICA8L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcGF0aD0idXJsKCNzYS1hKSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODApc2NhbGUoLjkzNzUpIj4KICAgIDxwYXRoIGZpbGw9IiMxNjVkMzEiIGQ9Ik0tMTI4IDBoNzY4djUxMmgtNzY4eiIvPgogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTY1LjUgMTQ1LjFjLS44IDEyLTIgMzMgOC4zIDM1LjIgMTIuMyAxLjIgNS41LTIwLjggMTAtMjQuOC44LTIgMi4zLTIgMi40LjV2MTguN2MwIDYgNCA3LjggNyA5IDMuMi0uMiA1LjQgMCA2LjYgM2wxLjYgMzIuM3M3LjQgMi4yIDcuOC0xOC4xYy4zLTEyLTIuNC0yMS45LS44LTI0LjIgMC0yLjMgMy0yLjQgNS0xLjMgMy4yIDIuMiA0LjYgNSA5LjYgNCA3LjYtMi4yIDEyLjItNS45IDEyLjMtMTEuN2E0NyA0NyAwIDAgMC0zLjUtMTYuNmMuNC0xLTEuNC0zLjctMS00LjcgMS4zIDIuMiAzLjQgMiAzLjggMC0xLjMtNC4yLTMuMy04LjMtNi41LTEwLTIuNy0yLjQtNi43LTItOCAzLS44IDUuNyAyIDEyLjQgNi4xIDE4IC45IDIuMSAyLjEgNS43IDEuNiA4LjktMi4yIDEuMy00LjQuNy02LjMtMS4yIDAgMC02LTQuNS02LTUuNiAxLjYtMTAuMi4zLTExLjQtLjYtMTQuMy0uNi0zLjktMi41LTUuMi00LTcuOC0xLjUtMS42LTMuNS0xLjYtNC41IDAtMi43IDQuNi0xLjQgMTQuNS41IDE5IDEuNCA0LjEgMy41IDYuNyAyLjUgNi43LS44IDIuMy0yLjUgMS43LTMuOC0xYTY2LjYgNjYuNiAwIDAgMS0yLjEtMTcuNGMtLjUtNC42LTEuMS0xNC40LTQuMi0xNy0xLjgtMi40LTQuNS0xLjItNS41IDFhODIuNCA4Mi40IDAgMCAwIC4zIDEzLjRjMiA3LjQgMi43IDE0IDMuNyAyMS41LjMgMTAuMS01LjggNC40LTUuNS0uN2E0NSA0NSAwIDAgMC0uMy0xOS40Yy0xLTIuNi0yLjEtMy4yLTQuNi0yLjgtMS45IDAtNi44IDUuMy04LjIgMTQuMyAwIDAtMS4yIDQuNi0xLjcgOC43LS43IDQuNi0zLjcgOC01LjktLjYtMS44LTYuMy0zLTIxLjYtNi0xOHoiLz4KICAgIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Im05OSAxOTQuMi0zMiAxNS40Yy4zLTcuMyAxNS4xLTIwLjQgMjUuMy0yMC41IDYuNS4xIDQuOSAyLjUgNi42IDUuMXoiLz4KICAgIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik05My4zIDIwNC4yYy0xNi44IDQzLjUgMzkuNSA0OS42IDQ1LjggMS44LjYtMiAzLTMuOSAzLjQtLjctMS4zIDQzLjMtNDMuNiA0Ni4yLTUwLjggMzIuNmE0MS45IDQxLjkgMCAwIDEtMi41LTE0LjZjLTEtOC41LTUuNS01LjItNi4yIDMuMi0uNyA0LjctLjUgNi0uNSAxMC41IDIuMiAzNC4yIDU2LjcgMTkuNSA2NS42LTguNyA0LjctMTUuNi0uOC0yNy4xIDEuNy0yNy4xIDUuNCA1LjggMTMgLjggMTQuNy0xLjIuNy0xIDIuNS0xLjcgMy43LS40IDQuMiAzIDExLjYgMS42IDEzLjItMy43LjktNS4zIDEuNi0xMC43IDEuOC0xNi4yLTMuNSAxLTYgMS43LTYuMyAzLjJsLS43IDQuNmMtLjMgMS41LTMuMiAxLjUtMy40LS40LTEuMy02LTYuNy02LjctMTAgMi41LTIuMSAxLjgtNi4xIDIuMi02LjUtLjUuNS02LjItMi03LTctNC4xbC00LjgtMzYuMmMyIDAgNCAxLjUgNS45LS45LTItNi41LTYuNS0xOS43LTktMjAuNy0xLjEtMS40LTIuMS0uNS0zLjctLjEtMi42LjgtNSAzLTQuMiA3LjQgMyAxOC44IDUgMzMuMSA4LjEgNTIgLjUgMi4xLTEuMyA1LTMuNyA0LjctNC0yLjctNS04LjItMTItOC01IDAtMTAuNiA1LjUtMTEuMyAxMC43LS45IDQuMi0xLjIgOC43IDAgMTIuMyAzLjUgNC4yIDcuNyAzLjggMTEuNCAyLjkgMy0xLjMgNS41LTQuMyA2LjYtMy42LjcuOS4xIDEwLjktMTQuMyAxOC41LTguNyA0LTE1LjcgNC44LTE5LjQtMi4zLTIuMy00LjUuMi0yMS40LTUuNi0xNy41Ii8+CiAgICA8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTY1IDE2MGMzLjMtMS4yIDE5LjMtMTkuNiAxOS4zLTE5LjZsLTIuNC0yYy0uOS0uNy0uOC0xLjUgMC0yLjIgNC0yLjQgMi43LTcuNC43LTkuOGE5LjcgOS43IDAgMCAwLTguNy4xYy0yLjggMi43LTMuNCA3LTEuMiA5LjYgMi4xIDEgNC4yIDMuMiAyLjggNC40LTYuNiA3LTI0LjUgMTkuMS0yMi40IDE5LjUuNC42IDExLjUuNiAxMS44IDB6bS05NyA2NWMtNiA5LjYtNi41IDIzLjktMy4yIDI4LjIgMS44IDIgNC43IDIuOSA2LjggMi4yIDMuOC0xLjYgNS41LTkuMyA0LjYtMTItMS4zLTItMi4zLTIuMy0zLjYtLjctMi42IDUuNC0zLjcgMS43LTQtMS4zYTcwIDcwIDAgMCAxIC44LTE1LjJjLjctNC4yIDAtMy0xLjQtMS4ybTI1Ny4xLTE1LjNjLTUuOC0xMi42LTEzLjktMjUtMTYuNC0yOS43YTU1Ny42IDU1Ny42IDAgMCAwLTI0LjgtMzZjLTYuMi03LjQgMTAuMiAzLjEtMi0xMS43bC04LjktNy41Yy0yLTEuNC02LjgtNC03LjYuMi0uNCAzLjgtLjIgNS44LjQgOC45LjUgMiAzLjUgNS41IDUgNy41YTU2NSA1NjUgMCAwIDEgNTMuOCA4Ni41YzIuNi0xLjMgMi0xNi4xLjUtMTguMiIvPgogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTI5OS42IDI1MS41Yy0xLjIgMS4zIDIuOCA2LjggOCA2LjggOC42LTEgMTYuMi01LjggMjMuMi0xOC42YTMzIDMzIDAgMCAwIDUuMy0xNC4yIDMxNyAzMTcgMCAwIDAtNS44LTcyLjRjLS4zLTIgMC00LjQuMi01IC42LS43IDIuNSAwIDMuNS0xLjcgMS41LTEuNS00LTE0LTctMTguNy0xLTIuMi0xLjUtMy42LTMuMy4yYTI3IDI3IDAgMCAwLTMgMTMuNmM0LjEgMjguNSA1LjQgNTMuNCA4IDgxLjkuMyAyLjgtLjEgNi44LTIgOC40YTgwLjIgODAuMiAwIDAgMS0yNy4xIDE5LjdtMTE2LjUtLjFjLTYuMiAzLjYtNi4yIDcuNy0xLjIgNy44IDguNi0xIDE4LjgtMS43IDI1LjgtMTIuM2E0MSA0MSAwIDAgMCA0LjItMTYgMzAzIDMwMyAwIDAgMC00LjctNzEuNGMtLjItMi0xLjEtNi43LS44LTcuMy42LTEuNCAzLjQuMSA0LjQtMS41IDEuNC0xLjUtNy4zLTEyLjctMTAuNC0xNy41LTEtMi4yLTEuNC0zLjYtMy4zLjJhMjIuMyAyMi4zIDAgMCAwLTEuOCAxMy42YzQuNiAzMSA4IDU0LjIgOC43IDgxLjYtLjQgMi42LS41IDQtMS43IDcuMy0yLjcgMy40LTUuNyA3LjgtOC41IDkuOS0yLjggMi04LjggNC0xMC43IDUuNiIvPgogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTQyMC43IDIyMy43YzAtNy4zLjEtMTMuNS0uMS0xOWEzNCAzNCAwIDAgMC0zLTEzLjVjLTEuOC00LjEtLjctNy40LTEuNi0xMS44LS44LTQuNC0uNi0xMS0xLjgtMTYuMS0uNC0yLTEuNC04LjUtMS4xLTkuMi41LTEuNCAyLjQgMCAzLjQtMS42IDEuNC0xLjUtNS0xOC04LjItMjIuNy0xLjEtMi4xLTMuMy0xLjQtNS44IDItMi41IDIuMy0xLjYgNy40LS42IDEyLjMgNi4xIDMyLjMgMTAuOCA2MS42IDkuOCA5Mi4zLS40IDIuNiA5LTcuOCA5LTEyLjdtLTQ1LjctNDBjLTMuOS0uMi0xMi03LjctMTQuNC0xMmE4IDggMCAwIDEgLjQtNi41YzEuNS0xIDMuNy0yIDUuNC0xIDAgMCAxLjcgMi40IDEuNCAyLjcgMiAxIDMgLjUgMy4yLS40LjEtMS41LS42LTIuNC0uNi00IC45LTQuNiA2LTUuMyA4LTIuNCAxLjQgMS44IDIgNS41IDIuMSA4IDAgMS4zLTItLjItMy4zIDAtMS4xLjQtMS40IDEuOC0xLjUgMy0uMiAzLjMtLjYgOC42LS43IDEyLjV6bS03MS44IDQ4YzEtOS44LS40LTI3LjMtLjUtMzMuMUE0NzcgNDc3IDAgMCAwIDI5OSAxNTRjLTEuMi04LjQgMy40LjkgMi44LTQtMS41LTguMy02LjEtMTQtMTEuNi0yMS41LTEuNy0yLjUtMS43LTMtNC40LjYtMyA2LjctLjQgMTEuNC40IDE2LjcgMy45IDE3LjIgNi4yIDMzIDcuMyA0OC43YTM5My40IDM5My40IDAgMCAxIC40IDQ5YzMgLjEgNy42LTQuNyA5LjMtMTEuOCIvPgogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTQzNCAyMTZjLTYuOS0xMS42LTE3LjItMjQtMjAtMjguN2E2NTggNjU4IDAgMCAwLTI5LjItMzcuOGMtOC41LTkgNC0xLjUtMS42LTguNS00LjctNS4xLTYtNi44LTEwLjEtOS45LTItMS4zLTMuMi0zLjgtNCAuNWE4MyA4MyAwIDAgMC0uMiAxMS4yYzAgMS43IDEuOCA1IDMuNCA3IDIwLjcgMjUuNSA0My40IDUxLjUgNjEuNiA4NC4yIDIuNi0xLjMgMS43LTE2IDAtMTh6Ii8+CiAgICA8cGF0aCBmaWxsPSIjMTY1ZDMxIiBkPSJNMTIyLjYgMTk0LjdjLS41LjktMS42IDItMS4yIDMuMS43IDEgMS40IDEuMyAyLjYgMS4zIDEuMSAwIDIuNy4zIDMtLjMuNi0uNyAxLTIgLjYtMy4zLTEuMi0zLTQuNC0xLjgtNS0uOCIvPgogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTM1NC4yIDM2Mi41YzkuMi40IDE1LjIuNSAyMy4zIDEuNGw5LjYtMWMxMC42LTEgMTEgMTUuMSAxMSAxNS4xIDAgOS41LTMuNyAxMC04LjQgMTEtMi43LjQtNC0xLjYtNS41LTMuNmExNCAxNCAwIDAgMS03IC40Yy0zLjktLjItNy43LS4yLTExLjUtLjUtNC0uMy02LjIuNS0xMC4zLjEtLjggMS4zLTIgMy4xLTQuNCAyLjYtMi0uMy00LjUtNi0zLjgtMTAuNSAxLjUtMy4yIDEtMi4xIDEtMy41LTM3LjYtMS03NS41LTIuNy0xMTIuMy0yLjItMjguOC4xLTU3LjIgMS4zLTg1LjcgMi41LTE1LjItLjItMjYuOC0yLjYtMzQuOC0xNC4zLjggMCAzOC44IDIuMSA0OS45IDEuNCAyMC41LS4yIDM5LjMtMS45IDYwLjItMi41IDQxLjIuNyA4Mi4xLjcgMTIzLjMgMy42LTQtMi43LTQtOSAyLTEwLjYuNS0uNC44IDMuMSAxLjcgMyA0LjktLjMgMi43IDYuMyAxLjcgNy42TTE4OC42IDEzNS4zYy02LjIgMTcuOCAzLjYgMzcuNCAxMC40IDM1LjUgNSAyIDgtNy40IDEwLTE3LjYgMS41LTIuOSAyLjUtMy4yIDMuMi0xLjctLjIgMTMuNiAxIDE2LjcgNC41IDIwLjggNy44IDYgMTQuMy44IDE0LjguM2w2LTYuMWMxLjQtMS41IDMuMi0xLjUgNS4xLS4zIDEuOSAxLjcgMS42IDQuNiA1LjYgNi42IDMuNCAxLjQgMTAuNS40IDEyLjItMi41IDIuMi0zLjkgMi44LTUuMiAzLjgtNi42IDEuNi0yLjEgNC4zLTEuMiA0LjMtLjUtLjMgMS4yLTEuOSAyLjMtLjggNC41IDIgMS40IDIuNC41IDMuNS4yIDQtMiA3LTEwLjYgNy0xMC42LjEtMy4yLTEuNy0zLTIuOS0yLjJsLTMuMSAyLjFjLTIgLjMtNS43IDEuNi03LjYtMS4zLTEuOS0zLjQtMS45LTguMy0zLjMtMTEuOCAwLS4yLTIuNi01LjUtLjItNS44IDEuMi4yIDMuNy45IDQuMS0xLjIgMS4yLTIuMS0yLjYtOC01LjMtMTEtMi4zLTIuNS01LjUtMi44LTguNi0uMi0yLjIgMi0xLjkgNC4yLTIuMyA2LjNhOS44IDkuOCAwIDAgMCAyIDguN2MyLjIgNC4yIDYuMSA5LjcgNC44IDE3LjUgMCAwLTIuMyAzLjYtNi4zIDMuMS0xLjctLjMtNC40LTEtNS44LTExLjgtMS4xLTggLjItMTkuNC0zLjItMjQuNy0xLjMtMy4zLTIuMi02LjQtNS4yLS45LS44IDIuMi00LjMgNS41LTEuOCAxMi4yYTM2IDM2IDAgMCAxIDIgMTljLTEuNSAyLjItMS44IDIuOS0zLjcgNS0yLjYgMy01LjUgMi4yLTcuNyAxLjEtMi0xLjMtMy42LTItNC42LTYuNS4yLTcgLjYtMTguNS0uNy0yMC45LTEuOS0zLjgtNS0yLjQtNi4zLTEuMmE0Ny43IDQ3LjcgMCAwIDAtMTEuNSAyMy41Yy0xLjggNS44LTMuNyA0LjEtNSAxLjgtMy4yLTMtMy41LTI2LjctNy40LTIyLjgiLz4KICAgIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0yMDcuNCAxNzQuMWMyLjktMiAxLjYtMy40IDUuOC44YTcyIDcyIDAgMCAxIDkuMiAzMS4zYy0uMiAyLjYgMS42IDQuMiAyLjUgMy42LjQtNiAxNS4xLTE0LjQgMjguNi0xNS42IDItLjUgMS00LjQgMS4zLTYuNC0uOC03LjUgNC4yLTE0LjMgMTEuMi0xNC44IDkuNiAxLjQgMTIuOCA2LjUgMTMgMTQuMi0xLjEgMTUtMTYuNyAxNy41LTI1LjQgMTguNy0xLjMuNS0xLjkgMS4xIDAgMS44bDM2LjYuMiAxLjkgMWMuMiAxLS42LjItMiAyLjZhMjkuNSAyOS41IDAgMCAwLTMuNyAxMS41Yy0xMC45IDMuNi0yMi4yIDUtMzMuNiA2LjUtNCAyLTYgNC43LTUuMiA3LjcgMS40IDMuMyAxMC4yIDYuNyAxMC4yIDYuOCAxLjcgMSAzLjYgMy41LS41IDguNi0xNy44LS44LTMxLjctOC40LTM2LjUtMTkuMS0xLjQtMS4xLTMgMC00IDEuNC03IDktMTMuOCAxNy0yNS43IDIxLjQtNyAxLjgtMTQuMy0xLjEtMTcuNy01LjctMi4zLTIuNy0yLjItNS42LTMtNi4yLTMuOSAxLjctMzYuOSAxNS43LTMyLjcgOS4xIDgtOC41IDIyLTE0LjkgMzQuMi0yMy4zLjktMi45IDIuNS0xMi41IDcuMy0xNS42LjMgMC0uNyA1LjYtLjYgOCAwIDItLjIgMi43LjIgMi4yLjktLjUgMTUuNy0xMi4yIDE3LTE1LjggMS40LTIgLjMtNy4yLjMtNy40LTIuOC03LjItNi43LTcuOC04LjEtMTEuNC0xLjMtNC43LS43LTEwLjEgMi0xMS43IDIuNC0yLjEgNS4yLTEuOSA3LjkuNSAzIDIuNyA1LjYgOCA2LjQgMTEuOS0uNSAxLjUtNC0xLTUtLjNhMTYgMTYgMCAwIDEgMy43IDcuOGMyIDguMiAxLjQgMTEuNC0uNiAxNi43LTYuNiAxMy45LTE1IDE4LTIyLjQgMjMuMi0uMiAwLS4zIDMuNSAyLjQgNS40IDEgMSA0LjkgMS41IDkuNCAwYTU0LjUgNTQuNSAwIDAgMCAyMi4zLTIzLjMgNTEgNTEgMCAwIDAtMi40LTIyLjJjLTIuOS02LjctNi4zLTE2LjItNi4zLTE2LjQtLjEtNC4yLjItNS42IDItNy43bS05NS44LTM4LjZjNC4yIDIgMTIuMiAxLjEgMTEuOC01LjdsLS4yLTMuMWMtLjgtMi0zLjItMS41LTMuNy41LS4yLjcuMyAxLjgtLjMgMi4xLS40LjQtMS43LjItMS43LTEuNyAwLS42LS40LTEuMi0uNy0xLjYtLjItLjItLjQtLjItLjktLjItLjYgMC0uNi4xLS45LjYtLjEuNS0uMyAxLS4zIDEuNiAwIC43LS40LjktLjggMS0uNiAwLS41IDAtMS0uMi0uMi0uMy0uNS0uNC0uNS0xbC0uMy0xLjZjLS4yLS4zLS42LS41LTEtLjYtMi4zIDAtMi41IDIuNy0yLjMgMy43LS4yLjItLjMgNC45IDIuOCA2LjIiLz4KICAgIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0yMzUuMSAxODcuN2M0LjIgMiAxNC4zLjkgMTEuOC01LjZsLS4yLTMuMmMtLjktMi0zLjItMS41LTMuNy42LS4yLjYuMyAxLjctLjQgMi0uMy40LTEuNy4yLTEuNi0xLjYgMC0uNi0uNC0xLjMtLjctMS43LS4zLS4xLS40LS4yLTEtLjItLjUgMC0uNS4yLS44LjctLjIuNS0uMyAxLS4zIDEuNi0uMS42LS40LjgtLjkgMS0uNSAwLS40IDAtLjgtLjMtLjMtLjMtLjYtLjQtLjYtLjlsLS4zLTEuNmMtLjItLjMtLjYtLjUtMS0uNi0yLjMgMC0yLjUgMi42LTIuNCAzLjYtLjEuMi0uMiA1IDMgNi4yem03Mi0yMS42YzQuMiAyIDEyLjEgMS4xIDExLjgtNS42bC0uMi0zLjJjLS45LTItMy4yLTEuNS0zLjcuNS0uMi43LjMgMS44LS40IDIuMi0uMy4zLTEuNy4xLTEuNi0xLjggMC0uNi0uNC0xLjItLjctMS42LS4zLS4yLS40LS4yLTEtLjItLjUgMC0uNS4yLS44LjdsLS4zIDEuNWMtLjEuNy0uNCAxLS45IDFzLS40IDAtLjgtLjJjLS4zLS4zLS42LS40LS42LS45cy0uMS0xLjMtLjMtMS43Yy0uMi0uMy0uNi0uNC0xLS41LTIuMyAwLTIuNSAyLjYtMi40IDMuNi0uMS4yLS4yIDQuOSAzIDYuMnptMzcuMyA1NC4zYy03LjMgOC4zLTQuMSAyMi0yLjQgMjUgMi40IDQuOCA0LjMgNy45IDkgMTAuMyA0LjMgMy4xIDcuNyAxLjIgOS41LTEgNC4zLTQuNSA0LjQtMTYgNi40LTE4LjIgMS40LTQuMiA1LTMuNSA2LjctMS42YTE2LjUgMTYuNSAwIDAgMCA2LjIgNS4zYzQgMy41IDguOCA0LjIgMTMuNiAxIDMuMi0xLjkgNS4zLTQuMiA3LjItOC45IDItNS42IDEtMzEuNi41LTQ3bC00LjItMjEuNWMwLS4yLS41LTEwLjItMS0xMi41IDAtMS0uMy0xLjMuNy0xLjIgMS4xIDEgMS4yIDEgMiAxLjMgMSAuMiAyLTEuNyAxLjMtMy4zbC0xMC0xOC42Yy0uOC0uOC0xLjktMS42LTMuMi4yYTcuMyA3LjMgMCAwIDAtMi40IDUuNWMuMyA0LjQgMSA4LjkgMS4zIDEzLjNsNCAyMi42YzEuMyAxNiAxLjYgMjkuMiAyLjkgNDUuMy0uMiA2LjgtMi4zIDEyLjctNC4zIDEzLjYgMCAwLTMgMS43LTUtLjItMS41LS42LTcuNC05LjktNy40LTkuOS0zLTIuNy01LTItNy4xIDAtNiA1LjgtOC42IDE2LjQtMTIuNyAyMy44LTEgMS43LTQgMy03LjItLjEtOC4yLTExLjMtMy40LTI3LjMtNC40LTIzLjJNMzA5IDEyNi43YzMuOCAxLjUgNi40IDkuMiA1LjYgMTMtLjggNC41LTIuOCA5LjUtNC4yIDguOS0xLjYtLjYgMS00LjYtLjUtOC44LS44LTIuOC02LTcuOC01LjQtOS4yLTEtMy4xIDIuMi00LjUgNC41LTR6Ii8+CiAgICA8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMzU2LjYgMjI1Yy43LTkuMi0uNi0xNC44LS44LTIwLjJzLTYuMS00Ni42LTcuMy01MC42Yy0xLjUtNy44IDUuNy0xIDQuOS01LjYtMi41LTUuNi04LjYtMTMuOS0xMC41LTE4LjgtMS4yLTItLjctNC0zLjMtLjVhNDIuMyA0Mi4zIDAgMCAwLTIuMyAxOS4yYzYuMiAzMi4zIDEyLjUgNTkuMSAxMS41IDg5LjggMyAwIDYuMy02LjcgNy44LTEzLjNtNjQuNC04NS4zYzMuNSAxLjcgNS41IDExLjMgNS4xIDE0LS43IDUtMi41IDEwLjQtMy44IDkuNy0xLjUtLjYuMy03LjQtLjQtOS41LS44LTMtNS41LTguNC01LTEwLTEtMy40IDItNC44IDQuMS00LjJtLTI1NS43IDY3LjljMy4zIDEuMyA1LjMgOC4zIDUgMTAuMy0uOCAzLjctMi41IDcuNy0zLjggNy4xLTEuMy0uNC4zLTUuNC0uMy03LS4zLTMuNy00LjktNS43LTQuOC03LjMtLjgtMyAyLTMuNSA0LTMuMXoiLz4KICAgIDxwYXRoIGZpbGw9IiMxNjVkMzEiIGQ9Ik0yNDQuOSAyMTguMmM0LjIuMiA2LjMgMy42IDIuNCA1LTQgMS4zLTcuNyAyLjQtNy44IDggMS41IDgtMiA1LjItNCA0LjItMi40LTEuOC05LjItNi0xMC4yLTE1LS4xLTIuMSAxLjYtNCA0LjMtNCA0IDEuMSAxMCAxLjIgMTUuMyAxLjgiLz4KICAgIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik03Ny40IDEyNC40YzQuOCAxLjQgNS4xIDguNiA0LjggMTAuNy0uNyAzLjgtMi40IDcuOS0zLjYgNy40LTEuNC0uNSAwLTUuNy0uNy03LjMtLjctMi4yLTQuOC02LjQtNC40LTcuNi0uOS0yLjUgMi0zLjcgMy45LTMuMm05NS45IDMzLjZjLTMuOCAyLTUuMiA4LTIuOSAxMS42IDIuMiAzIDUuNiAxLjkgNiAxLjkgMy43LjQgNS45LTYuOSA1LjktNi45cy4xLTItNC4yIDEuOWMtMS45LjMtMi0uNC0yLjUtMS40YTkgOSAwIDAgMSAuNS01LjdjLjctMS44LS43LTIuNi0yLjgtMS40bTI4LTM2LjRjLTIgMS4zLTUuNyA1LjItNS44IDkuNi0uMSAyLjUtLjYgMi41IDEgNCAxLjMgMS44IDIuNCAxLjcgNC44LjRhNS4xIDUuMSAwIDAgMCAyLjMtMy40Yy42LTIuOC0zIDEuNC0zLjQtMS44LS44LTMgMS41LTQuMiAzLjctNyAwLTIgMC0zLjMtMi43LTEuOHptMjIuNCA0YTU5LjUgNTkuNSAwIDAgMC0xLjYgMTEuMWMtLjYgMi44IDMgNCA0LjUuNCAyLjQtNi41IDIuNC05LjMgMi42LTEyLS43LTQuMy0zLjYtNC4yLTUuNS41bTE0MiA3Mi4zYy40LS41IDIwLTE0LjQgMjAtMTQuNCAyLS43IDEuNSA3LjIuNiA3LjFhNzcuOCA3Ny44IDAgMCAxLTIwLjcgMTQuM2MtMSAuNy0xLjktNS4zIDAtN3ptMTcuNy0uMmMzLjUgMS43IDQuOSAxMS44IDQuNSAxNC41IDAgNS40LTMuMyA5LjYtNC43IDktMS40LS43LjItNi43LS41LTguOC0uOC0zLTMuNy04LjUtMy4yLTEwLjEtMS0zLjQgMS44LTUuMiA0LTQuNnptLTExNiA0My40YTI2IDI2IDAgMCAxIDUuNi00LjljMi0xIDMuOC44IDMuNy43LjMgMi0xLjIgMy43LS43IDYuMy40IDEgLjcgMi4yIDIuNiAxLjggMy4xLTIuNSA2LTIuNyA5LTIuOCAyLjUuMSAyLjYgNC4yIDEgNC4yLTUuNyAxLjItOC4yIDIuOC0xMi4zIDQuMy0yIDEuMi0zLjYtLjMtMy42LS40cy0xLjEtMS4xLS40LTMuN2MuMi0yLS42LTMuMi0yLjQtMy0xLjIuOC0yLjQgMS4yLTMtLjMtLjMtMS0uNC0xLjYuNS0yLjJtMTM2LjYgNS40Yy44IDEgMS40IDItLjEgMy44bC0zLjcgMy4yYy0uNiAxLTEgMi44IDEgMy4zIDMuNiAxIDEyLTQuNSAxMi00LjYgMS40LTEgMS0zIC44LTMtLjgtLjktMi42LS4zLTMuOC0uNS0uNiAwLTIuNS0uMi0xLjYtMmExMS40IDExLjQgMCAwIDAgMS42LTIuOWMuNS0xLjIgMC0yLTItMi43LTIuMS0uNC0zLS4yLTUuMyAwLTEuMi4yLTEuNi44LTEuOSAyLjMuMSAyLjMgMS41IDIuMiAzIDN6Ii8+CiAgICA8cGF0aCBmaWxsPSIjMTY1ZDMxIiBkPSJNMjY4LjEgMTg5LjdjLS41IDEtMi4zIDEtNCAwcy0yLjctMi42LTIuMS0zLjUgMi4zLS45IDQgMCAyLjYgMi42IDIuMSAzLjVtLTg5LTUzLjZjLTEgLjMtMi40LS42LTMtMnMtLjMtMi42LjctMi45IDIuMy43IDMgMiAuMyAyLjctLjggM3pNMzU1LjIgMzc1YzkuNC40IDE4LjIgMCAyNy41LjUgMS43IDEuNS41IDUtLjYgNC44bC03LjgtLjNjLS4xLTMtNy43LTIuNS03LjUuMS00LjEuNS03LjgtLjEtMTItLjMtMS4yLTEuNS0xLTQuMi40LTQuOCIvPgogIDwvZz4KPC9zdmc+Cg==" alt="" width="26" height="20" loading="lazy">Saudi Arabia</span><span class="flagchip" role="listitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJmbGFnLWljb25zLWFlIiB2aWV3Qm94PSIwIDAgNjQwIDQ4MCI+CiAgPHBhdGggZmlsbD0iIzAwNzMyZiIgZD0iTTAgMGg2NDB2MTYwSDB6Ii8+CiAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMTYwaDY0MHYxNjBIMHoiLz4KICA8cGF0aCBmaWxsPSIjMDAwMDAxIiBkPSJNMCAzMjBoNjQwdjE2MEgweiIvPgogIDxwYXRoIGZpbGw9InJlZCIgZD0iTTAgMGgyMjB2NDgwSDB6Ii8+Cjwvc3ZnPgo=" alt="" width="26" height="20" loading="lazy">UAE</span><span class="flagchip" role="listitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJmbGFnLWljb25zLW5nIiB2aWV3Qm94PSIwIDAgNjQwIDQ4MCI+CiAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICA8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMCAwaDY0MHY0ODBIMHoiLz4KICAgIDxwYXRoIGZpbGw9IiMwMDg3NTMiIGQ9Ik00MjYuNiAwSDY0MHY0ODBINDI2LjZ6TTAgMGgyMTMuM3Y0ODBIMHoiLz4KICA8L2c+Cjwvc3ZnPgo=" alt="" width="26" height="20" loading="lazy">Nigeria</span><span class="flagchip" role="listitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJmbGFnLWljb25zLWdiIiB2aWV3Qm94PSIwIDAgNjQwIDQ4MCI+CiAgPHBhdGggZmlsbD0iIzAxMjE2OSIgZD0iTTAgMGg2NDB2NDgwSDB6Ii8+CiAgPHBhdGggZmlsbD0iI0ZGRiIgZD0ibTc1IDAgMjQ0IDE4MUw1NjIgMGg3OHY2Mkw0MDAgMjQxbDI0MCAxNzh2NjFoLTgwTDMyMCAzMDEgODEgNDgwSDB2LTYwbDIzOS0xNzhMMCA2NFYweiIvPgogIDxwYXRoIGZpbGw9IiNDODEwMkUiIGQ9Im00MjQgMjgxIDIxNiAxNTl2NDBMMzY5IDI4MXptLTE4NCAyMCA2IDM1TDU0IDQ4MEgwek02NDAgMHYzTDM5MSAxOTFsMi00NEw1OTAgMHpNMCAwbDIzOSAxNzZoLTYwTDAgNDJ6Ii8+CiAgPHBhdGggZmlsbD0iI0ZGRiIgZD0iTTI0MSAwdjQ4MGgxNjBWMHpNMCAxNjB2MTYwaDY0MFYxNjB6Ii8+CiAgPHBhdGggZmlsbD0iI0M4MTAyRSIgZD0iTTAgMTkzdjk2aDY0MHYtOTZ6TTI3MyAwdjQ4MGg5NlYweiIvPgo8L3N2Zz4K" alt="" width="26" height="20" loading="lazy">UK</span><span class="flagchip" role="listitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJmbGFnLWljb25zLXVzIiB2aWV3Qm94PSIwIDAgNjQwIDQ4MCI+CiAgPHBhdGggZmlsbD0iI2JkM2Q0NCIgZD0iTTAgMGg2NDB2NDgwSDAiLz4KICA8cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMzciIGQ9Ik0wIDU1LjNoNjQwTTAgMTI5aDY0ME0wIDIwM2g2NDBNMCAyNzdoNjQwTTAgMzUxaDY0ME0wIDQyNWg2NDAiLz4KICA8cGF0aCBmaWxsPSIjMTkyZjVkIiBkPSJNMCAwaDM2NC44djI1OC41SDAiLz4KICA8bWFya2VyIGlkPSJ1cy1hIiBtYXJrZXJIZWlnaHQ9IjMwIiBtYXJrZXJXaWR0aD0iMzAiPgogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0ibTE0IDAgOSAyN0wwIDEwaDI4TDUgMjd6Ii8+CiAgPC9tYXJrZXI+CiAgPHBhdGggZmlsbD0ibm9uZSIgbWFya2VyLW1pZD0idXJsKCN1cy1hKSIgZD0ibTAgMCAxNiAxMWg2MSA2MSA2MSA2MSA2MEw0NyAzN2g2MSA2MSA2MCA2MUwxNiA2M2g2MSA2MSA2MSA2MSA2MEw0NyA4OWg2MSA2MSA2MCA2MUwxNiAxMTVoNjEgNjEgNjEgNjEgNjBMNDcgMTQxaDYxIDYxIDYwIDYxTDE2IDE2Nmg2MSA2MSA2MSA2MSA2MEw0NyAxOTJoNjEgNjEgNjAgNjFMMTYgMjE4aDYxIDYxIDYxIDYxIDYweiIvPgo8L3N2Zz4K" alt="" width="26" height="20" loading="lazy">USA</span></div>
+      <div class="netnote rev"><span>Working in one of these regions? We would like to hear from you.</span><a class="btn primary" href="mailto:adi@nevarrotech.com?subject=Partnership">Get in touch</a></div>
+    </div>
+  </section>
+
   <section class="band pledge">
     <div class="wrap pledge-grid rev">
       <a href="https://cloudsecurityalliance.org/star/ai-trustworthy-pledge/organizations" target="_blank" rel="noopener" aria-label="CSA AI Trustworthy Pledge signatories">
-        <img src="/csa-ai-trustworthy-pledge.png" alt="Cloud Security Alliance AI Trustworthy Pledge 2026 badge" width="132" height="132" loading="lazy">
+        <img src="/csa-ai-trustworthy-pledge.png" alt="Cloud Security Alliance AI Trustworthy Pledge 2026 badge" width="72" height="72" loading="lazy">
       </a>
       <div>
         <div class="eyebrow">Our commitment</div>
-        <h2>Signatories of the AI Trustworthy Pledge.</h2>
-        <p>Nevarro Technologies has signed the Cloud Security Alliance's AI Trustworthy Pledge, a public commitment to ethical AI and responsible innovation. It applies to everything we build, inside companies and at NEV Research Labs.</p>
+        <h3>Signatories of the AI Trustworthy Pledge.</h3>
+        <p>Nevarro Technologies has signed the Cloud Security Alliance's AI Trustworthy Pledge, a public commitment to ethical AI and responsible innovation, across everything we build.</p>
       </div>
       <div class="actions">
         <a class="btn" href="https://cloudsecurityalliance.org/star/ai-trustworthy-pledge/organizations" target="_blank" rel="noopener">View the pledge ↗</a>
@@ -445,11 +471,6 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
     <div class="fgrid">
       <div>
         <a class="brand" href="/" aria-label="Nevarro Technologies, home"><svg class="mk" viewBox="0 0 68 68" aria-hidden="true"><defs><mask id="nvcore-foot" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68"><rect width="68" height="68" fill="#000"/><polygon points="38.38,49.16 29.63,64.32 12.13,64.32 3.38,49.16 12.13,34.00 29.63,34.00" fill="#fff"/><polygon points="38.38,18.84 29.63,34.00 12.13,34.00 3.38,18.84 12.13,3.68 29.63,3.68" fill="#fff"/><polygon points="64.63,34.00 55.88,49.16 38.38,49.16 29.63,34.00 38.38,18.84 55.88,18.84" fill="#fff"/><line x1="29.63" y1="34" x2="12.13" y2="34" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="18.84" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="49.16" stroke="#000" stroke-width="2.2"/><polygon points="36.83,34.00 33.23,40.24 26.03,40.24 22.43,34.00 26.03,27.76 33.23,27.76" fill="#000"/></mask></defs><rect width="68" height="68" fill="currentColor" mask="url(#nvcore-foot)"/></svg><span class="wm"><b>NEVARRO</b><i>TECHNOLOGIES</i></span></a>
-        <p class="about">A technology company that modernizes businesses in deep verticals, and the home of NEV Research Labs.</p>
-        <a class="pledge-mini" href="https://cloudsecurityalliance.org/star/ai-trustworthy-pledge/organizations" target="_blank" rel="noopener">
-          <img src="/csa-ai-trustworthy-pledge.png" alt="CSA AI Trustworthy Pledge 2026 badge" width="40" height="40" loading="lazy">
-          <span>Signatory · CSA AI Trustworthy Pledge</span>
-        </a>
       </div>
       <div>
         <h4>Work</h4>
@@ -468,10 +489,20 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
         <a href="mailto:adi@nevarrotech.com">adi@nevarrotech.com</a>
         <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a>
       </div>
+      <div>
+        <h4>Our presence</h4>
+        <div class="pres">
+          <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBpZD0iZmxhZy1pY29ucy1pbiIgdmlld0JveD0iMCAwIDY0MCA0ODAiPgogIDxwYXRoIGZpbGw9IiNmOTMiIGQ9Ik0wIDBoNjQwdjE2MEgweiIvPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0wIDE2MGg2NDB2MTYwSDB6Ii8+CiAgPHBhdGggZmlsbD0iIzEyODgwNyIgZD0iTTAgMzIwaDY0MHYxNjBIMHoiLz4KICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgzLjIgMCAwIDMuMiAzMjAgMjQwKSI+CiAgICA8Y2lyY2xlIHI9IjIwIiBmaWxsPSIjMDA4Ii8+CiAgICA8Y2lyY2xlIHI9IjE3LjUiIGZpbGw9IiNmZmYiLz4KICAgIDxjaXJjbGUgcj0iMy41IiBmaWxsPSIjMDA4Ii8+CiAgICA8ZyBpZD0iaW4tZCI+CiAgICAgIDxnIGlkPSJpbi1jIj4KICAgICAgICA8ZyBpZD0iaW4tYiI+CiAgICAgICAgICA8ZyBpZD0iaW4tYSIgZmlsbD0iIzAwOCI+CiAgICAgICAgICAgIDxjaXJjbGUgcj0iLjkiIHRyYW5zZm9ybT0icm90YXRlKDcuNSAtOC44IDEzMy41KSIvPgogICAgICAgICAgICA8cGF0aCBkPSJNMCAxNy41LjYgNyAwIDJsLS42IDV6Ii8+CiAgICAgICAgICA8L2c+CiAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNpbi1hIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB0cmFuc2Zvcm09InJvdGF0ZSgxNSkiLz4KICAgICAgICA8L2c+CiAgICAgICAgPHVzZSB4bGluazpocmVmPSIjaW4tYiIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdHJhbnNmb3JtPSJyb3RhdGUoMzApIi8+CiAgICAgIDwvZz4KICAgICAgPHVzZSB4bGluazpocmVmPSIjaW4tYyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdHJhbnNmb3JtPSJyb3RhdGUoNjApIi8+CiAgICA8L2c+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNpbi1kIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNpbi1kIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTIwKSIvPgogIDwvZz4KPC9zdmc+Cg==" alt="India" width="22" height="17" loading="lazy"><span><b>India</b>Bengaluru · Chennai · Lucknow</span></div>
+          <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJmbGFnLWljb25zLWJoIiB2aWV3Qm94PSIwIDAgNjQwIDQ4MCI+CiAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGg2NDB2NDgwSDAiLz4KICA8cGF0aCBmaWxsPSIjY2UxMTI2IiBkPSJNNjQwIDBIOTZsMTEwLjcgNDhMOTYgOTZsMTEwLjcgNDhMOTYgMTkybDExMC43IDQ4TDk2IDI4OGwxMTAuNyA0OEw5NiAzODRsMTEwLjcgNDhMOTYgNDgwaDU0NCIvPgo8L3N2Zz4K" alt="Bahrain" width="22" height="17" loading="lazy"><span><b>Bahrain</b>Abu Saiba</span></div>
+        </div>
+      </div>
     </div>
     <div class="fbar">
       <span>© 2026 Nevarro Technologies Private Limited</span>
-      <span>Made in 🇮🇳 with 💙 for the 🌍</span>
+      <a class="pledge-mini" href="https://cloudsecurityalliance.org/star/ai-trustworthy-pledge/organizations" target="_blank" rel="noopener">
+        <img src="/csa-ai-trustworthy-pledge.png" alt="CSA AI Trustworthy Pledge 2026 badge" width="28" height="28" loading="lazy">
+        <span>Signatory · CSA AI Trustworthy Pledge</span>
+      </a>
     </div>
   </div>
 </footer>
@@ -499,8 +530,8 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
     tick();setInterval(tick,1000);
   })();
   (function(){
-    /* Real coastlines: Natural Earth 110m land, rasterised to 128x64. */
-    var LAND_MASK='0000000000000000000000000000000000000000000000000000000000000000000000001f80ff00000000000000000000000003feffff8003c00000600000000000060070ffff80040000000c00000000000000c00fff8000000801fe00000000001beefc0fff00000030fffffc380007fffc93a703fe0003f802dffffffff7f7ffffff83c7e0600ff5ffffffffffff13ffffff038380001effffffffffffff07effffc0e0080003cfffffffffffe3800c0fffe07c000020c7fffffffffc0c000003fffefe0000711ffffffffff01c000001fffeff00003ffffffffffffe00000001fffff180001ffffffffffffe00000000fffffe00001fffb9fffffffa00000000ffffe000005ebc3bfffffff300000000ffffc00000705ffdffffffc000000000ffff800000708ff9fffffcc4000000007fff8000003f007ffffffc5c000000003ffe0000007f90fffffffe20000000000fd2000000fffffbfffffe00000000000781800001ffff7dfffffe00000000000380000003ffffbf0ffffc00000000000188800003ffffbf87e7c0000000000001d8a80003ffffdf03c3c00000000000001c000003ffffdc0301e000000000000004000003fffff00101e0000000000000025c0001fffffc01004000000000000000fe0000fffffc00810080000000000000ffc00001fff800028400000000000000ffc00001fff000011cc0000000000001fff00001ffe000009b10000000000001fffe0000ffc00000c10f000000000000ffff00007fc000003007000000000000fffe00007fc0000002008000000000007ffc00007fc40000003a0000000000007ffc0000ffc4000000f30000000000001ffc0000ff8c000001ff0000000000001ff800007f08000007ff8000000000001ff000007f8800000fffc000000000001fe000007f0000000fffc000000000001fc000003e00000007ffe000000000001f8000003c000000078fc000000000003f000000000000000007c000000000003f0000000000000000028020000000003c00000000000000000100200000000038000000000000000000008000000000700000000000000000000000000000007000000000000800000000000000000072000000000000000000000000000000180000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000010000880000000000000008000000009ff8ffffffe000000000007c0000fffffff7ffffffff80001ff8fffc0003fffffffffffffffe000fffffff80007ffffffffffffffffc0000ffffff82703ffffffffffffffff80003fffffffefffffffffffffffffffe0ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
+    /* Optional: paste the hex string from mask.mjs between the quotes for real coastlines. Empty = simplified continents. */
+    var LAND_MASK='';
     var MW=128,MH=64,NS='http://www.w3.org/2000/svg';
     var gG=document.getElementById('gGlobe'),gB=document.getElementById('gRingBack'),gF=document.getElementById('gRingFront'),wrap=document.getElementById('globeWrap');
     if(!gG)return;
