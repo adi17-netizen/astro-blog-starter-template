@@ -222,7 +222,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 .hero{padding:56px 0 72px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);column-gap:40px;align-items:center}
 .hero .eyebrow{margin-bottom:22px}
-.hero h1{max-width:15ch;margin-bottom:28px}
+.hero h1{max-width:17ch;margin-bottom:28px;font-size:clamp(2.1rem,3.9vw,3rem)}
 .hero .lead{font-size:1.3125rem;margin-bottom:34px;max-width:50ch}
 .globe-wrap{justify-self:end;width:100%;max-width:470px;cursor:crosshair}
 .globe-wrap svg{width:100%;height:auto;display:block;shape-rendering:crispEdges}
@@ -473,7 +473,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
       </div>
       <div>
         <h4>Work</h4>
-        <a href="/modernization">Technology transformation</a>
+        <a href="/modernization">Transformation</a>
         <a href="https://nevresearch.com" target="_blank" rel="noopener">NEV Research Labs ↗</a>
         <a href="/pricing">Pricing</a>
       </div>
@@ -526,8 +526,8 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
     tick();setInterval(tick,1000);
   })();
   (function(){
-    /* Optional: paste the hex string from mask.mjs between the quotes for real coastlines. Empty = simplified continents. */
-    var LAND_MASK='';
+    /* Real coastlines: Natural Earth 110m land, rasterised to 128x64. */
+    var LAND_MASK='0000000000000000000000000000000000000000000000000000000000000000000000001f80ff00000000000000000000000003feffff8003c00000600000000000060070ffff80040000000c00000000000000c00fff8000000801fe00000000001beefc0fff00000030fffffc380007fffc93a703fe0003f802dffffffff7f7ffffff83c7e0600ff5ffffffffffff13ffffff038380001effffffffffffff07effffc0e0080003cfffffffffffe3800c0fffe07c000020c7fffffffffc0c000003fffefe0000711ffffffffff01c000001fffeff00003ffffffffffffe00000001fffff180001ffffffffffffe00000000fffffe00001fffb9fffffffa00000000ffffe000005ebc3bfffffff300000000ffffc00000705ffdffffffc000000000ffff800000708ff9fffffcc4000000007fff8000003f007ffffffc5c000000003ffe0000007f90fffffffe20000000000fd2000000fffffbfffffe00000000000781800001ffff7dfffffe00000000000380000003ffffbf0ffffc00000000000188800003ffffbf87e7c0000000000001d8a80003ffffdf03c3c00000000000001c000003ffffdc0301e000000000000004000003fffff00101e0000000000000025c0001fffffc01004000000000000000fe0000fffffc00810080000000000000ffc00001fff800028400000000000000ffc00001fff000011cc0000000000001fff00001ffe000009b10000000000001fffe0000ffc00000c10f000000000000ffff00007fc000003007000000000000fffe00007fc0000002008000000000007ffc00007fc40000003a0000000000007ffc0000ffc4000000f30000000000001ffc0000ff8c000001ff0000000000001ff800007f08000007ff8000000000001ff000007f8800000fffc000000000001fe000007f0000000fffc000000000001fc000003e00000007ffe000000000001f8000003c000000078fc000000000003f000000000000000007c000000000003f0000000000000000028020000000003c00000000000000000100200000000038000000000000000000008000000000700000000000000000000000000000007000000000000800000000000000000072000000000000000000000000000000180000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000010000880000000000000008000000009ff8ffffffe000000000007c0000fffffff7ffffffff80001ff8fffc0003fffffffffffffffe000fffffff80007ffffffffffffffffc0000ffffff82703ffffffffffffffff80003fffffffefffffffffffffffffffe0ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
     var MW=128,MH=64,NS='http://www.w3.org/2000/svg';
     var gG=document.getElementById('gGlobe'),gB=document.getElementById('gRingBack'),gF=document.getElementById('gRingFront'),wrap=document.getElementById('globeWrap');
     if(!gG)return;
