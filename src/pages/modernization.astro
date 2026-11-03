@@ -5,194 +5,420 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f7f4">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>Vertical Modernization — Nevarro Technologies</title>
-<meta name="description" content="We work inside established businesses — as partner or owner — to modernize operations and expand margins in deep verticals.">
+<meta name="description" content="We work inside individual companies, as partner or owner, to modernize operations and build the custom software and products they need.">
+<link rel="canonical" href="https://nevarrotech.com/modernization">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=EB+Garamond:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap">
 <script is:inline>
-  (function(){var t=localStorage.getItem('nev-theme');if(t){document.documentElement.setAttribute('data-theme',t);}})();
+  try{var t=localStorage.getItem('nev-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}
 </script>
 <style is:global>
-  :root{
-    --canvas:#f7f7f4; --surface:#f2f1ed; --raised:#e6e5e0; --border:#dedcd6;
-    --text:#26251e; --muted:#7a7974; --faint:#a1a19f; --stone:#cdcdc9; --driftwood:#84847e;
-    --ember:#f54e00; --amber:#c08532;
-    --btn-fill:#26251e; --btn-fill-text:#f7f7f4;
-    --sans:'Inter',ui-sans-serif,system-ui,-apple-system,sans-serif;
-    --serif:'EB Garamond',ui-serif,Georgia,serif;
-    --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
-  }
-  :root[data-theme="dark"]{
-    --canvas:#1a1915; --surface:#21201a; --raised:#2a2922; --border:#38372f;
-    --text:#f2f1ed; --muted:#a1a19f; --faint:#84847e; --stone:#38372f; --driftwood:#a1a19f;
-    --ember:#ff6a24; --amber:#d0973f; --btn-fill:#e6e5e0; --btn-fill-text:#26251e;
-  }
-  @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]){
-      --canvas:#1a1915; --surface:#21201a; --raised:#2a2922; --border:#38372f;
-      --text:#f2f1ed; --muted:#a1a19f; --faint:#84847e; --stone:#38372f; --driftwood:#a1a19f;
-      --ember:#ff6a24; --amber:#d0973f; --btn-fill:#e6e5e0; --btn-fill-text:#26251e;
-    }
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--canvas);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.5;
-    -webkit-font-smoothing:antialiased;transition:background .35s ease,color .35s ease}
-  ::selection{background:#8bc4f8;color:#26251e}
-  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+:root{
+  --canvas:#f7f7f4; --surface:#f2f1ed; --raised:#e6e5e0; --border:#dedcd6; --hairline:#e5e3dd;
+  --text:#26251e; --muted:#6f6e68; --faint:#9b9a94;
+  --ember:#f54e00; --ember-soft:rgba(245,78,0,.09);
+  --btn-fill:#26251e; --btn-fill-text:#f7f7f4;
+  --sans:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"EB Garamond","Iowan Old Style",Palatino,ui-serif,Georgia,serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  --r:4px; --page:1080px; --band:104px; --gutter:48px;
+  --s1:#ecebe4; --s2:#d9d7cd; --s3:#c3c1b6; --s4:#aaa89d; --s5:#918f85;
+  --l1:#6b6a5f; --l2:#52514a; --l3:#3d3c35; --l4:#2c2b25; --l5:#1e1d18;
+  --ring:#a5a49c; --ring-d:#c9c8c1;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --canvas:#1a1915; --surface:#1f1e19; --raised:#27261f; --border:#34332c; --hairline:#2c2b24;
+  --text:#f2f1ed; --muted:#a3a29c; --faint:#7c7b74;
+  --ember:#ff6a24; --ember-soft:rgba(255,106,36,.11);
+  --btn-fill:#e6e5e0; --btn-fill-text:#26251e;
+  --s1:#5a584d; --s2:#4b4941; --s3:#3e3d36; --s4:#33322c; --s5:#2a2924;
+  --l1:#f6f3ea; --l2:#e0ddd2; --l3:#c6c3b8; --l4:#a9a79c; --l5:#8d8b81;
+  --ring:#77766e; --ring-d:#4f4e46;
+}}
+:root[data-theme="dark"]{
+  --canvas:#1a1915; --surface:#1f1e19; --raised:#27261f; --border:#34332c; --hairline:#2c2b24;
+  --text:#f2f1ed; --muted:#a3a29c; --faint:#7c7b74;
+  --ember:#ff6a24; --ember-soft:rgba(255,106,36,.11);
+  --btn-fill:#e6e5e0; --btn-fill-text:#26251e;
+  --s1:#5a584d; --s2:#4b4941; --s3:#3e3d36; --s4:#33322c; --s5:#2a2924;
+  --l1:#f6f3ea; --l2:#e0ddd2; --l3:#c6c3b8; --l4:#a9a79c; --l5:#8d8b81;
+  --ring:#77766e; --ring-d:#4f4e46;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--canvas);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;transition:background .3s ease,color .3s ease}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--ember);color:#fff}
+:focus-visible{outline:1.5px solid var(--ember);outline-offset:3px;border-radius:var(--r)}
+.wrap{max-width:var(--page);margin:0 auto;padding-left:32px;padding-right:32px}
+h1,h2,h3{margin:0;font-weight:400;line-height:1.12;text-wrap:balance}
+h1{font-size:clamp(2.25rem,4.6vw,3.4rem);font-weight:300;letter-spacing:-0.035em;line-height:1.05}
+h1 em{font-style:normal;color:var(--ember)}
+h2{font-size:clamp(1.5rem,2.5vw,2rem);letter-spacing:-0.025em}
+h3{font-size:1.1875rem;letter-spacing:-0.012em}
+p{margin:0 0 14px;text-wrap:pretty}
+.band{padding:var(--band) 0;border-top:1px solid var(--hairline)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--faint);margin-bottom:20px;text-transform:uppercase}
+.lead{font-family:var(--serif);font-size:1.25rem;line-height:1.52;color:var(--muted);max-width:54ch}
+.head{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);column-gap:var(--gutter);align-items:start;margin-bottom:56px}
+.head .eyebrow{grid-column:1/-1}
+.head h2{grid-column:1;padding-right:8%}
+.head .lead{grid-column:2;margin:0;padding-top:.35em}
 
-  nav{border-bottom:1px solid var(--border)}
-  .navin{max-width:900px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;
-    justify-content:space-between;gap:16px}
-  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
-  .brand svg{width:22px;height:22px;flex:none}
-  .brand span{font-size:14px;font-weight:500;letter-spacing:.1em}
-  .navend{display:flex;align-items:center;gap:12px}
-  .navend a.back{font-size:14px;color:var(--muted);text-decoration:none}
-  .navend a.back:hover{color:var(--text)}
-  #themeToggle{background:none;border:1px solid var(--border);border-radius:4px;width:32px;height:32px;
-    display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:var(--muted)}
-  #themeToggle:hover{color:var(--text);border-color:var(--stone)}
-  #themeToggle svg{width:15px;height:15px}
-  .icon-sun{display:none}
-  :root[data-theme="dark"] .icon-sun{display:block}
-  :root[data-theme="dark"] .icon-moon{display:none}
-  @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]) .icon-sun{display:block}
-    :root:not([data-theme="light"]) .icon-moon{display:none}
-  }
+/* buttons */
+.btn{display:inline-block;padding:11px 22px;border-radius:999px;font-size:14px;background:var(--raised);color:var(--text);
+  border:1px solid transparent;transition:background .18s ease,border-color .18s ease,opacity .18s ease}
+.btn:hover{background:transparent;border-color:var(--border)}
+.btn.primary{background:var(--btn-fill);color:var(--btn-fill-text);border-color:var(--btn-fill)}
+.btn.primary:hover{opacity:.86}
+.actions{display:flex;flex-wrap:wrap;gap:9px}
 
-  main{padding:60px 0 88px}
-  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-  h1{font-size:clamp(34px,5.4vw,52px);font-weight:400;letter-spacing:-.03em;line-height:1.08;margin-top:14px;max-width:18ch}
-  h1 em{font-style:normal;color:var(--ember)}
-  .lead{font-family:var(--serif);font-size:20px;line-height:1.62;color:var(--driftwood);max-width:62ch;margin-top:22px}
-  h2{font-size:clamp(22px,3vw,27px);font-weight:400;letter-spacing:-.015em;margin-top:64px;max-width:26ch}
-  p{color:var(--muted);line-height:1.78;font-size:15px;margin-top:14px;max-width:64ch}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--canvas) 88%,transparent);
+  backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid var(--hairline)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text)}
+.brand .mk{width:24px;height:24px;flex:none;display:block}
+.brand .wm{font-size:13px;letter-spacing:.14em;white-space:nowrap;line-height:1}
+.brand .wm b{font-weight:600}
+.brand .wm i{font-style:normal;font-weight:300;margin-left:.45em}
+.links{display:flex;align-items:center;gap:6px;font-size:14px}
+.links a:not(.btn){color:var(--muted);padding:7px 11px;border-radius:var(--r);transition:color .18s ease,background .18s ease;white-space:nowrap}
+.links a:not(.btn):hover{color:var(--text);background:var(--surface)}
+.links a.on{color:var(--text)}
+.links .ext{color:var(--faint);font-size:12px}
+.links .btn{margin-left:6px}
+.iconbtn{display:flex;align-items:center;justify-content:center;width:32px;height:32px;margin-left:6px;border-radius:var(--r);
+  border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:color .18s ease,border-color .18s ease}
+.iconbtn:hover{color:var(--text);border-color:var(--faint)}
+.iconbtn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round}
+.i-sun{display:none}.i-moon{display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .i-sun{display:block}:root:not([data-theme="light"]) .i-moon{display:none}}
+:root[data-theme="dark"] .i-sun{display:block}
+:root[data-theme="dark"] .i-moon{display:none}
+.ticker{border-bottom:1px solid var(--hairline);background:var(--surface)}
+.ticker .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:10px;padding-bottom:10px;
+  font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.07em;text-transform:uppercase}
+.ticker span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#clock{font-variant-numeric:tabular-nums}
 
-  .modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:28px}
-  .mode{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:24px}
-  .mode .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-  .mode h3{font-size:19px;font-weight:400;margin-top:10px;letter-spacing:-.008em}
-  .mode p{font-size:14px;margin-top:10px}
+/* status pill */
+.status{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 11px;border:1px solid var(--border);border-radius:999px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--ember);box-shadow:0 0 0 3px var(--ember-soft);animation:pulse 2.4s ease-in-out infinite;flex:none}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px var(--ember-soft)}50%{box-shadow:0 0 0 6px transparent}}
 
-  .lines{margin-top:26px;border-top:1px solid var(--border)}
-  .line{display:grid;grid-template-columns:190px 1fr;gap:26px;padding:20px 0;border-bottom:1px solid var(--border);align-items:baseline}
-  .line .k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-  .line p{margin-top:0;font-size:15px}
-  @media (max-width:640px){.line{grid-template-columns:1fr;gap:8px}}
+/* hairline grids + cards */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:var(--r);overflow:hidden}
+.card{background:var(--canvas);padding:34px 30px;transition:background .2s ease}
+.card h3{font-size:1.25rem;letter-spacing:-0.015em;margin-bottom:12px}
+.card p{color:var(--muted);font-size:15px;line-height:1.62;margin:0}
+.card .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase;margin-bottom:14px}
+.lines{border-top:1px solid var(--hairline)}
+.line{display:grid;grid-template-columns:220px 1fr;column-gap:var(--gutter);padding:22px 0;border-bottom:1px solid var(--hairline);align-items:baseline}
+.line .k{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase}
+.line p{margin:0;color:var(--muted);font-size:15px;line-height:1.62}
+.line h3{font-size:1.0625rem;font-weight:500;margin-bottom:6px}
 
-  .checks{margin-top:24px;list-style:none}
-  .checks li{color:var(--muted);font-size:15px;line-height:1.8;padding-left:22px;position:relative}
-  .checks li::before{content:"—";position:absolute;left:0;color:var(--ember)}
+/* line-art shared */
+.art{display:block;width:100%;height:auto;overflow:visible}
+.art .ln{fill:none;stroke:var(--text);stroke-width:1.4;stroke-linejoin:round;stroke-linecap:round}
+.art .fl{fill:var(--canvas);stroke:var(--text);stroke-width:1.4;stroke-linejoin:round}
+.art .sf{fill:var(--surface);stroke:var(--border);stroke-width:1}
+.art .wire{fill:none;stroke:var(--faint);stroke-width:1.1;stroke-dasharray:3 4}
+.art .cap{font-family:var(--mono);font-size:10px;letter-spacing:.14em;fill:var(--faint)}
+.art .cap.t{fill:var(--text)}
+.art .cap.e{fill:var(--ember)}
+.art .dot{fill:var(--muted)}
+.art .dot.e{fill:var(--ember)}
+.art .hub{fill:var(--canvas);stroke:var(--ember);stroke-width:1.2}
+.art .cell{fill:var(--text);opacity:.14;animation:cell 3.2s ease-in-out infinite}
+.art .cell.hot{fill:var(--ember);opacity:1;animation:hot 3.2s ease-in-out infinite}
+.art .scrib{fill:none;stroke:var(--faint);stroke-width:1.3;stroke-linecap:round;stroke-dasharray:60;stroke-dashoffset:60;animation:write 4s ease-in-out infinite}
+@keyframes cell{0%,100%{opacity:.12}50%{opacity:.42}}
+@keyframes hot{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes write{0%{stroke-dashoffset:60}45%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:-60}}
 
-  .box{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:24px 26px;margin-top:56px}
-  .box p{margin-top:0;font-size:15px}
-  .box p+p{margin-top:12px}
-  a.link{color:var(--ember);text-decoration:none}
-  a.link:hover{text-decoration:underline;text-underline-offset:3px}
-  .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;text-decoration:none;padding:.7em 1.3em;
-    border-radius:4px;background:var(--btn-fill);color:var(--btn-fill-text);margin-top:24px;transition:opacity .15s}
-  .btn:hover{opacity:.86}
+/* footer */
+footer{border-top:1px solid var(--hairline);background:var(--surface)}
+.fgrid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:var(--gutter);padding:64px 0 48px;font-size:14px}
+.fgrid h4{margin:0 0 16px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--faint);font-weight:400;text-transform:uppercase}
+.fgrid a.brand{display:flex;padding:0;color:var(--text)}
+.fgrid a{display:block;color:var(--muted);padding:5px 0;transition:color .18s ease}
+.fgrid a:hover{color:var(--text)}
+.fgrid .about{color:var(--muted);max-width:32ch;margin-top:16px;line-height:1.6}
+.fgrid a.pledge-mini{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.pledge-mini img{width:40px;height:40px;border-radius:50%;box-shadow:0 0 0 1px var(--hairline);display:block}
+.fbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:1px solid var(--hairline);padding:20px 0;
+  font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.07em;text-transform:uppercase}
 
-  footer{border-top:1px solid var(--border);text-align:center;font-family:var(--mono);font-size:12px;
-    color:var(--faint);padding:24px}
-  footer a{color:var(--muted);text-decoration:none}
+/* secondary pages */
+.page-head{padding:88px 0 56px}
+.page-head .eyebrow{margin-bottom:18px}
+.page-head h1{margin:0 0 22px;max-width:18ch}
+.page-head .lead{max-width:60ch}
+.prose{max-width:72ch}
+.prose h2{font-size:1.375rem;letter-spacing:-.02em;margin:40px 0 12px}
+.prose h2:first-child{margin-top:0}
+.prose p,.prose li{color:var(--muted);font-size:15.5px;line-height:1.72}
+.prose ul,.prose ol{padding-left:20px;margin:0 0 16px}
+.prose a,.inl{color:var(--text);border-bottom:1px solid var(--faint);transition:border-color .18s ease}
+.prose a:hover,.inl:hover{border-color:var(--ember)}
+.stamp{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase}
+.box{border:1px solid var(--hairline);border-radius:var(--r);background:var(--surface);padding:24px 26px;box-shadow:inset 3px 0 0 var(--ember)}
+.box p{margin:0;color:var(--muted);font-size:15px;line-height:1.65}
+.box p+p{margin-top:10px}
+.box b{color:var(--text);font-weight:500}
+
+.rev{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.rev.in{opacity:1;transform:none}
+
+@media (max-width:920px){
+  :root{--band:76px;--gutter:32px}
+  .head{grid-template-columns:1fr;row-gap:16px}
+  .head h2{padding-right:0}
+  .head .lead{grid-column:1;padding-top:0}
+  .two{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr 1fr;row-gap:36px}
+  .fgrid>div:first-child{grid-column:1/-1}
+}
+@media (max-width:680px){
+  :root{--band:60px}
+  body{font-size:15.5px}
+  .wrap{padding-left:22px;padding-right:22px}
+  .links a:not(.btn){display:none}
+  .ticker .wrap span:last-child{display:none}
+  .card{padding:26px 22px}
+  .line{grid-template-columns:1fr;row-gap:6px}
+  .page-head{padding:56px 0 36px}
+}
+@media (max-width:520px){.brand .wm i{display:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .rev{opacity:1;transform:none}
+  .art .dot{display:none}
+  .art .scrib{stroke-dashoffset:0}
+}
+
+.ph-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);column-gap:48px;align-items:center}
+.ph-grid .art{max-width:440px;justify-self:end}
+.page-head .status{margin-top:4px}
+.sec-gap{margin-top:0}
+.factors{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:var(--r);overflow:hidden}
+.factors>div{background:var(--canvas);padding:28px 24px}
+.factors .fk{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--ember);margin-bottom:14px}
+.factors h3{font-size:1.0625rem;font-weight:500;margin-bottom:8px}
+.factors p{font-size:14.5px;color:var(--muted);line-height:1.6;margin:0}
+.checklist{list-style:none;margin:0;padding:0;border-top:1px solid var(--hairline)}
+.checklist li{display:grid;grid-template-columns:20px 1fr;gap:16px;align-items:start;padding:18px 0;border-bottom:1px solid var(--hairline);font-size:15.5px;line-height:1.55;color:var(--muted)}
+.checklist svg{width:16px;height:16px;margin-top:4px;fill:none;stroke:var(--ember);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.eng{border:1px solid var(--hairline);border-radius:var(--r);background:var(--canvas);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);overflow:hidden}
+.eng .ebody{padding:32px 30px;display:flex;flex-direction:column;gap:14px}
+.eng .etop{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.eng .sector{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase}
+.eng .pill{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid var(--ember);color:var(--ember)}
+.eng .who{display:flex;flex-direction:column;gap:6px;padding:4px 0}
+.eng .who small{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--faint)}
+.redact{display:inline-block;width:150px;height:15px;border-radius:2px;background:var(--text);opacity:.88;position:relative;overflow:hidden}
+.redact::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--canvas) 35%,transparent),transparent);transform:translateX(-100%);animation:sweep 3.6s ease-in-out infinite}
+@keyframes sweep{0%,55%{transform:translateX(-100%)}85%,100%{transform:translateX(100%)}}
+.eng h3{font-size:1.375rem;letter-spacing:-.02em;margin:0;line-height:1.3}
+.eng p{font-size:15px;color:var(--muted);line-height:1.62;margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.tags span{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);border:1px solid var(--border);border-radius:999px;padding:4px 10px}
+.eng .eart{background:var(--surface);border-left:1px solid var(--hairline);display:flex;align-items:center;justify-content:center;padding:28px}
+.eng .eart svg{max-width:300px}
+.portal .pw{fill:var(--canvas);stroke:var(--text);stroke-width:1.4}
+.portal .side{fill:var(--surface);stroke:none}
+.portal .bar{fill:var(--text);opacity:.14}
+.portal .row{fill:var(--text);opacity:.1;animation:cell 3.2s ease-in-out infinite}
+.portal .tick{fill:none;stroke:var(--ember);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:14;stroke-dashoffset:14;animation:tickd 3.2s ease-in-out infinite}
+.portal .av{fill:var(--raised);stroke:var(--border)}
+@keyframes tickd{0%,20%{stroke-dashoffset:14}45%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:14}}
+.steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--hairline)}
+.steps li{display:grid;grid-template-columns:84px minmax(0,.62fr) minmax(0,1fr);column-gap:var(--gutter);align-items:baseline;padding:28px 0;border-bottom:1px solid var(--hairline)}
+.steps .n{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--ember)}
+.steps h3{font-size:1.125rem;font-weight:500}
+.steps p{color:var(--muted);font-size:15px;line-height:1.6;margin:0}
+.rate{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;border:1px solid var(--hairline);border-radius:var(--r);background:var(--surface);padding:28px 30px;box-shadow:inset 3px 0 0 var(--ember)}
+.rate .l b{display:block;font-weight:500;font-size:16px;margin-bottom:6px}
+.rate .l span{color:var(--muted);font-size:14.5px}
+.rate .v{font-size:clamp(1.75rem,3vw,2.25rem);font-weight:300;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rate .v small{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase;margin-left:6px}
+.cta-row{margin-top:28px}
+@media (max-width:1080px){.factors{grid-template-columns:1fr 1fr}}
+@media (max-width:920px){.ph-grid{grid-template-columns:1fr;row-gap:36px}.ph-grid .art{justify-self:start}.eng{grid-template-columns:1fr}.eng .eart{border-left:0;border-top:1px solid var(--hairline)}.steps li{grid-template-columns:72px 1fr;row-gap:8px}.steps li p{grid-column:2}}
+@media (max-width:680px){.factors{grid-template-columns:1fr}.steps li{grid-template-columns:1fr}.steps li p{grid-column:1}.eng .ebody{padding:24px 22px}}
 </style>
 </head>
 <body>
-
-<nav><div class="navin">
-  <a class="brand" href="/">
-    <svg viewBox="0 0 40 40" aria-hidden="true">
-      <rect x="5" y="8" width="30" height="27" rx="11" fill="none" stroke="currentColor" stroke-width="2.4"/>
-      <circle cx="15" cy="21" r="3" fill="currentColor"/><circle cx="25" cy="21" r="3" fill="currentColor"/>
-      <line x1="20" y1="8" x2="20" y2="4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-      <circle cx="20" cy="3.5" r="2" fill="currentColor"/>
-    </svg><span>NEVARRO</span>
-  </a>
-  <span class="navend">
-    <button id="themeToggle" aria-label="Toggle theme">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="1.5" x2="12" y2="3.5"/><line x1="12" y1="20.5" x2="12" y2="22.5"/><line x1="4.5" y1="4.5" x2="5.9" y2="5.9"/><line x1="18.1" y1="18.1" x2="19.5" y2="19.5"/><line x1="1.5" y1="12" x2="3.5" y2="12"/><line x1="20.5" y1="12" x2="22.5" y2="12"/><line x1="4.5" y1="19.5" x2="5.9" y2="18.1"/><line x1="18.1" y1="5.9" x2="19.5" y2="4.5"/></svg>
-    </button>
-    <a class="back" href="/">← Home</a>
-  </span>
-</div></nav>
-
-<main><div class="wrap">
-  <div class="eyebrow">Arm one</div>
-  <h1>Vertical <em>Modernization</em>.</h1>
-  <p class="lead">Good businesses stall for unglamorous reasons. The work is done by hand because it always has been, the systems were bought a decade ago, and nobody has had the time to rebuild any of it while the business keeps running. We do that rebuild — from inside, alongside the people who know the work.</p>
-
-  <h2>Two ways in</h2>
-  <p>The work is the same either way. What differs is our position in the business.</p>
-  <div class="modes">
-    <div class="mode">
-      <div class="k">As partner</div>
-      <h3>We work with the owner</h3>
-      <p>You keep the business. We come in on a defined engagement, modernize the operations that matter most, and stay through the change. Terms are structured around what we are trying to achieve, not hours billed.</p>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Nevarro Technologies, home"><svg class="mk" viewBox="0 0 68 68" aria-hidden="true"><defs><mask id="nvcore-nav" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68"><rect width="68" height="68" fill="#000"/><polygon points="38.38,49.16 29.63,64.32 12.13,64.32 3.38,49.16 12.13,34.00 29.63,34.00" fill="#fff"/><polygon points="38.38,18.84 29.63,34.00 12.13,34.00 3.38,18.84 12.13,3.68 29.63,3.68" fill="#fff"/><polygon points="64.63,34.00 55.88,49.16 38.38,49.16 29.63,34.00 38.38,18.84 55.88,18.84" fill="#fff"/><line x1="29.63" y1="34" x2="12.13" y2="34" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="18.84" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="49.16" stroke="#000" stroke-width="2.2"/><polygon points="36.83,34.00 33.23,40.24 26.03,40.24 22.43,34.00 26.03,27.76 33.23,27.76" fill="#000"/></mask></defs><rect width="68" height="68" fill="currentColor" mask="url(#nvcore-nav)"/></svg><span class="wm"><b>NEVARRO</b><i>TECHNOLOGIES</i></span></a>
+    <nav class="links" aria-label="Main">
+      <a href="/modernization" class="on">Modernization</a>
+      <a href="https://nevresearch.com" target="_blank" rel="noopener">NEV Research Labs <span class="ext">↗</span></a>
+      <a href="/pricing">Pricing</a>
+      <a href="/support">Support</a>
+      <button class="iconbtn" id="themeToggle" aria-label="Toggle theme"><svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2M12 20.5v2M4.5 4.5l1.4 1.4M18.1 18.1l1.4 1.4M1.5 12h2M20.5 12h2M4.5 19.5l1.4-1.4M18.1 5.9l1.4-1.4"/></svg></button>
+      <a class="btn primary" href="mailto:adi@nevarrotech.com?subject=Enquiry">Get in touch</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="page-head"><div class="wrap ph-grid">
+  <div><div class="eyebrow">01 · Vertical Modernization</div><h1>We work with <em>individual companies</em>.</h1><p class="lead">Good businesses stall for unglamorous reasons. The work is done by hand because it always has been, the systems were bought a decade ago, and nobody has had the time to rebuild any of it while the business keeps running. We do that rebuild, from inside, alongside the people who know the work.</p><div class="status"><i></i>Now building · a portal for an industry association</div></div>
+  <div><svg class="art" viewBox="0 0 360 172" role="img" aria-label="Manual paperwork turning into a working software system">
+  <rect class="sf" x="36" y="22" width="78" height="100" rx="3"/>
+  <rect class="sf" x="29" y="29" width="78" height="100" rx="3"/>
+  <rect class="fl" x="22" y="36" width="78" height="100" rx="3"/>
+  <path class="scrib" d="M32 56 C40 52 48 60 56 56 S72 52 84 56"/>
+  <path class="scrib" style="animation-delay:.5s" d="M32 70 C38 66 46 74 54 70 S66 66 76 70"/>
+  <path class="scrib" style="animation-delay:1s" d="M32 84 C40 80 48 88 58 84 S74 80 86 84"/>
+  <path class="scrib" style="animation-delay:1.5s" d="M32 98 C38 94 44 102 52 98"/>
+  <path class="scrib" style="animation-delay:2s" d="M32 112 C40 108 50 116 62 112 S74 108 82 112"/>
+  <path class="wire" d="M108 86 L206 86"/>
+  <circle class="dot e" r="3.5"><animateMotion dur="2.4s" repeatCount="indefinite" path="M108 86 L206 86"/></circle>
+  <circle class="dot e" r="3.5"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M108 86 L206 86"/></circle>
+  <rect class="fl" x="214" y="30" width="126" height="112" rx="4"/>
+  <path class="ln" d="M214 46 H340"/>
+  <circle cx="224" cy="38" r="2.2" fill="var(--faint)"/><circle cx="232" cy="38" r="2.2" fill="var(--faint)"/><circle cx="240" cy="38" r="2.2" fill="var(--faint)"/>
+  <rect class="cell" x="224" y="56" width="32" height="18" rx="2"/>
+  <rect class="cell" style="animation-delay:.3s" x="261" y="56" width="32" height="18" rx="2"/>
+  <rect class="cell" style="animation-delay:.6s" x="298" y="56" width="32" height="18" rx="2"/>
+  <rect class="cell" style="animation-delay:.9s" x="224" y="79" width="32" height="18" rx="2"/>
+  <rect class="cell hot" x="261" y="79" width="32" height="18" rx="2"/>
+  <rect class="cell" style="animation-delay:1.2s" x="298" y="79" width="32" height="18" rx="2"/>
+  <rect class="cell" style="animation-delay:1.5s" x="224" y="102" width="32" height="18" rx="2"/>
+  <rect class="cell" style="animation-delay:1.8s" x="261" y="102" width="32" height="18" rx="2"/>
+  <rect class="cell" style="animation-delay:2.1s" x="298" y="102" width="32" height="18" rx="2"/>
+  <path class="ln" d="M224 130 H300" opacity=".35"/>
+  <text class="cap" x="61" y="160" text-anchor="middle">WORKFLOW</text>
+  <text class="cap e" x="157" y="76" text-anchor="middle">BUILD</text>
+  <text class="cap t" x="277" y="160" text-anchor="middle">SYSTEM</text>
+</svg></div>
+</div></section>
+<section class="band"><div class="wrap">
+  <div class="head rev"><div class="eyebrow">Two ways in</div><h2>Partner or owner.</h2><p class="lead">The work is the same either way. What differs is our position in the business.</p></div>
+  <div class="rev"><div class="two">
+  <div class="card"><div class="k">As partner</div><h3>We work with the owner</h3><p>You keep the business. We come in on a defined engagement, modernize the operations that matter most, and stay through the change. Terms are structured around what we are trying to achieve, not hours billed.</p></div>
+  <div class="card"><div class="k">As owner</div><h3>We acquire the business</h3><p>For owners looking for succession, an exit, or a partner willing to take real ownership, we buy, in full or in part, and run it. Founders who want to stay involved can; those who want out get a clean handover.</p></div>
+</div></div>
+</div></section>
+<section class="band" id="build"><div class="wrap">
+  <div class="head rev"><div class="eyebrow">Custom solutions and products</div><h2>Software built around how you work.</h2><p class="lead">Inside an engagement, or on its own: industry bodies, regulated professions and niche enterprises whose work is too specific for generic software.</p></div>
+  <div class="rev"><div class="two">
+  <div class="card"><div class="k">Built to order</div><h3>Your system, your ownership</h3><p>A proprietary build for one organisation, designed around its process and handed over with documentation and source. Deployment and handover are part of the work.</p></div>
+  <div class="card"><div class="k">Built as a product</div><h3>Co-built for a category</h3><p>Where a problem is shared across a whole vertical, we build it as a product, sometimes alone, sometimes alongside a partner who knows the industry from the inside.</p></div>
+</div></div>
+</div></section>
+<section class="band"><div class="wrap">
+  <div class="head rev"><div class="eyebrow">Current work</div><h2>What we are building now.</h2></div>
+  <div class="rev"><div class="eng">
+  <div class="ebody">
+    <div class="etop"><span class="sector">Industry body</span><span class="pill">In build</span></div>
+    <div class="who"><small>CLIENT</small><span class="redact" aria-label="Client name withheld"></span></div>
+    <h3>Proprietary portal for an industry association</h3>
+    <p>A purpose-built portal for an industry body, replacing fragmented manual processes with a single system its members and secretariat can both work in. Designed around how the association actually operates, rather than around a generic membership platform.</p>
+    <div class="tags"><span>Member operations</span><span>Custom build</span></div>
+  </div>
+  <div class="eart"><svg class="art portal" viewBox="0 0 300 190" role="img" aria-label="An association portal: members, a secretariat dashboard and approvals">
+  <rect class="pw" x="10" y="10" width="280" height="170" rx="5"/>
+  <rect class="side" x="11" y="11" width="62" height="168" rx="4"/>
+  <path class="ln" d="M73 11 V179"/>
+  <rect class="bar" x="22" y="26" width="40" height="7" rx="2"/>
+  <rect class="bar" x="22" y="44" width="32" height="6" rx="2"/>
+  <rect class="bar" x="22" y="58" width="36" height="6" rx="2"/>
+  <rect class="bar" x="22" y="72" width="28" height="6" rx="2"/>
+  <rect x="22" y="86" width="34" height="6" rx="2" fill="var(--ember)"/>
+  <text class="cap" x="88" y="30">MEMBERS</text>
+  <circle class="av" cx="96" cy="52" r="8"/><rect class="row" x="112" y="47" width="110" height="10" rx="2"/>
+  <path class="tick" d="M246 52 l5 5 l10 -10"/>
+  <circle class="av" cx="96" cy="78" r="8"/><rect class="row" style="animation-delay:.4s" x="112" y="73" width="96" height="10" rx="2"/>
+  <path class="tick" style="animation-delay:.8s" d="M246 78 l5 5 l10 -10"/>
+  <circle class="av" cx="96" cy="104" r="8"/><rect class="row" style="animation-delay:.8s" x="112" y="99" width="120" height="10" rx="2"/>
+  <path class="tick" style="animation-delay:1.6s" d="M246 104 l5 5 l10 -10"/>
+  <path class="ln" d="M88 124 H276" opacity=".25"/>
+  <rect class="cell" x="88" y="136" width="56" height="30" rx="3"/>
+  <rect class="cell" style="animation-delay:.5s" x="152" y="136" width="56" height="30" rx="3"/>
+  <rect class="cell hot" x="216" y="136" width="60" height="30" rx="3"/>
+</svg></div>
+</div></div>
+</div></section>
+<section class="band"><div class="wrap">
+  <div class="head rev"><div class="eyebrow">What modernization means here</div><h2>The business earns more, serves better and runs faster.</h2><p class="lead">Not a rebrand and not a transformation deck. These are the four things we measure.</p></div>
+  <div class="rev"><div class="factors">
+  <div><div class="fk">01 · MARGIN</div><h3>Less cost in delivery</h3><p>Replace manual process with software, without taking quality out with it.</p></div>
+  <div><div class="fk">02 · THROUGHPUT</div><h3>More volume, same team</h3><p>Faster turnaround, shorter queues, fewer handoffs.</p></div>
+  <div><div class="fk">03 · SERVICE</div><h3>A visibly better experience</h3><p>Because that is what renews contracts and wins referrals.</p></div>
+  <div><div class="fk">04 · INSTITUTION</div><h3>Systems that outlast people</h3><p>Process, documentation and software that outlast any individual, including us.</p></div>
+</div></div>
+</div></section>
+<section class="band"><div class="wrap">
+  <div class="head rev"><div class="eyebrow">What we look for</div><h2>Narrow on purpose.</h2><p class="lead">A business that fits most of these is one where we can genuinely move the needle.</p></div>
+  <div class="rev"><ul class="checklist"><li><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span>A deep, defensible niche rather than a general-purpose service</span></li><li><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span>Healthy gross margins with room to expand</span></li><li><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span>Operations that are labour-intensive but genuinely replaceable with technology</span></li><li><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span>Recurring or renewing revenue, ideally with developed-market customers</span></li><li><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span>A regulatory, technological or geographic tailwind behind the sector</span></li><li><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span>An owner who wants the business to be better, not just bigger</span></li></ul></div>
+</div></section>
+<section class="band"><div class="wrap">
+  <div class="head rev"><div class="eyebrow">How an engagement runs</div><h2>Four steps, in order.</h2></div>
+  <div class="rev"><ol class="steps"><li><span class="n">01</span><h3>First conversation</h3><p>We look at the shape of the business, where the volume sits, and where the manual work concentrates. If we are not the right fit, we say so here rather than three months in.</p></li><li><span class="n">02</span><h3>Written scope</h3><p>What we are aiming at, what we will build, and the commercial terms, agreed in writing before anything begins.</p></li><li><span class="n">03</span><h3>Build and operate</h3><p>We work inside the operation, shipping in short cycles. You see something running early and use it well before it is finished.</p></li><li><span class="n">04</span><h3>Outcome</h3><p>Where the engagement is built toward one, the destination is a strategic event: a sale, a listing or a transition. Where it is not, the destination is simply a better business.</p></li></ol><div class="box" style="margin-top:40px"><p><b>Structure and terms.</b> Every engagement differs in depth and duration, so terms are set individually and documented before work starts. Indicative rates are on our <a class="inl" href="/pricing">pricing page</a>.</p><p>If you own a business in one of our verticals, or need software nobody has built yet, the fastest way to find out if we fit is a short email.</p></div>
+<div class="actions cta-row"><a class="btn primary" href="mailto:adi@nevarrotech.com?subject=Modernization%20enquiry">Start a conversation</a></div></div>
+</div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="/" aria-label="Nevarro Technologies, home"><svg class="mk" viewBox="0 0 68 68" aria-hidden="true"><defs><mask id="nvcore-foot" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68"><rect width="68" height="68" fill="#000"/><polygon points="38.38,49.16 29.63,64.32 12.13,64.32 3.38,49.16 12.13,34.00 29.63,34.00" fill="#fff"/><polygon points="38.38,18.84 29.63,34.00 12.13,34.00 3.38,18.84 12.13,3.68 29.63,3.68" fill="#fff"/><polygon points="64.63,34.00 55.88,49.16 38.38,49.16 29.63,34.00 38.38,18.84 55.88,18.84" fill="#fff"/><line x1="29.63" y1="34" x2="12.13" y2="34" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="18.84" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="49.16" stroke="#000" stroke-width="2.2"/><polygon points="36.83,34.00 33.23,40.24 26.03,40.24 22.43,34.00 26.03,27.76 33.23,27.76" fill="#000"/></mask></defs><rect width="68" height="68" fill="currentColor" mask="url(#nvcore-foot)"/></svg><span class="wm"><b>NEVARRO</b><i>TECHNOLOGIES</i></span></a>
+        <p class="about">A technology company that modernizes businesses in deep verticals, and the home of NEV Research Labs.</p>
+        <a class="pledge-mini" href="https://cloudsecurityalliance.org/star/ai-trustworthy-pledge/organizations" target="_blank" rel="noopener">
+          <img src="/csa-ai-trustworthy-pledge.png" alt="CSA AI Trustworthy Pledge 2026 badge" width="40" height="40" loading="lazy">
+          <span>Signatory · CSA AI Trustworthy Pledge</span>
+        </a>
+      </div>
+      <div>
+        <h4>Work</h4>
+        <a href="/modernization">Vertical Modernization</a>
+        <a href="https://nevresearch.com" target="_blank" rel="noopener">NEV Research Labs ↗</a>
+        <a href="/pricing">Pricing</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/support">Support</a>
+        <a href="/terms">Terms</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:adi@nevarrotech.com">adi@nevarrotech.com</a>
+        <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a>
+      </div>
     </div>
-    <div class="mode">
-      <div class="k">As owner</div>
-      <h3>We acquire the business</h3>
-      <p>For owners looking for succession, an exit, or a partner willing to take real ownership, we buy — in full or in part — and run it. Founders who want to stay involved can; those who want out get a clean handover.</p>
+    <div class="fbar">
+      <span>© 2026 Nevarro Technologies Private Limited</span>
+      <span>Made in 🇮🇳 with 💙 for the 🌍</span>
     </div>
   </div>
-
-  <h2>What modernization means here</h2>
-  <p>Not a rebrand and not a transformation deck. The measure is whether the business earns more, serves better, and runs faster afterwards.</p>
-  <div class="lines">
-    <div class="line"><div class="k">Margin</div>
-      <p>Take cost out of delivery by replacing manual process with software, without taking quality out with it.</p></div>
-    <div class="line"><div class="k">Throughput</div>
-      <p>Move more volume through the same operation — faster turnaround, shorter queues, fewer handoffs.</p></div>
-    <div class="line"><div class="k">Service</div>
-      <p>Make the customer experience visibly better, because that is what renews contracts and wins referrals.</p></div>
-    <div class="line"><div class="k">Institution</div>
-      <p>Leave behind process, documentation, and systems that outlast any individual — including us.</p></div>
-  </div>
-
-  <h2>What we look for</h2>
-  <p>We are narrow on purpose. A business that fits most of these is one where we can genuinely move the needle.</p>
-  <ul class="checks">
-    <li>A deep, defensible niche rather than a general-purpose service</li>
-    <li>Healthy gross margins with room to expand</li>
-    <li>Operations that are labour-intensive but genuinely replaceable with technology</li>
-    <li>Recurring or renewing revenue, ideally with developed-market customers</li>
-    <li>A regulatory, technological, or geographic tailwind behind the sector</li>
-    <li>An owner who wants the business to be better, not just bigger</li>
-  </ul>
-
-  <h2>How an engagement runs</h2>
-  <div class="lines">
-    <div class="line"><div class="k">First conversation</div>
-      <p>We look at the shape of the business, where the volume sits, and where the manual work concentrates. If we are not the right fit, we will say so here rather than three months in.</p></div>
-    <div class="line"><div class="k">Written scope</div>
-      <p>What we are aiming at, what we will build, and the commercial terms — agreed in writing before anything begins.</p></div>
-    <div class="line"><div class="k">Build and operate</div>
-      <p>We work inside the operation, shipping in short cycles. You see something running early and use it well before it is finished.</p></div>
-    <div class="line"><div class="k">Outcome</div>
-      <p>Where the engagement is built toward one, the destination is a strategic event — a sale, a listing, or a transition. Where it is not, the destination is simply a better business.</p></div>
-  </div>
-
-  <div class="box">
-    <p><strong>Structure and terms.</strong> Every engagement is different in depth and duration, so terms are set individually and documented before work starts. Indicative rates are on our <a class="link" href="/pricing">pricing page</a>.</p>
-    <p>If you own a business in one of our verticals — or you are wondering whether it qualifies — the fastest way to find out is a short email.</p>
-  </div>
-
-  <a class="btn" href="mailto:adi@nevarrotech.com?subject=Modernization%20enquiry">Start a conversation</a>
-</div></main>
-
-<footer>© 2026 Nevarro Technologies · <a href="/labs">Labs</a> · <a href="/pricing">Pricing</a> · <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · <a href="/support">Support</a></footer>
-
+</footer>
 <script is:inline>
-  document.getElementById('themeToggle').addEventListener('click',function(){
-    var r=document.documentElement,c=r.getAttribute('data-theme');
-    if(!c){c=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
-    var n=c==='dark'?'light':'dark';
-    r.setAttribute('data-theme',n);localStorage.setItem('nev-theme',n);
-  });
+  (function(){
+    var b=document.getElementById('themeToggle');
+    if(b)b.addEventListener('click',function(){
+      var r=document.documentElement,c=r.getAttribute('data-theme');
+      if(!c){c=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+      var n=c==='dark'?'light':'dark';r.setAttribute('data-theme',n);
+      try{localStorage.setItem('nev-theme',n);}catch(e){}
+    });
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('.rev').forEach(function(el){io.observe(el);});
+    } else { document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in');}); }
+  })();
 </script>
 
 </body>
