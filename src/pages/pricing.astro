@@ -152,10 +152,12 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 .fgrid a{display:block;color:var(--muted);padding:5px 0;transition:color .18s ease}
 .fgrid a:hover{color:var(--text)}
 .fgrid .about{color:var(--muted);max-width:32ch;margin-top:16px;line-height:1.6}
-.fbrand{display:flex;flex-direction:column;gap:22px}
-.fgrid a.pledge-mini{display:inline-flex;align-items:center;gap:10px;padding:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5;color:var(--muted);max-width:220px;transition:color .18s ease}
-.fgrid a.pledge-mini:hover{color:var(--text)}
-.pledge-mini img{width:40px;height:40px;flex:none;border-radius:50%;box-shadow:0 0 0 1px var(--hairline);display:block}
+.fgrid a.pledge{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:28px;padding:0;max-width:250px;color:var(--muted)}
+@media (max-width:900px){.fgrid a.pledge{flex-direction:row;align-items:center;max-width:360px}}
+.pledge img{width:84px;height:84px;border-radius:50%;display:block;flex:none;box-shadow:0 0 0 1px var(--hairline)}
+.pledge span{font-size:13px;line-height:1.5}
+.pledge u{text-decoration:none;color:var(--text);border-bottom:1px solid var(--hairline)}
+.fgrid a.pledge:hover u{border-color:var(--text)}
 .pres{display:flex;flex-direction:column;gap:12px}
 .pres div{display:flex;align-items:flex-start;gap:10px;color:var(--muted);line-height:1.45}
 .pres img{width:22px;height:16.5px;border-radius:2px;box-shadow:0 0 0 1px var(--hairline);margin-top:3px;flex:none;object-fit:cover}
@@ -287,7 +289,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
   <div class="rev"><div class="rate"><div class="l"><b>Consultation</b><span>Advisory, technical review and scoping sessions, held remotely.</span></div><div class="v">from USD 150<small>/ hour</small></div></div></div>
 </div></section>
 <section class="band"><div class="wrap">
-  <div class="head rev"><div class="eyebrow">Transformation engagements</div><h2>Set individually, in writing.</h2><p class="lead">Platforms, custom evals and custom models, built with a company as partner or owner. See <a class="inl" href="/modernization">Technology transformation</a> for what the work involves.</p></div>
+  <div class="head rev"><div class="eyebrow">Transformation engagements</div><h2>Set individually, in writing.</h2><p class="lead">Custom platforms, AI solutions and custom models, built with a company as partner or owner. See <a class="inl" href="/modernization">Technology transformation</a> for what the work involves.</p></div>
   <div class="rev"><div class="lines">
   <div class="line"><div class="k">Structure</div><p>Terms are written around what the engagement is working toward, and may combine fees, retainers or ownership depending on the situation.</p></div>
   <div class="line"><div class="k">Agreement</div><p>Scope, deliverables, targets and commercials are documented and signed before any work begins. Nothing is billed against an assumption.</p></div>
@@ -308,12 +310,9 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 <footer>
   <div class="wrap">
     <div class="fgrid">
-      <div class="fbrand">
+      <div>
         <a class="brand" href="/" aria-label="Nevarro Technologies, home"><svg class="mk" viewBox="0 0 68 68" aria-hidden="true"><defs><mask id="nvcore-foot" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68"><rect width="68" height="68" fill="#000"/><polygon points="38.38,49.16 29.63,64.32 12.13,64.32 3.38,49.16 12.13,34.00 29.63,34.00" fill="#fff"/><polygon points="38.38,18.84 29.63,34.00 12.13,34.00 3.38,18.84 12.13,3.68 29.63,3.68" fill="#fff"/><polygon points="64.63,34.00 55.88,49.16 38.38,49.16 29.63,34.00 38.38,18.84 55.88,18.84" fill="#fff"/><line x1="29.63" y1="34" x2="12.13" y2="34" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="18.84" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="49.16" stroke="#000" stroke-width="2.2"/><polygon points="36.83,34.00 33.23,40.24 26.03,40.24 22.43,34.00 26.03,27.76 33.23,27.76" fill="#000"/></mask></defs><rect width="68" height="68" fill="currentColor" mask="url(#nvcore-foot)"/></svg><span class="wm"><b>NEVARRO</b><i>TECHNOLOGIES</i></span></a>
-        <a class="pledge-mini" href="https://cloudsecurityalliance.org/star/ai-trustworthy-pledge/organizations" target="_blank" rel="noopener">
-          <img src="/csa-ai-trustworthy-pledge.png" alt="CSA AI Trustworthy Pledge 2026 badge" width="28" height="28" loading="lazy">
-          <span>Signatory · CSA AI Trustworthy Pledge</span>
-        </a>
+        <a class="pledge" href="https://cloudsecurityalliance.org/star/ai-trustworthy-pledge/organizations" target="_blank" rel="noopener"><img src="/csa-ai-trustworthy-pledge.png" width="84" height="84" alt="Cloud Security Alliance AI Trustworthy Pledge 2026 badge" loading="lazy"><span>Nevarro Technologies is a signatory to the <u>Cloud Security Alliance AI Trustworthy Pledge</u>.</span></a>
       </div>
       <div>
         <h4>Work</h4>
@@ -330,7 +329,6 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
       <div>
         <h4>Contact</h4>
         <a href="mailto:adi@nevarrotech.com">adi@nevarrotech.com</a>
-        <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a>
       </div>
       <div>
         <h4>Our presence</h4>

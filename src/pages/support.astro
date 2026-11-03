@@ -152,10 +152,12 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 .fgrid a{display:block;color:var(--muted);padding:5px 0;transition:color .18s ease}
 .fgrid a:hover{color:var(--text)}
 .fgrid .about{color:var(--muted);max-width:32ch;margin-top:16px;line-height:1.6}
-.fbrand{display:flex;flex-direction:column;gap:22px}
-.fgrid a.pledge-mini{display:inline-flex;align-items:center;gap:10px;padding:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5;color:var(--muted);max-width:220px;transition:color .18s ease}
-.fgrid a.pledge-mini:hover{color:var(--text)}
-.pledge-mini img{width:40px;height:40px;flex:none;border-radius:50%;box-shadow:0 0 0 1px var(--hairline);display:block}
+.fgrid a.pledge{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:28px;padding:0;max-width:250px;color:var(--muted)}
+@media (max-width:900px){.fgrid a.pledge{flex-direction:row;align-items:center;max-width:360px}}
+.pledge img{width:84px;height:84px;border-radius:50%;display:block;flex:none;box-shadow:0 0 0 1px var(--hairline)}
+.pledge span{font-size:13px;line-height:1.5}
+.pledge u{text-decoration:none;color:var(--text);border-bottom:1px solid var(--hairline)}
+.fgrid a.pledge:hover u{border-color:var(--text)}
 .pres{display:flex;flex-direction:column;gap:12px}
 .pres div{display:flex;align-items:flex-start;gap:10px;color:var(--muted);line-height:1.45}
 .pres img{width:22px;height:16.5px;border-radius:2px;box-shadow:0 0 0 1px var(--hairline);margin-top:3px;flex:none;object-fit:cover}
@@ -283,12 +285,12 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
   <div class="eyebrow">Support</div><h1>Support and escalation</h1><p class="lead">How to reach us, what we cover, and how issues are escalated.</p>
 </div></section>
 <section class="band" style="padding-top:56px"><div class="wrap"><div class="prose">
-<div class="box" style="margin-bottom:8px"><p><b>Primary support channel:</b> <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a>. First response within 1 business day (Mon–Fri, IST).</p><p><b>Business enquiries:</b> <a href="mailto:adi@nevarrotech.com">adi@nevarrotech.com</a></p></div>
+<div class="box" style="margin-bottom:8px"><p><b>Contact:</b> <a href="mailto:adi@nevarrotech.com">adi@nevarrotech.com</a>. First response within 1 business day (Mon–Fri, IST).</p></div>
 <h2>What support covers</h2>
 <ul><li>Questions about our services, engagements and proposals</li><li>Billing, invoices, receipts and refund requests</li><li>Issues with software we have built or deployed for you (critical issues addressed within 2 business days)</li></ul>
 <h2>Escalation path</h2>
 <ol>
-<li><b>Level 1 — Support:</b> email support@nevarrotech.com. Acknowledged within 1 business day; most issues resolved within 3 business days.</li>
+<li><b>Level 1 — Support:</b> email adi@nevarrotech.com. Acknowledged within 1 business day; most issues resolved within 3 business days.</li>
 <li><b>Level 2 — Founder review:</b> if unresolved after 5 business days, reply with "ESCALATE" in the subject line. The founder personally reviews and responds within 2 business days.</li>
 <li><b>Level 3 — Resolution:</b> billing issues are resolved per our <a href="/terms">Terms of Service</a>; we aim to close every escalation within 10 business days.</li>
 </ol>
@@ -299,12 +301,9 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 <footer>
   <div class="wrap">
     <div class="fgrid">
-      <div class="fbrand">
+      <div>
         <a class="brand" href="/" aria-label="Nevarro Technologies, home"><svg class="mk" viewBox="0 0 68 68" aria-hidden="true"><defs><mask id="nvcore-foot" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68"><rect width="68" height="68" fill="#000"/><polygon points="38.38,49.16 29.63,64.32 12.13,64.32 3.38,49.16 12.13,34.00 29.63,34.00" fill="#fff"/><polygon points="38.38,18.84 29.63,34.00 12.13,34.00 3.38,18.84 12.13,3.68 29.63,3.68" fill="#fff"/><polygon points="64.63,34.00 55.88,49.16 38.38,49.16 29.63,34.00 38.38,18.84 55.88,18.84" fill="#fff"/><line x1="29.63" y1="34" x2="12.13" y2="34" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="18.84" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="49.16" stroke="#000" stroke-width="2.2"/><polygon points="36.83,34.00 33.23,40.24 26.03,40.24 22.43,34.00 26.03,27.76 33.23,27.76" fill="#000"/></mask></defs><rect width="68" height="68" fill="currentColor" mask="url(#nvcore-foot)"/></svg><span class="wm"><b>NEVARRO</b><i>TECHNOLOGIES</i></span></a>
-        <a class="pledge-mini" href="https://cloudsecurityalliance.org/star/ai-trustworthy-pledge/organizations" target="_blank" rel="noopener">
-          <img src="/csa-ai-trustworthy-pledge.png" alt="CSA AI Trustworthy Pledge 2026 badge" width="28" height="28" loading="lazy">
-          <span>Signatory · CSA AI Trustworthy Pledge</span>
-        </a>
+        <a class="pledge" href="https://cloudsecurityalliance.org/star/ai-trustworthy-pledge/organizations" target="_blank" rel="noopener"><img src="/csa-ai-trustworthy-pledge.png" width="84" height="84" alt="Cloud Security Alliance AI Trustworthy Pledge 2026 badge" loading="lazy"><span>Nevarro Technologies is a signatory to the <u>Cloud Security Alliance AI Trustworthy Pledge</u>.</span></a>
       </div>
       <div>
         <h4>Work</h4>
@@ -321,7 +320,6 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
       <div>
         <h4>Contact</h4>
         <a href="mailto:adi@nevarrotech.com">adi@nevarrotech.com</a>
-        <a href="mailto:support@nevarrotech.com">support@nevarrotech.com</a>
       </div>
       <div>
         <h4>Our presence</h4>
