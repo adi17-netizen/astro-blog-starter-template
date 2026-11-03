@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f7f7f4">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Vertical Modernization — Nevarro Technologies</title>
-<meta name="description" content="We work inside individual companies, as partner or owner, to modernize operations and build the custom software and products they need.">
+<title>Technology transformation — Nevarro Technologies</title>
+<meta name="description" content="We build platforms for companies in specialized industries, run custom evals on their work, and help them train custom models for their use cases.">
 <link rel="canonical" href="https://nevarrotech.com/modernization">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,9 +152,10 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 .fgrid a{display:block;color:var(--muted);padding:5px 0;transition:color .18s ease}
 .fgrid a:hover{color:var(--text)}
 .fgrid .about{color:var(--muted);max-width:32ch;margin-top:16px;line-height:1.6}
-.fbar a.pledge-mini{display:inline-flex;align-items:center;gap:10px;color:var(--muted);transition:color .18s ease}
-.fbar a.pledge-mini:hover{color:var(--text)}
-.pledge-mini img{width:28px;height:28px;border-radius:50%;box-shadow:0 0 0 1px var(--hairline);display:block}
+.fbrand{display:flex;flex-direction:column;gap:22px}
+.fgrid a.pledge-mini{display:inline-flex;align-items:center;gap:10px;padding:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5;color:var(--muted);max-width:220px;transition:color .18s ease}
+.fgrid a.pledge-mini:hover{color:var(--text)}
+.pledge-mini img{width:40px;height:40px;flex:none;border-radius:50%;box-shadow:0 0 0 1px var(--hairline);display:block}
 .pres{display:flex;flex-direction:column;gap:12px}
 .pres div{display:flex;align-items:flex-start;gap:10px;color:var(--muted);line-height:1.45}
 .pres img{width:22px;height:16.5px;border-radius:2px;box-shadow:0 0 0 1px var(--hairline);margin-top:3px;flex:none;object-fit:cover}
@@ -216,6 +217,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 .ph-grid .art{max-width:440px;justify-self:end}
 .page-head .status{margin-top:4px}
 .sec-gap{margin-top:0}
+.factors.three{grid-template-columns:repeat(3,1fr)}
 .factors{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:var(--r);overflow:hidden}
 .factors>div{background:var(--canvas);padding:28px 24px}
 .factors .fk{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--ember);margin-bottom:14px}
@@ -259,8 +261,8 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 .rate .v small{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase;margin-left:6px}
 .cta-row{margin-top:28px}
 @media (max-width:1080px){.factors{grid-template-columns:1fr 1fr}}
-@media (max-width:920px){.ph-grid{grid-template-columns:1fr;row-gap:36px}.ph-grid .art{justify-self:start}.eng{grid-template-columns:1fr}.eng .eart{border-left:0;border-top:1px solid var(--hairline)}.steps li{grid-template-columns:72px 1fr;row-gap:8px}.steps li p{grid-column:2}}
-@media (max-width:680px){.factors{grid-template-columns:1fr}.steps li{grid-template-columns:1fr}.steps li p{grid-column:1}.eng .ebody{padding:24px 22px}}
+@media (max-width:920px){.factors.three{grid-template-columns:1fr}.ph-grid{grid-template-columns:1fr;row-gap:36px}.ph-grid .art{justify-self:start}.eng{grid-template-columns:1fr}.eng .eart{border-left:0;border-top:1px solid var(--hairline)}.steps li{grid-template-columns:72px 1fr;row-gap:8px}.steps li p{grid-column:2}}
+@media (max-width:680px){.factors,.factors.three{grid-template-columns:1fr}.steps li{grid-template-columns:1fr}.steps li p{grid-column:1}.eng .ebody{padding:24px 22px}}
 </style>
 </head>
 <body>
@@ -268,7 +270,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
   <div class="wrap">
     <a class="brand" href="/" aria-label="Nevarro Technologies, home"><svg class="mk" viewBox="0 0 68 68" aria-hidden="true"><defs><mask id="nvcore-nav" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68"><rect width="68" height="68" fill="#000"/><polygon points="38.38,49.16 29.63,64.32 12.13,64.32 3.38,49.16 12.13,34.00 29.63,34.00" fill="#fff"/><polygon points="38.38,18.84 29.63,34.00 12.13,34.00 3.38,18.84 12.13,3.68 29.63,3.68" fill="#fff"/><polygon points="64.63,34.00 55.88,49.16 38.38,49.16 29.63,34.00 38.38,18.84 55.88,18.84" fill="#fff"/><line x1="29.63" y1="34" x2="12.13" y2="34" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="18.84" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="49.16" stroke="#000" stroke-width="2.2"/><polygon points="36.83,34.00 33.23,40.24 26.03,40.24 22.43,34.00 26.03,27.76 33.23,27.76" fill="#000"/></mask></defs><rect width="68" height="68" fill="currentColor" mask="url(#nvcore-nav)"/></svg><span class="wm"><b>NEVARRO</b><i>TECHNOLOGIES</i></span></a>
     <nav class="links" aria-label="Main">
-      <a href="/modernization" class="on">Modernization</a>
+      <a href="/modernization" class="on">Transformation</a>
       <a href="https://nevresearch.com" target="_blank" rel="noopener">NEV Research Labs <span class="ext">↗</span></a>
       <a href="/pricing">Pricing</a>
       <a href="/support">Support</a>
@@ -278,7 +280,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 </header>
 <main>
 <section class="page-head"><div class="wrap ph-grid">
-  <div><div class="eyebrow">01 · Vertical Modernization</div><h1>We work with <em>individual companies</em>.</h1><p class="lead">Good businesses stall for unglamorous reasons. The work is done by hand because it always has been, the systems were bought a decade ago, and nobody has had the time to rebuild any of it while the business keeps running. We do that rebuild, from inside, alongside the people who know the work.</p><div class="status"><i></i>Now building · a portal for an industry association</div></div>
+  <div><div class="eyebrow">01 · Technology transformation</div><h1>We work with <em>companies</em>.</h1><p class="lead">We are technology transformation partners for specialized industries. We build platforms for companies, run custom evals on their own work, and help them train models for their use cases.</p><div class="status"><i></i>Now building · a platform for a leading nonprofit organization</div></div>
   <div><svg class="art" viewBox="0 0 360 172" role="img" aria-label="Manual paperwork turning into a working software system">
   <rect class="sf" x="36" y="22" width="78" height="100" rx="3"/>
   <rect class="sf" x="29" y="29" width="78" height="100" rx="3"/>
@@ -310,27 +312,28 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 </svg></div>
 </div></section>
 <section class="band"><div class="wrap">
+  <div class="head rev"><div class="eyebrow">What we do for companies</div><h2>Platforms, evals and custom models.</h2></div>
+  <div class="rev"><div class="factors three">
+  <div><div class="fk">01 · PLATFORMS</div><h3>Built around how you work</h3><p>Proprietary platforms and internal systems, designed around your process and handed over with documentation and source.</p></div>
+  <div><div class="fk">02 · EVALS</div><h3>Custom evals on your own work</h3><p>Evaluation sets built from your archives and workflows, so you can see how current models actually perform on your tasks.</p></div>
+  <div><div class="fk">03 · MODELS</div><h3>Models trained for your use case</h3><p>We help you train and tune custom models on your own work, and run them where your data needs to stay.</p></div>
+</div></div>
+</div></section>
+<section class="band"><div class="wrap">
   <div class="head rev"><div class="eyebrow">Two ways in</div><h2>Partner or owner.</h2><p class="lead">The work is the same either way. What differs is our position in the business.</p></div>
   <div class="rev"><div class="two">
   <div class="card"><div class="k">As partner</div><h3>We work with the owner</h3><p>You keep the business. We come in on a defined engagement, modernize the operations that matter most, and stay through the change. Terms are structured around what we are trying to achieve, not hours billed.</p></div>
   <div class="card"><div class="k">As owner</div><h3>We acquire the business</h3><p>For owners looking for succession, an exit, or a partner willing to take real ownership, we buy, in full or in part, and run it. Founders who want to stay involved can; those who want out get a clean handover.</p></div>
 </div></div>
 </div></section>
-<section class="band" id="build"><div class="wrap">
-  <div class="head rev"><div class="eyebrow">Custom solutions and products</div><h2>Software built around how you work.</h2><p class="lead">Inside an engagement, or on its own: industry bodies, regulated professions and niche enterprises whose work is too specific for generic software.</p></div>
-  <div class="rev"><div class="two">
-  <div class="card"><div class="k">Built to order</div><h3>Your system, your ownership</h3><p>A proprietary build for one organisation, designed around its process and handed over with documentation and source. Deployment and handover are part of the work.</p></div>
-  <div class="card"><div class="k">Built as a product</div><h3>Co-built for a category</h3><p>Where a problem is shared across a whole vertical, we build it as a product, sometimes alone, sometimes alongside a partner who knows the industry from the inside.</p></div>
-</div></div>
-</div></section>
 <section class="band"><div class="wrap">
   <div class="head rev"><div class="eyebrow">Current work</div><h2>What we are building now.</h2></div>
   <div class="rev"><div class="eng">
   <div class="ebody">
-    <div class="etop"><span class="sector">Industry body</span><span class="pill">In build</span></div>
+    <div class="etop"><span class="sector">Nonprofit</span><span class="pill">In build</span></div>
     <div class="who"><small>CLIENT</small><span class="redact" aria-label="Client name withheld"></span></div>
-    <h3>Proprietary portal for an industry association</h3>
-    <p>A purpose-built portal for an industry body, replacing fragmented manual processes with a single system its members and secretariat can both work in. Designed around how the association actually operates, rather than around a generic membership platform.</p>
+    <h3>A platform for a leading nonprofit organization</h3>
+    <p>A purpose-built platform that replaces fragmented manual processes with a single system its members and team can both work in, designed around how the organization actually operates.</p>
     <div class="tags"><span>Member operations</span><span>Custom build</span></div>
   </div>
   <div class="eart"><svg class="art portal" viewBox="0 0 300 190" role="img" aria-label="An association portal: members, a secretariat dashboard and approvals">
@@ -357,7 +360,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 </div></div>
 </div></section>
 <section class="band"><div class="wrap">
-  <div class="head rev"><div class="eyebrow">What modernization means here</div><h2>The business earns more, serves better and runs faster.</h2><p class="lead">Not a rebrand and not a transformation deck. These are the four things we measure.</p></div>
+  <div class="head rev"><div class="eyebrow">What we measure</div><h2>The business earns more, serves better and runs faster.</h2><p class="lead">Not a deck. These are the four things we measure.</p></div>
   <div class="rev"><div class="factors">
   <div><div class="fk">01 · MARGIN</div><h3>Less cost in delivery</h3><p>Replace manual process with software, without taking quality out with it.</p></div>
   <div><div class="fk">02 · THROUGHPUT</div><h3>More volume, same team</h3><p>Faster turnaround, shorter queues, fewer handoffs.</p></div>
@@ -377,12 +380,16 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 <footer>
   <div class="wrap">
     <div class="fgrid">
-      <div>
+      <div class="fbrand">
         <a class="brand" href="/" aria-label="Nevarro Technologies, home"><svg class="mk" viewBox="0 0 68 68" aria-hidden="true"><defs><mask id="nvcore-foot" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68"><rect width="68" height="68" fill="#000"/><polygon points="38.38,49.16 29.63,64.32 12.13,64.32 3.38,49.16 12.13,34.00 29.63,34.00" fill="#fff"/><polygon points="38.38,18.84 29.63,34.00 12.13,34.00 3.38,18.84 12.13,3.68 29.63,3.68" fill="#fff"/><polygon points="64.63,34.00 55.88,49.16 38.38,49.16 29.63,34.00 38.38,18.84 55.88,18.84" fill="#fff"/><line x1="29.63" y1="34" x2="12.13" y2="34" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="18.84" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="49.16" stroke="#000" stroke-width="2.2"/><polygon points="36.83,34.00 33.23,40.24 26.03,40.24 22.43,34.00 26.03,27.76 33.23,27.76" fill="#000"/></mask></defs><rect width="68" height="68" fill="currentColor" mask="url(#nvcore-foot)"/></svg><span class="wm"><b>NEVARRO</b><i>TECHNOLOGIES</i></span></a>
+        <a class="pledge-mini" href="https://cloudsecurityalliance.org/star/ai-trustworthy-pledge/organizations" target="_blank" rel="noopener">
+          <img src="/csa-ai-trustworthy-pledge.png" alt="CSA AI Trustworthy Pledge 2026 badge" width="28" height="28" loading="lazy">
+          <span>Signatory · CSA AI Trustworthy Pledge</span>
+        </a>
       </div>
       <div>
         <h4>Work</h4>
-        <a href="/modernization">Vertical Modernization</a>
+        <a href="/modernization">Technology transformation</a>
         <a href="https://nevresearch.com" target="_blank" rel="noopener">NEV Research Labs ↗</a>
         <a href="/pricing">Pricing</a>
       </div>
@@ -407,10 +414,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
     </div>
     <div class="fbar">
       <span>© 2026 Nevarro Technologies Private Limited</span>
-      <a class="pledge-mini" href="https://cloudsecurityalliance.org/star/ai-trustworthy-pledge/organizations" target="_blank" rel="noopener">
-        <img src="/csa-ai-trustworthy-pledge.png" alt="CSA AI Trustworthy Pledge 2026 badge" width="28" height="28" loading="lazy">
-        <span>Signatory · CSA AI Trustworthy Pledge</span>
-      </a>
+
     </div>
   </div>
 </footer>

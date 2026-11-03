@@ -152,9 +152,10 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 .fgrid a{display:block;color:var(--muted);padding:5px 0;transition:color .18s ease}
 .fgrid a:hover{color:var(--text)}
 .fgrid .about{color:var(--muted);max-width:32ch;margin-top:16px;line-height:1.6}
-.fbar a.pledge-mini{display:inline-flex;align-items:center;gap:10px;color:var(--muted);transition:color .18s ease}
-.fbar a.pledge-mini:hover{color:var(--text)}
-.pledge-mini img{width:28px;height:28px;border-radius:50%;box-shadow:0 0 0 1px var(--hairline);display:block}
+.fbrand{display:flex;flex-direction:column;gap:22px}
+.fgrid a.pledge-mini{display:inline-flex;align-items:center;gap:10px;padding:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5;color:var(--muted);max-width:220px;transition:color .18s ease}
+.fgrid a.pledge-mini:hover{color:var(--text)}
+.pledge-mini img{width:40px;height:40px;flex:none;border-radius:50%;box-shadow:0 0 0 1px var(--hairline);display:block}
 .pres{display:flex;flex-direction:column;gap:12px}
 .pres div{display:flex;align-items:flex-start;gap:10px;color:var(--muted);line-height:1.45}
 .pres img{width:22px;height:16.5px;border-radius:2px;box-shadow:0 0 0 1px var(--hairline);margin-top:3px;flex:none;object-fit:cover}
@@ -216,6 +217,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 .ph-grid .art{max-width:440px;justify-self:end}
 .page-head .status{margin-top:4px}
 .sec-gap{margin-top:0}
+.factors.three{grid-template-columns:repeat(3,1fr)}
 .factors{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:var(--r);overflow:hidden}
 .factors>div{background:var(--canvas);padding:28px 24px}
 .factors .fk{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--ember);margin-bottom:14px}
@@ -259,8 +261,8 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 .rate .v small{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase;margin-left:6px}
 .cta-row{margin-top:28px}
 @media (max-width:1080px){.factors{grid-template-columns:1fr 1fr}}
-@media (max-width:920px){.ph-grid{grid-template-columns:1fr;row-gap:36px}.ph-grid .art{justify-self:start}.eng{grid-template-columns:1fr}.eng .eart{border-left:0;border-top:1px solid var(--hairline)}.steps li{grid-template-columns:72px 1fr;row-gap:8px}.steps li p{grid-column:2}}
-@media (max-width:680px){.factors{grid-template-columns:1fr}.steps li{grid-template-columns:1fr}.steps li p{grid-column:1}.eng .ebody{padding:24px 22px}}
+@media (max-width:920px){.factors.three{grid-template-columns:1fr}.ph-grid{grid-template-columns:1fr;row-gap:36px}.ph-grid .art{justify-self:start}.eng{grid-template-columns:1fr}.eng .eart{border-left:0;border-top:1px solid var(--hairline)}.steps li{grid-template-columns:72px 1fr;row-gap:8px}.steps li p{grid-column:2}}
+@media (max-width:680px){.factors,.factors.three{grid-template-columns:1fr}.steps li{grid-template-columns:1fr}.steps li p{grid-column:1}.eng .ebody{padding:24px 22px}}
 </style>
 </head>
 <body>
@@ -268,7 +270,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
   <div class="wrap">
     <a class="brand" href="/" aria-label="Nevarro Technologies, home"><svg class="mk" viewBox="0 0 68 68" aria-hidden="true"><defs><mask id="nvcore-nav" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68"><rect width="68" height="68" fill="#000"/><polygon points="38.38,49.16 29.63,64.32 12.13,64.32 3.38,49.16 12.13,34.00 29.63,34.00" fill="#fff"/><polygon points="38.38,18.84 29.63,34.00 12.13,34.00 3.38,18.84 12.13,3.68 29.63,3.68" fill="#fff"/><polygon points="64.63,34.00 55.88,49.16 38.38,49.16 29.63,34.00 38.38,18.84 55.88,18.84" fill="#fff"/><line x1="29.63" y1="34" x2="12.13" y2="34" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="18.84" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="49.16" stroke="#000" stroke-width="2.2"/><polygon points="36.83,34.00 33.23,40.24 26.03,40.24 22.43,34.00 26.03,27.76 33.23,27.76" fill="#000"/></mask></defs><rect width="68" height="68" fill="currentColor" mask="url(#nvcore-nav)"/></svg><span class="wm"><b>NEVARRO</b><i>TECHNOLOGIES</i></span></a>
     <nav class="links" aria-label="Main">
-      <a href="/modernization">Modernization</a>
+      <a href="/modernization">Transformation</a>
       <a href="https://nevresearch.com" target="_blank" rel="noopener">NEV Research Labs <span class="ext">↗</span></a>
       <a href="/pricing">Pricing</a>
       <a href="/support" class="on">Support</a>
@@ -297,12 +299,16 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 <footer>
   <div class="wrap">
     <div class="fgrid">
-      <div>
+      <div class="fbrand">
         <a class="brand" href="/" aria-label="Nevarro Technologies, home"><svg class="mk" viewBox="0 0 68 68" aria-hidden="true"><defs><mask id="nvcore-foot" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68"><rect width="68" height="68" fill="#000"/><polygon points="38.38,49.16 29.63,64.32 12.13,64.32 3.38,49.16 12.13,34.00 29.63,34.00" fill="#fff"/><polygon points="38.38,18.84 29.63,34.00 12.13,34.00 3.38,18.84 12.13,3.68 29.63,3.68" fill="#fff"/><polygon points="64.63,34.00 55.88,49.16 38.38,49.16 29.63,34.00 38.38,18.84 55.88,18.84" fill="#fff"/><line x1="29.63" y1="34" x2="12.13" y2="34" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="18.84" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="49.16" stroke="#000" stroke-width="2.2"/><polygon points="36.83,34.00 33.23,40.24 26.03,40.24 22.43,34.00 26.03,27.76 33.23,27.76" fill="#000"/></mask></defs><rect width="68" height="68" fill="currentColor" mask="url(#nvcore-foot)"/></svg><span class="wm"><b>NEVARRO</b><i>TECHNOLOGIES</i></span></a>
+        <a class="pledge-mini" href="https://cloudsecurityalliance.org/star/ai-trustworthy-pledge/organizations" target="_blank" rel="noopener">
+          <img src="/csa-ai-trustworthy-pledge.png" alt="CSA AI Trustworthy Pledge 2026 badge" width="28" height="28" loading="lazy">
+          <span>Signatory · CSA AI Trustworthy Pledge</span>
+        </a>
       </div>
       <div>
         <h4>Work</h4>
-        <a href="/modernization">Vertical Modernization</a>
+        <a href="/modernization">Technology transformation</a>
         <a href="https://nevresearch.com" target="_blank" rel="noopener">NEV Research Labs ↗</a>
         <a href="/pricing">Pricing</a>
       </div>
@@ -327,10 +333,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
     </div>
     <div class="fbar">
       <span>© 2026 Nevarro Technologies Private Limited</span>
-      <a class="pledge-mini" href="https://cloudsecurityalliance.org/star/ai-trustworthy-pledge/organizations" target="_blank" rel="noopener">
-        <img src="/csa-ai-trustworthy-pledge.png" alt="CSA AI Trustworthy Pledge 2026 badge" width="28" height="28" loading="lazy">
-        <span>Signatory · CSA AI Trustworthy Pledge</span>
-      </a>
+
     </div>
   </div>
 </footer>
