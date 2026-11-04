@@ -25,7 +25,7 @@
   --sans:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --serif:"EB Garamond","Iowan Old Style",Palatino,ui-serif,Georgia,serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
-  --r:4px; --page:1080px; --band:104px; --gutter:48px;
+  --r:4px; --page:1080px; --band:44px; --gutter:40px;
   --s1:#ecebe4; --s2:#d9d7cd; --s3:#c3c1b6; --s4:#aaa89d; --s5:#918f85;
   --l1:#6b6a5f; --l2:#52514a; --l3:#3d3c35; --l4:#2c2b25; --l5:#1e1d18;
   --ring:#a5a49c; --ring-d:#c9c8c1;
@@ -63,9 +63,9 @@ h2{font-size:clamp(1.5rem,2.5vw,2rem);letter-spacing:-0.025em}
 h3{font-size:1.1875rem;letter-spacing:-0.012em}
 p{margin:0 0 14px;text-wrap:pretty}
 .band{padding:var(--band) 0;border-top:1px solid var(--hairline)}
-.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--faint);margin-bottom:20px;text-transform:uppercase}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--faint);margin-bottom:12px;text-transform:uppercase}
 .lead{font-family:var(--serif);font-size:1.25rem;line-height:1.52;color:var(--muted);max-width:54ch}
-.head{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);column-gap:var(--gutter);align-items:start;margin-bottom:56px}
+.head{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);column-gap:var(--gutter);align-items:start;margin-bottom:24px}
 .head .eyebrow{grid-column:1/-1}
 .head h2{grid-column:1;padding-right:8%}
 .head .lead{grid-column:2;margin:0;padding-top:.35em}
@@ -146,7 +146,7 @@ p{margin:0 0 14px;text-wrap:pretty}
 
 /* footer */
 footer{border-top:1px solid var(--hairline);background:var(--surface)}
-.fgrid{display:grid;grid-template-columns:repeat(5,auto);justify-content:space-between;gap:36px 32px;padding:64px 0 48px;font-size:14px}
+.fgrid{display:grid;grid-template-columns:repeat(5,auto);justify-content:space-between;gap:28px 32px;padding:40px 0 32px;font-size:14px}
 .fgrid h4{margin:0 0 16px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--faint);font-weight:400;text-transform:uppercase}
 .fgrid a.brand{display:flex;padding:0;color:var(--text)}
 .fgrid a{display:block;color:var(--muted);padding:5px 0;transition:color .18s ease}
@@ -167,7 +167,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
   font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.07em;text-transform:uppercase}
 
 /* secondary pages */
-.page-head{padding:88px 0 56px}
+.page-head{padding:40px 0 24px}
 .page-head .eyebrow{margin-bottom:18px}
 .page-head h1{margin:0 0 22px;max-width:18ch}
 .page-head .lead{max-width:60ch}
@@ -189,21 +189,21 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
 
 @media (max-width:1100px){.fgrid{grid-template-columns:repeat(3,minmax(0,1fr));justify-content:stretch}.fgrid>div:first-child{grid-column:1/-1}}
 @media (max-width:920px){
-  :root{--band:76px;--gutter:32px}
+  :root{--band:36px;--gutter:28px}
   .head{grid-template-columns:1fr;row-gap:16px}
   .head h2{padding-right:0}
   .head .lead{grid-column:1;padding-top:0}
   .two{grid-template-columns:1fr}
 }
 @media (max-width:680px){
-  :root{--band:60px}
+  :root{--band:32px}
   body{font-size:15.5px}
   .wrap{padding-left:22px;padding-right:22px}
   .links a:not(.btn){display:none}
   .ticker .wrap span:last-child{display:none}
   .card{padding:26px 22px}
   .line{grid-template-columns:1fr;row-gap:6px}
-  .page-head{padding:56px 0 36px}
+  .page-head{padding:28px 0 18px}
 }
 @media (max-width:680px){.fgrid{grid-template-columns:1fr 1fr}.pres span{white-space:normal}}
 @media (max-width:520px){.brand .wm i{display:none}}
@@ -333,7 +333,7 @@ footer{border-top:1px solid var(--hairline);background:var(--surface)}
       <div>
         <h4>Our presence</h4>
         <div class="pres">
-          <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBpZD0iZmxhZy1pY29ucy1pbiIgdmlld0JveD0iMCAwIDY0MCA0ODAiPgogIDxwYXRoIGZpbGw9IiNmOTMiIGQ9Ik0wIDBoNjQwdjE2MEgweiIvPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0wIDE2MGg2NDB2MTYwSDB6Ii8+CiAgPHBhdGggZmlsbD0iIzEyODgwNyIgZD0iTTAgMzIwaDY0MHYxNjBIMHoiLz4KICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgzLjIgMCAwIDMuMiAzMjAgMjQwKSI+CiAgICA8Y2lyY2xlIHI9IjIwIiBmaWxsPSIjMDA4Ii8+CiAgICA8Y2lyY2xlIHI9IjE3LjUiIGZpbGw9IiNmZmYiLz4KICAgIDxjaXJjbGUgcj0iMy41IiBmaWxsPSIjMDA4Ii8+CiAgICA8ZyBpZD0iaW4tZCI+CiAgICAgIDxnIGlkPSJpbi1jIj4KICAgICAgICA8ZyBpZD0iaW4tYiI+CiAgICAgICAgICA8ZyBpZD0iaW4tYSIgZmlsbD0iIzAwOCI+CiAgICAgICAgICAgIDxjaXJjbGUgcj0iLjkiIHRyYW5zZm9ybT0icm90YXRlKDcuNSAtOC44IDEzMy41KSIvPgogICAgICAgICAgICA8cGF0aCBkPSJNMCAxNy41LjYgNyAwIDJsLS42IDV6Ii8+CiAgICAgICAgICA8L2c+CiAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNpbi1hIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB0cmFuc2Zvcm09InJvdGF0ZSgxNSkiLz4KICAgICAgICA8L2c+CiAgICAgICAgPHVzZSB4bGluazpocmVmPSIjaW4tYiIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdHJhbnNmb3JtPSJyb3RhdGUoMzApIi8+CiAgICAgIDwvZz4KICAgICAgPHVzZSB4bGluazpocmVmPSIjaW4tYyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdHJhbnNmb3JtPSJyb3RhdGUoNjApIi8+CiAgICA8L2c+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNpbi1kIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNpbi1kIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTIwKSIvPgogIDwvZz4KPC9zdmc+Cg==" alt="India" width="22" height="17" loading="lazy"><span><b>India</b>Bengaluru · Chennai · Lucknow</span></div>
+          <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBpZD0iZmxhZy1pY29ucy1pbiIgdmlld0JveD0iMCAwIDY0MCA0ODAiPgogIDxwYXRoIGZpbGw9IiNmOTMiIGQ9Ik0wIDBoNjQwdjE2MEgweiIvPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0wIDE2MGg2NDB2MTYwSDB6Ii8+CiAgPHBhdGggZmlsbD0iIzEyODgwNyIgZD0iTTAgMzIwaDY0MHYxNjBIMHoiLz4KICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgzLjIgMCAwIDMuMiAzMjAgMjQwKSI+CiAgICA8Y2lyY2xlIHI9IjIwIiBmaWxsPSIjMDA4Ii8+CiAgICA8Y2lyY2xlIHI9IjE3LjUiIGZpbGw9IiNmZmYiLz4KICAgIDxjaXJjbGUgcj0iMy41IiBmaWxsPSIjMDA4Ii8+CiAgICA8ZyBpZD0iaW4tZCI+CiAgICAgIDxnIGlkPSJpbi1jIj4KICAgICAgICA8ZyBpZD0iaW4tYiI+CiAgICAgICAgICA8ZyBpZD0iaW4tYSIgZmlsbD0iIzAwOCI+CiAgICAgICAgICAgIDxjaXJjbGUgcj0iLjkiIHRyYW5zZm9ybT0icm90YXRlKDcuNSAtOC44IDEzMy41KSIvPgogICAgICAgICAgICA8cGF0aCBkPSJNMCAxNy41LjYgNyAwIDJsLS42IDV6Ii8+CiAgICAgICAgICA8L2c+CiAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNpbi1hIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB0cmFuc2Zvcm09InJvdGF0ZSgxNSkiLz4KICAgICAgICA8L2c+CiAgICAgICAgPHVzZSB4bGluazpocmVmPSIjaW4tYiIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdHJhbnNmb3JtPSJyb3RhdGUoMzApIi8+CiAgICAgIDwvZz4KICAgICAgPHVzZSB4bGluazpocmVmPSIjaW4tYyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdHJhbnNmb3JtPSJyb3RhdGUoNjApIi8+CiAgICA8L2c+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNpbi1kIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNpbi1kIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTIwKSIvPgogIDwvZz4KPC9zdmc+Cg==" alt="India" width="22" height="17" loading="lazy"><span><b>India</b>Bengaluru, Karnataka<br>Palakkad, Kerala</span></div>
           <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJmbGFnLWljb25zLWJoIiB2aWV3Qm94PSIwIDAgNjQwIDQ4MCI+CiAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGg2NDB2NDgwSDAiLz4KICA8cGF0aCBmaWxsPSIjY2UxMTI2IiBkPSJNNjQwIDBIOTZsMTEwLjcgNDhMOTYgOTZsMTEwLjcgNDhMOTYgMTkybDExMC43IDQ4TDk2IDI4OGwxMTAuNyA0OEw5NiAzODRsMTEwLjcgNDhMOTYgNDgwaDU0NCIvPgo8L3N2Zz4K" alt="Bahrain" width="22" height="17" loading="lazy"><span><b>Bahrain</b>Abu Saiba</span></div>
         </div>
       </div>
