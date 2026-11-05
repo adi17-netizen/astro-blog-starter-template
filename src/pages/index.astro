@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f7f7f4">
+<meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>Nevarro Technologies</title>
 <meta name="description" content="Nevarro Technologies builds custom platforms and AI solutions for companies in specialized industries, and licenses enterprise data rights for research through NEV Research Labs.">
@@ -23,7 +24,7 @@
 </script>
 <style is:global>
 :root{
-  --canvas:#f7f7f4; --surface:#f2f1ed; --raised:#e6e5e0; --border:#dedcd6; --hairline:#e5e3dd;
+  --canvas:#fbfbf9; --surface:#f5f4f1; --raised:#ebeae6; --border:#e3e2dd; --hairline:#ecebe7;
   --text:#26251e; --muted:#6f6e68; --faint:#9b9a94;
   --ember:#f54e00; --ember-soft:rgba(245,78,0,.09);
   --btn-fill:#26251e; --btn-fill-text:#f7f7f4;
@@ -36,19 +37,19 @@
   --ring:#a5a49c; --ring-d:#c9c8c1;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --canvas:#1a1915; --surface:#1f1e19; --raised:#27261f; --border:#34332c; --hairline:#2c2b24;
-  --text:#f2f1ed; --muted:#a3a29c; --faint:#7c7b74;
+  --canvas:#141414; --surface:#1b1b1a; --raised:#242423; --border:#30302e; --hairline:#272726;
+  --text:#ededeb; --muted:#a3a29c; --faint:#7c7b74;
   --ember:#ff6a24; --ember-soft:rgba(255,106,36,.11);
-  --btn-fill:#e6e5e0; --btn-fill-text:#26251e;
+  --btn-fill:#ededeb; --btn-fill-text:#141414;
   --s1:#5a584d; --s2:#4b4941; --s3:#3e3d36; --s4:#33322c; --s5:#2a2924;
   --l1:#f6f3ea; --l2:#e0ddd2; --l3:#c6c3b8; --l4:#a9a79c; --l5:#8d8b81;
   --ring:#77766e; --ring-d:#4f4e46;
 }}
 :root[data-theme="dark"]{
-  --canvas:#1a1915; --surface:#1f1e19; --raised:#27261f; --border:#34332c; --hairline:#2c2b24;
-  --text:#f2f1ed; --muted:#a3a29c; --faint:#7c7b74;
+  --canvas:#141414; --surface:#1b1b1a; --raised:#242423; --border:#30302e; --hairline:#272726;
+  --text:#ededeb; --muted:#a3a29c; --faint:#7c7b74;
   --ember:#ff6a24; --ember-soft:rgba(255,106,36,.11);
-  --btn-fill:#e6e5e0; --btn-fill-text:#26251e;
+  --btn-fill:#ededeb; --btn-fill-text:#141414;
   --s1:#5a584d; --s2:#4b4941; --s3:#3e3d36; --s4:#33322c; --s5:#2a2924;
   --l1:#f6f3ea; --l2:#e0ddd2; --l3:#c6c3b8; --l4:#a9a79c; --l5:#8d8b81;
   --ring:#77766e; --ring-d:#4f4e46;
@@ -85,7 +86,7 @@ p{margin:0 0 14px;text-wrap:pretty}
 
 /* nav */
 .nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--canvas) 88%,transparent);
-  backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid var(--hairline)}
+  backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:24px}
 .brand{display:flex;align-items:center;gap:10px;color:var(--text)}
 .brand .mk{width:24px;height:24px;flex:none;display:block}
