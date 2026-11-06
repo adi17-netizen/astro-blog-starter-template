@@ -235,31 +235,36 @@ footer{background:var(--surface);margin-top:24px}
 .c-ring{fill:var(--ring)}.c-ring-d{fill:var(--ring-d)}
 
 /* two lines of work */
-/* shared core linking the two verticals */
+/* the common engineering core: one source, powering both verticals independently */
 .two.split{position:relative}
-.bridge{position:absolute;left:50%;top:calc(20px + ((min(1016px, 100vw - 64px) - 14px) / 2 - 68px) * 0.23889);width:132px;height:58px;transform:translate(-50%,-50%);z-index:2;pointer-events:none;color:var(--text)}
-.bline{position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:repeating-linear-gradient(90deg,var(--ember) 0 5px,transparent 5px 10px);opacity:.75}
-.bline i{position:absolute;top:50%;left:0;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--ember);animation:bx 2.4s linear infinite}
-.bline i+i{animation-delay:-1.2s}
-@keyframes bx{0%{left:0;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:100%;opacity:0}}
-.bnode{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:var(--canvas);border:1.5px solid var(--ember);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px color-mix(in srgb,var(--ember) 12%,transparent)}
+.bridge{position:absolute;left:50%;top:calc(20px + ((min(1016px, 100vw - 64px) - 14px) / 2 - 68px) * 0.23889);width:100px;height:58px;transform:translate(-50%,-50%);z-index:2;pointer-events:none;color:var(--text)}
+.bline{position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:repeating-linear-gradient(90deg,var(--ember) 0 5px,transparent 5px 10px);opacity:.7}
+.bline i{position:absolute;top:50%;left:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--ember);animation:bl 2.6s ease-in infinite}
+.bline i:nth-child(2){animation-delay:-1.3s}
+.bline i:nth-child(3){animation-name:br}
+.bline i:nth-child(4){animation-name:br;animation-delay:-1.3s}
+@keyframes bl{0%{left:50%;opacity:0}20%{opacity:1}85%{opacity:1}100%{left:0;opacity:0}}
+@keyframes br{0%{left:50%;opacity:0}20%{opacity:1}85%{opacity:1}100%{left:100%;opacity:0}}
+.bnode{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:var(--canvas);border:1.5px solid var(--ember);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px color-mix(in srgb,var(--ember) 12%,transparent);z-index:1}
 .bnode svg{width:30px;height:30px;display:block}
-.bnode::after{content:"";position:absolute;inset:-1.5px;border-radius:50%;border:1.5px solid var(--ember);animation:ring 2.8s ease-out infinite}
+.bnode::after{content:"";position:absolute;inset:-1.5px;border-radius:50%;border:1.5px solid var(--ember);animation:ring 2.6s ease-out infinite}
 @keyframes ring{0%{transform:scale(1);opacity:.6}75%,100%{transform:scale(1.55);opacity:0}}
-.blabel{position:absolute;left:50%;top:calc(100% + 12px);transform:translateX(-50%);white-space:nowrap;text-align:center}
-.blabel b{display:inline-block;font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ember);background:var(--canvas);border:1px solid color-mix(in srgb,var(--ember) 40%,transparent);border-radius:999px;padding:6px 10px 5px}
-.blabel small{display:none}
 @media (max-width:920px){
   .bridge{position:relative;left:auto;top:auto;transform:none;width:auto;height:84px}
-  .bnode{left:52px}
-  .bline{left:52px;right:auto;top:-15px;bottom:-15px;width:2px;height:auto;margin:0 0 0 -1px;background:repeating-linear-gradient(180deg,var(--ember) 0 5px,transparent 5px 10px)}
-  .bline i{left:1px;top:0;margin:-4px 0 0 -4px;animation-name:by}
-  @keyframes by{0%{top:0;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:100%;opacity:0}}
-  .blabel{left:98px;top:50%;transform:translateY(-50%);text-align:left}
-  .blabel b{display:block;background:none;border:0;padding:0;margin-bottom:5px}
-  .blabel small{display:block;font-size:12.5px;color:var(--muted)}
+  .bline{left:50%;right:auto;top:-15px;bottom:-15px;width:2px;height:auto;margin:0 0 0 -1px;background:repeating-linear-gradient(180deg,var(--ember) 0 5px,transparent 5px 10px)}
+  .bline i{left:1px;top:50%;animation-name:bu}
+  .bline i:nth-child(3),.bline i:nth-child(4){animation-name:bd}
+  @keyframes bu{0%{top:50%;opacity:0}20%{opacity:1}85%{opacity:1}100%{top:0;opacity:0}}
+  @keyframes bd{0%{top:50%;opacity:0}20%{opacity:1}85%{opacity:1}100%{top:100%;opacity:0}}
 }
-@media (prefers-reduced-motion:reduce){.bline i,.bnode::after{display:none}}
+/* contract being signed and sealed (NEV art) */
+.art .sig{fill:none;stroke:var(--text);stroke-width:1.4;stroke-linecap:round;stroke-dasharray:40;stroke-dashoffset:40;animation:sign 4.2s ease-in-out infinite}
+.art .seal circle{fill:var(--ember)}
+.art .seal .in{fill:none;stroke:var(--canvas);stroke-width:1.2}
+.art .seal{transform-box:fill-box;transform-origin:center;animation:seal 4.2s ease-out infinite}
+@keyframes sign{0%,8%{stroke-dashoffset:40}40%,88%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes seal{0%,42%{transform:scale(0);opacity:0}50%{transform:scale(1.25);opacity:1}56%,88%{transform:scale(1);opacity:1}100%{transform:scale(1);opacity:0}}
+@media (prefers-reduced-motion:reduce){.bline i,.bnode::after{display:none}.art .sig,.art .seal{animation:none;stroke-dashoffset:0}}
 .two.split{gap:14px;background:none;border:0;border-radius:0;overflow:visible}
 .two.split>.card{border:1px solid var(--hairline);border-radius:var(--r);overflow:hidden}
 .line-card{display:flex;flex-direction:column;padding:0;color:inherit}
@@ -352,7 +357,7 @@ footer{background:var(--surface);margin-top:24px}
       <div class="head rev">
         <div class="eyebrow">What we do</div>
         <h2>Two verticals.</h2>
-        <p class="lead">One builds with enterprises. The other syndicates enterprise data for AI research. Both run on the same AI and platform engineering.</p>
+        <p class="lead">One builds with enterprises. The other syndicates enterprise data for AI research. Each runs independently, on the same engineering foundation.</p>
       </div>
       <div class="two split rev">
         <a class="card line-card" href="/modernization">
@@ -381,7 +386,6 @@ footer{background:var(--surface);margin-top:24px}
   <rect class="cell" style="animation-delay:1.8s" x="261" y="102" width="32" height="18" rx="2"/>
   <rect class="cell" style="animation-delay:2.1s" x="298" y="102" width="32" height="18" rx="2"/>
   <path class="ln" d="M224 130 H300" opacity=".35"/>
-  <path class="wire" d="M340 86 L360 86"/>
   <text class="cap" x="61" y="160" text-anchor="middle">WORKFLOW</text>
   <text class="cap e" x="157" y="76" text-anchor="middle">BUILD</text>
   <text class="cap t" x="277" y="160" text-anchor="middle">SYSTEM</text>
@@ -394,11 +398,10 @@ footer{background:var(--surface);margin-top:24px}
             <div class="foot"><span class="meta">Platforms · AI solutions · Custom models</span><span class="go">Read more →</span></div>
           </div>
         </a>
-        <div class="bridge" aria-hidden="true"><span class="bline"><i></i><i></i></span><span class="bnode"><svg viewBox="0 0 68 68"><defs><mask id="nvcore-bridge" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68"><rect width="68" height="68" fill="#000"/><polygon points="38.38,49.16 29.63,64.32 12.13,64.32 3.38,49.16 12.13,34.00 29.63,34.00" fill="#fff"/><polygon points="38.38,18.84 29.63,34.00 12.13,34.00 3.38,18.84 12.13,3.68 29.63,3.68" fill="#fff"/><polygon points="64.63,34.00 55.88,49.16 38.38,49.16 29.63,34.00 38.38,18.84 55.88,18.84" fill="#fff"/><line x1="29.63" y1="34" x2="12.13" y2="34" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="18.84" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="49.16" stroke="#000" stroke-width="2.2"/><polygon points="36.83,34.00 33.23,40.24 26.03,40.24 22.43,34.00 26.03,27.76 33.23,27.76" fill="#000"/></mask></defs><rect width="68" height="68" fill="currentColor" mask="url(#nvcore-bridge)"/></svg></span><span class="blabel"><b>Shared core</b><small>AI and platform engineering</small></span></div>
+        <div class="bridge" aria-hidden="true"><span class="bline"><i></i><i></i><i></i><i></i></span><span class="bnode"><svg viewBox="0 0 68 68"><defs><mask id="nvcore-bridge" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68"><rect width="68" height="68" fill="#000"/><polygon points="38.38,49.16 29.63,64.32 12.13,64.32 3.38,49.16 12.13,34.00 29.63,34.00" fill="#fff"/><polygon points="38.38,18.84 29.63,34.00 12.13,34.00 3.38,18.84 12.13,3.68 29.63,3.68" fill="#fff"/><polygon points="64.63,34.00 55.88,49.16 38.38,49.16 29.63,34.00 38.38,18.84 55.88,18.84" fill="#fff"/><line x1="29.63" y1="34" x2="12.13" y2="34" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="18.84" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="49.16" stroke="#000" stroke-width="2.2"/><polygon points="36.83,34.00 33.23,40.24 26.03,40.24 22.43,34.00 26.03,27.76 33.23,27.76" fill="#000"/></mask></defs><rect width="68" height="68" fill="currentColor" mask="url(#nvcore-bridge)"/></svg></span></div>
         <a class="card line-card" href="https://nevresearch.com" target="_blank" rel="noopener">
-          <div class="artbox"><svg class="art" viewBox="0 0 360 172" role="img" aria-label="Company archives, held as rights by Nevarro, supporting training data and training environments">
+          <div class="artbox"><svg class="art" viewBox="0 0 360 172" role="img" aria-label="Company archives, licensed under contract, becoming training data and training environments">
   <rect class="fl" x="18" y="28" width="78" height="28" rx="3"/>
-  <path class="wire" d="M0 86 C9 86 9 80 18 80"/>
   <rect class="fl" x="18" y="66" width="78" height="28" rx="3"/>
   <rect class="fl" x="18" y="104" width="78" height="28" rx="3"/>
   <path class="ln" d="M47 42 H67 M47 80 H67 M47 118 H67"/>
@@ -408,9 +411,10 @@ footer{background:var(--surface);margin-top:24px}
   <circle class="dot" r="3"><animateMotion dur="2.6s" repeatCount="indefinite" path="M96 42 C126 42 134 84 162 84"/></circle>
   <circle class="dot" r="3"><animateMotion dur="2.6s" begin="-.9s" repeatCount="indefinite" path="M96 80 L162 84"/></circle>
   <circle class="dot" r="3"><animateMotion dur="2.6s" begin="-1.7s" repeatCount="indefinite" path="M96 118 C126 118 134 84 162 84"/></circle>
-  <defs><mask id="nvcore-art" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68"><rect width="68" height="68" fill="#000"/><polygon points="38.38,49.16 29.63,64.32 12.13,64.32 3.38,49.16 12.13,34.00 29.63,34.00" fill="#fff"/><polygon points="38.38,18.84 29.63,34.00 12.13,34.00 3.38,18.84 12.13,3.68 29.63,3.68" fill="#fff"/><polygon points="64.63,34.00 55.88,49.16 38.38,49.16 29.63,34.00 38.38,18.84 55.88,18.84" fill="#fff"/><line x1="29.63" y1="34" x2="12.13" y2="34" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="18.84" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="49.16" stroke="#000" stroke-width="2.2"/><polygon points="36.83,34.00 33.23,40.24 26.03,40.24 22.43,34.00 26.03,27.76 33.23,27.76" fill="#000"/></mask></defs>
-  <g transform="translate(171 69) scale(0.4412)"><rect width="68" height="68" fill="var(--text)" mask="url(#nvcore-art)"/></g>
-  <text class="cap" x="186" y="118" text-anchor="middle">RIGHTS</text>
+  <rect class="fl" x="164" y="56" width="44" height="56" rx="3"/>
+  <path class="ln" d="M172 67 H200 M172 74 H200 M172 81 H192"/>
+  <path class="sig" d="M172 98 c2.5 -6 4.5 3 7 -1.5 s3.5 -5 5.5 0 s3.5 2.5 7.5 -2.5"/>
+  <g class="seal"><circle cx="203" cy="106" r="7.5"/><circle class="in" cx="203" cy="106" r="4.2"/></g>
   <path class="wire" d="M210 84 C238 84 238 52 262 52"/>
   <path class="wire" d="M210 84 C238 84 238 116 262 116"/>
   <circle class="dot e" r="3.5"><animateMotion dur="2.2s" repeatCount="indefinite" path="M210 84 C238 84 238 52 262 52"/></circle>
