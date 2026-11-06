@@ -9,10 +9,10 @@
 <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>Nevarro Technologies</title>
-<meta name="description" content="Nevarro Technologies builds custom platforms and AI solutions for companies in specialized industries, and syndicates enterprise data for AI research through NEV Research Labs.">
+<meta name="description" content="Nevarro Technologies builds custom technology and AI solutions for companies in specialized industries, and syndicates enterprise data for AI research through NEV Research Labs.">
 <link rel="canonical" href="https://nevarrotech.com/">
 <meta property="og:title" content="Nevarro Technologies">
-<meta property="og:description" content="Nevarro Technologies builds custom platforms and AI solutions for companies in specialized industries, and syndicates enterprise data for AI research through NEV Research Labs.">
+<meta property="og:description" content="Nevarro Technologies builds custom technology and AI solutions for companies in specialized industries, and syndicates enterprise data for AI research through NEV Research Labs.">
 <meta property="og:image" content="https://nevarrotech.com/og.png">
 <meta property="og:url" content="https://nevarrotech.com/">
 <meta name="twitter:card" content="summary_large_image">
@@ -257,14 +257,13 @@ footer{background:var(--surface);margin-top:24px}
   @keyframes bu{0%{top:50%;opacity:0}20%{opacity:1}85%{opacity:1}100%{top:0;opacity:0}}
   @keyframes bd{0%{top:50%;opacity:0}20%{opacity:1}85%{opacity:1}100%{top:100%;opacity:0}}
 }
-/* contract being signed and sealed (NEV art) */
-.art .sig{fill:none;stroke:var(--text);stroke-width:1.4;stroke-linecap:round;stroke-dasharray:40;stroke-dashoffset:40;animation:sign 4.2s ease-in-out infinite}
-.art .seal circle{fill:var(--ember)}
-.art .seal .in{fill:none;stroke:var(--canvas);stroke-width:1.2}
-.art .seal{transform-box:fill-box;transform-origin:center;animation:seal 4.2s ease-out infinite}
-@keyframes sign{0%,8%{stroke-dashoffset:40}40%,88%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
-@keyframes seal{0%,42%{transform:scale(0);opacity:0}50%{transform:scale(1.25);opacity:1}56%,88%{transform:scale(1);opacity:1}100%{transform:scale(1);opacity:0}}
-@media (prefers-reduced-motion:reduce){.bline i,.bnode::after{display:none}.art .sig,.art .seal{animation:none;stroke-dashoffset:0}}
+/* a page broken into data and rebuilt (NEV art) */
+.art .pg{animation:pg 5s ease-in-out infinite}
+.art .px{fill:var(--faint);transform-box:fill-box;transform-origin:center;animation:px 5s cubic-bezier(.45,0,.25,1) infinite}
+.art .px.e{fill:var(--ember)}
+@keyframes pg{0%,14%{opacity:1}20%,80%{opacity:0}88%,100%{opacity:1}}
+@keyframes px{0%,12%{transform:none;opacity:0}18%{transform:none;opacity:1}40%,54%{transform:translate(var(--dx),var(--dy)) scale(.55);opacity:.9}74%{transform:none;opacity:1}84%,100%{transform:none;opacity:0}}
+@media (prefers-reduced-motion:reduce){.bline i,.bnode::after{display:none}.art .pg,.art .px{animation:none}.art .px{opacity:0}}
 .two.split{gap:14px;background:none;border:0;border-radius:0;overflow:visible}
 .two.split>.card{border:1px solid var(--hairline);border-radius:var(--r);overflow:hidden}
 .line-card{display:flex;flex-direction:column;padding:0;color:inherit}
@@ -340,7 +339,7 @@ footer{background:var(--surface);margin-top:24px}
     <div class="wrap hero-grid">
       <div>
         <h1>Technology partners for <em>specialized industries</em>.</h1>
-        <p class="lead">Nevarro builds custom platforms and AI solutions for enterprises in specialized industries. Our research arm, NEV Research Labs, syndicates enterprise data for AI research.</p>
+        <p class="lead">Nevarro builds custom technology and AI solutions for enterprises in specialized industries. Our research arm, NEV Research Labs, syndicates enterprise data for AI research.</p>
       </div>
       <div class="globe-wrap" id="globeWrap" aria-hidden="true">
         <svg viewBox="0 0 660 440">
@@ -392,15 +391,15 @@ footer{background:var(--surface);margin-top:24px}
 </svg></div>
           <div class="body">
             <div class="k">01 · Technology transformation</div>
-            <h3>Custom platforms and AI solutions.</h3>
-            <p>We work with enterprises to build custom platforms and use AI for sovereign operations and model training.</p>
+            <h3>Custom technology and AI solutions.</h3>
+            <p>We work with enterprises to build custom technology and use AI for sovereign operations and model training.</p>
             <div class="now"><span class="pill">Active projects</span>A tailored platform for a leading Indian nonprofit organization</div>
-            <div class="foot"><span class="meta">Platforms · AI solutions · Custom models</span><span class="go">Read more →</span></div>
+            <div class="foot"><span class="meta">Technology · AI solutions · Custom models</span><span class="go">Read more →</span></div>
           </div>
         </a>
         <div class="bridge" aria-hidden="true"><span class="bline"><i></i><i></i><i></i><i></i></span><span class="bnode"><svg viewBox="0 0 68 68"><defs><mask id="nvcore-bridge" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68"><rect width="68" height="68" fill="#000"/><polygon points="38.38,49.16 29.63,64.32 12.13,64.32 3.38,49.16 12.13,34.00 29.63,34.00" fill="#fff"/><polygon points="38.38,18.84 29.63,34.00 12.13,34.00 3.38,18.84 12.13,3.68 29.63,3.68" fill="#fff"/><polygon points="64.63,34.00 55.88,49.16 38.38,49.16 29.63,34.00 38.38,18.84 55.88,18.84" fill="#fff"/><line x1="29.63" y1="34" x2="12.13" y2="34" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="18.84" stroke="#000" stroke-width="2.2"/><line x1="29.63" y1="34" x2="38.38" y2="49.16" stroke="#000" stroke-width="2.2"/><polygon points="36.83,34.00 33.23,40.24 26.03,40.24 22.43,34.00 26.03,27.76 33.23,27.76" fill="#000"/></mask></defs><rect width="68" height="68" fill="currentColor" mask="url(#nvcore-bridge)"/></svg></span></div>
         <a class="card line-card" href="https://nevresearch.com" target="_blank" rel="noopener">
-          <div class="artbox"><svg class="art" viewBox="0 0 360 172" role="img" aria-label="Company archives, licensed under contract, becoming training data and training environments">
+          <div class="artbox"><svg class="art" viewBox="0 0 360 172" role="img" aria-label="Company archives, broken down into data and rebuilt as training data and training environments">
   <rect class="fl" x="18" y="28" width="78" height="28" rx="3"/>
   <rect class="fl" x="18" y="66" width="78" height="28" rx="3"/>
   <rect class="fl" x="18" y="104" width="78" height="28" rx="3"/>
@@ -411,10 +410,8 @@ footer{background:var(--surface);margin-top:24px}
   <circle class="dot" r="3"><animateMotion dur="2.6s" repeatCount="indefinite" path="M96 42 C126 42 134 84 162 84"/></circle>
   <circle class="dot" r="3"><animateMotion dur="2.6s" begin="-.9s" repeatCount="indefinite" path="M96 80 L162 84"/></circle>
   <circle class="dot" r="3"><animateMotion dur="2.6s" begin="-1.7s" repeatCount="indefinite" path="M96 118 C126 118 134 84 162 84"/></circle>
-  <rect class="fl" x="164" y="56" width="44" height="56" rx="3"/>
-  <path class="ln" d="M172 67 H200 M172 74 H200 M172 81 H192"/>
-  <path class="sig" d="M172 98 c2.5 -6 4.5 3 7 -1.5 s3.5 -5 5.5 0 s3.5 2.5 7.5 -2.5"/>
-  <g class="seal"><circle cx="203" cy="106" r="7.5"/><circle class="in" cx="203" cy="106" r="4.2"/></g>
+  <g class="pg"><rect class="fl" x="164" y="56" width="44" height="56" rx="3"/><path class="ln" d="M172 67 H200 M172 74 H200 M172 81 H200 M172 88 H192 M172 98 H196"/></g>
+  <g class="pxs"><rect class="px" x="165" y="57.5" width="9" height="9" rx="2" style="--dx:-16.3px;--dy:-19.3px;animation-delay:0.16s"/><rect class="px" x="176" y="57.5" width="9" height="9" rx="2" style="--dx:-8.4px;--dy:-16.2px;animation-delay:0.09s"/><rect class="px" x="187" y="57.5" width="9" height="9" rx="2" style="--dx:1.4px;--dy:-16.4px;animation-delay:0.01s"/><rect class="px e" x="198" y="57.5" width="9" height="9" rx="2" style="--dx:14.3px;--dy:-19.9px;animation-delay:0.02s"/><rect class="px" x="165" y="68.5" width="9" height="9" rx="2" style="--dx:-15.5px;--dy:-5.6px;animation-delay:0.03s"/><rect class="px e" x="176" y="68.5" width="9" height="9" rx="2" style="--dx:-7.2px;--dy:-7.2px;animation-delay:0.24s"/><rect class="px" x="187" y="68.5" width="9" height="9" rx="2" style="--dx:5.6px;--dy:-9.1px;animation-delay:0.24s"/><rect class="px" x="198" y="68.5" width="9" height="9" rx="2" style="--dx:11.2px;--dy:-5.4px;animation-delay:0.07s"/><rect class="px" x="165" y="79.5" width="9" height="9" rx="2" style="--dx:-17.7px;--dy:-3.1px;animation-delay:0.08s"/><rect class="px" x="176" y="79.5" width="9" height="9" rx="2" style="--dx:-2.4px;--dy:-2.6px;animation-delay:0.15s"/><rect class="px" x="187" y="79.5" width="9" height="9" rx="2" style="--dx:6.1px;--dy:-1.0px;animation-delay:0.14s"/><rect class="px" x="198" y="79.5" width="9" height="9" rx="2" style="--dx:11.4px;--dy:-3.5px;animation-delay:0.05s"/><rect class="px" x="165" y="90.5" width="9" height="9" rx="2" style="--dx:-13.4px;--dy:7.7px;animation-delay:0.08s"/><rect class="px" x="176" y="90.5" width="9" height="9" rx="2" style="--dx:-4.3px;--dy:7.9px;animation-delay:0.07s"/><rect class="px e" x="187" y="90.5" width="9" height="9" rx="2" style="--dx:7.3px;--dy:9.8px;animation-delay:0.06s"/><rect class="px" x="198" y="90.5" width="9" height="9" rx="2" style="--dx:15.4px;--dy:8.5px;animation-delay:0.22s"/><rect class="px e" x="165" y="101.5" width="9" height="9" rx="2" style="--dx:-13.0px;--dy:14.8px;animation-delay:0.25s"/><rect class="px" x="176" y="101.5" width="9" height="9" rx="2" style="--dx:-8.0px;--dy:15.8px;animation-delay:0.19s"/><rect class="px" x="187" y="101.5" width="9" height="9" rx="2" style="--dx:2.2px;--dy:16.4px;animation-delay:0.01s"/><rect class="px" x="198" y="101.5" width="9" height="9" rx="2" style="--dx:16.2px;--dy:18.6px;animation-delay:0.14s"/></g>
   <path class="wire" d="M210 84 C238 84 238 52 262 52"/>
   <path class="wire" d="M210 84 C238 84 238 116 262 116"/>
   <circle class="dot e" r="3.5"><animateMotion dur="2.2s" repeatCount="indefinite" path="M210 84 C238 84 238 52 262 52"/></circle>
