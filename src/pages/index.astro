@@ -237,10 +237,15 @@ footer{background:var(--surface);margin-top:24px}
 /* two lines of work */
 /* data foundation that opens into the two verticals */
 #work .wrap{position:relative}
-.base{display:flex;flex-direction:column;align-items:center;gap:12px;margin:10px 0 58px;position:relative;z-index:3}
-.base .cap{font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.base{display:flex;flex-direction:column;align-items:center;gap:12px;margin:40px 0 58px;position:relative;z-index:3}
+.base .cap{display:flex;align-items:center;gap:9px;font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
 .base .cap i{font-style:normal;margin:0 4px}
 .base .cap b{font-weight:500;color:var(--text)}
+.eip{width:24px;height:24px;flex:none;overflow:visible}
+.eip .eb{fill:none;stroke:var(--text);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.eip .w{fill:var(--faint);animation:win 6s ease-in-out infinite}
+.eip .w:nth-of-type(2){animation-delay:1s}.eip .w:nth-of-type(3){animation-delay:2s}.eip .w:nth-of-type(4){animation-delay:3s}.eip .w:nth-of-type(5){animation-delay:4s}.eip .w:nth-of-type(6){animation-delay:5s}
+@keyframes win{0%,12%,30%,100%{fill:var(--faint)}16%,26%{fill:var(--ember)}}
 .src{display:flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--hairline);border-radius:999px;padding:5px}
 .src span{font:500 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--text);background:var(--canvas);border:1px solid var(--border);border-radius:999px;padding:8px 13px 7px;white-space:nowrap;animation:lit 4.8s ease-in-out infinite}
 .src span:nth-of-type(2){animation-delay:.3s}.src span:nth-of-type(3){animation-delay:.6s}.src span:nth-of-type(4){animation-delay:.9s}
@@ -251,7 +256,7 @@ footer{background:var(--surface);margin-top:24px}
 .fork .fd{fill:var(--ember)}
 .fork .fd.t1{opacity:.45}.fork .fd.t2{opacity:.18}
 .fork .fe{fill:var(--ember)}
-@media (max-width:920px){.base{margin-bottom:22px}}
+@media (max-width:920px){.base{margin:30px 0 22px}}
 @media (max-width:440px){.src{gap:4px;padding:4px}.src span{font-size:9px;letter-spacing:.06em;padding:7px 8px 6px}.src b{font-size:10px}}
 /* a page broken into data and rebuilt (NEV art) */
 .art .pg{animation:pg 5s ease-in-out infinite}
@@ -259,7 +264,7 @@ footer{background:var(--surface);margin-top:24px}
 .art .px.e{fill:var(--ember)}
 @keyframes pg{0%,14%{opacity:1}20%,74%{opacity:0}82%,100%{opacity:1}}
 @keyframes px{0%,12%{transform:scale(.6);opacity:0}20%,72%{transform:none;opacity:1}82%,100%{transform:none;opacity:0}}
-@media (prefers-reduced-motion:reduce){.src span{animation:none}.fork .fd{display:none}.art .pg,.art .px{animation:none}.art .px{opacity:0}}
+@media (prefers-reduced-motion:reduce){.src span,.eip .w{animation:none}.fork .fd{display:none}.art .pg,.art .px{animation:none}.art .px{opacity:0}}
 .two.split{gap:14px;background:none;border:0;border-radius:0;overflow:visible}
 .two.split>.card{border:1px solid var(--hairline);border-radius:var(--r);overflow:hidden}
 .line-card{display:flex;flex-direction:column;padding:0;color:inherit}
@@ -353,7 +358,7 @@ footer{background:var(--surface);margin-top:24px}
         <h2>Owned intelligence, built on <em>real-world data</em>.</h2>
         <p class="lead">We do not rent our intelligence. We build it on the records, systems and workflows that real enterprises run on. That foundation is ours, and two distinct businesses are built on it.</p>
       </div>
-      <div class="base rev"><div class="cap">Our foundation <i>·</i> <b>Enterprise IP</b></div><div class="src"><span>Records</span><b>+</b><span>Systems</span><b>+</b><span>Workflows</span><b>+</b><span>Outcomes</span></div></div>
+      <div class="base rev"><div class="cap"><svg class="eip" viewBox="0 0 24 24" aria-hidden="true"><path class="eb" d="M5 21 V5.5 a1.5 1.5 0 0 1 1.5 -1.5 h11 a1.5 1.5 0 0 1 1.5 1.5 V21 M2.5 21 H21.5"/><rect class="w" x="8" y="7" width="3" height="3" rx=".6"/><rect class="w" x="13" y="7" width="3" height="3" rx=".6"/><rect class="w" x="8" y="11.5" width="3" height="3" rx=".6"/><rect class="w" x="13" y="11.5" width="3" height="3" rx=".6"/><rect class="w" x="8" y="16" width="3" height="3" rx=".6"/><rect class="w" x="13" y="16" width="3" height="5" rx=".6"/></svg><span>Our foundation <i>·</i> <b>Enterprise IP</b></span></div><div class="src"><span>Records</span><b>+</b><span>Systems</span><b>+</b><span>Workflows</span><b>+</b><span>Outcomes</span></div></div>
       <svg class="fork" aria-hidden="true"></svg>
       <div class="two split rev">
         <a class="card line-card" href="/modernization">
