@@ -237,16 +237,20 @@ footer{background:var(--surface);margin-top:24px}
 /* two lines of work */
 /* data foundation that opens into the two verticals */
 #work .wrap{position:relative}
-.base{display:flex;justify-content:center;margin:10px 0 58px;position:relative;z-index:3}
+.base{display:flex;flex-direction:column;align-items:center;gap:12px;margin:10px 0 58px;position:relative;z-index:3}
+.base .cap{font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.base .cap i{font-style:normal;margin:0 4px}
+.base .cap b{font-weight:500;color:var(--text)}
 .src{display:flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--hairline);border-radius:999px;padding:5px}
 .src span{font:500 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--text);background:var(--canvas);border:1px solid var(--border);border-radius:999px;padding:8px 13px 7px;white-space:nowrap;animation:lit 4.8s ease-in-out infinite}
 .src span:nth-of-type(2){animation-delay:.3s}.src span:nth-of-type(3){animation-delay:.6s}.src span:nth-of-type(4){animation-delay:.9s}
 .src b{font:400 13px/1 var(--mono);color:var(--ember)}
 @keyframes lit{0%,8%,30%,100%{border-color:var(--border);color:var(--text)}15%,20%{border-color:var(--ember);color:var(--ember)}}
 .fork{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:2}
-.fork .fw{fill:none;stroke:var(--faint);stroke-width:1.3;stroke-dasharray:3.6 4.8}
+.fork .fw{fill:none;stroke:var(--faint);stroke-width:2;stroke-linecap:round;stroke-dasharray:0 7;opacity:.75}
 .fork .fd{fill:var(--ember)}
-.fork .fe{fill:var(--canvas);stroke:var(--ember);stroke-width:1.4}
+.fork .fd.t1{opacity:.45}.fork .fd.t2{opacity:.18}
+.fork .fe{fill:var(--ember)}
 @media (max-width:920px){.base{margin-bottom:22px}}
 @media (max-width:440px){.src{gap:4px;padding:4px}.src span{font-size:9px;letter-spacing:.06em;padding:7px 8px 6px}.src b{font-size:10px}}
 /* a page broken into data and rebuilt (NEV art) */
@@ -346,10 +350,10 @@ footer{background:var(--surface);margin-top:24px}
     <div class="wrap">
       <div class="head rev">
         <div class="eyebrow">What we do</div>
-        <h2>Technology, built on <em>data</em>.</h2>
-        <p class="lead">Every enterprise sits on years of records, systems and know-how. We build technology on top of that data. Everything we do starts there, and it runs in two directions.</p>
+        <h2>Owned intelligence, built on <em>real-world data</em>.</h2>
+        <p class="lead">We do not rent our intelligence. We build it on the records, systems and workflows that real enterprises run on. That foundation is ours, and two distinct businesses are built on it.</p>
       </div>
-      <div class="base rev"><div class="src"><span>Records</span><b>+</b><span>Systems</span><b>+</b><span>Workflows</span><b>+</b><span>Outcomes</span></div></div>
+      <div class="base rev"><div class="cap">Our foundation <i>·</i> <b>Enterprise IP</b></div><div class="src"><span>Records</span><b>+</b><span>Systems</span><b>+</b><span>Workflows</span><b>+</b><span>Outcomes</span></div></div>
       <svg class="fork" aria-hidden="true"></svg>
       <div class="two split rev">
         <a class="card line-card" href="/modernization">
@@ -595,7 +599,7 @@ footer{background:var(--surface);margin-top:24px}
     var cards=grid.children; if(cards.length<2)return;
     var W=wrap.getBoundingClientRect(),S=src.getBoundingClientRect();
     if(!W.width)return;
-    var cx=S.left+S.width/2-W.left,sy=S.bottom-W.top,r=10,out='',paths=[],ends=[];
+    var cx=S.left+S.width/2-W.left,sy=S.bottom-W.top+4,r=14,out='',paths=[],ends=[];
     var C=[0,1].map(function(i){var b=cards[i].getBoundingClientRect();return {l:b.left-W.left,t:b.top-W.top,w:b.width};});
     var stacked=C[1].t>C[0].t+20;
     if(!stacked){
@@ -612,10 +616,13 @@ footer{background:var(--surface);margin-top:24px}
     paths.forEach(function(p,i){
       var dur=stacked?(i?6:3.6):3.2;
       out+='<path class="fw" d="'+p+'"/>';
-      out+='<circle class="fd" r="3.6"><animateMotion dur="'+dur+'s" repeatCount="indefinite" path="'+p+'"/></circle>';
-      out+='<circle class="fd" r="3.6"><animateMotion dur="'+dur+'s" begin="-'+(dur/2)+'s" repeatCount="indefinite" path="'+p+'"/></circle>';
+      [0,dur/2].forEach(function(o){
+        [['',3,0],[' t1',2.5,.09],[' t2',2,.18]].forEach(function(k){
+          out+='<circle class="fd'+k[0]+'" r="'+k[1]+'"><animateMotion dur="'+dur+'s" begin="-'+(o+dur-k[2]).toFixed(2)+'s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines=".45 0 .35 1" path="'+p+'"/></circle>';
+        });
+      });
     });
-    ends.forEach(function(e){out+='<circle class="fe" cx="'+e[0]+'" cy="'+e[1]+'" r="3.4"/>';});
+    ends.forEach(function(e){out+='<circle class="fe" cx="'+e[0]+'" cy="'+e[1]+'" r="2.6"/>';});
     fork.setAttribute('viewBox','0 0 '+W.width+' '+W.height);
     fork.innerHTML=out;
   }
